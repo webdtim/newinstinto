@@ -7,25 +7,18 @@
   $block-name: &; // #{$block-name}__element
   display: flex;
   align-self: center;
-  margin-right: 26px;
-  padding-right: 26px;
+  border-right: none;
+  padding-top: 5px;
 
   @media (min-width: $screen-xs) {
-
-    margin-right: 18px;
     padding-right: 0;
-    border-right: none;
   }
 
   @media (min-width: $screen-sm) {
-
-    margin-right: 18px;
     padding-right: 0;
-    border-right: none;
   }
 
-  @media (min-width: $screen-md) {
-    margin-right: 26px;
+  @media (min-width: $screen-xl) {
     padding-right: 26px;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
   }

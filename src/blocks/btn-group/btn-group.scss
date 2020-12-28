@@ -9,44 +9,15 @@
   &__inner {
 
     display: flex;
-
-    @media (min-width: $screen-xs) {
-
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media (min-width: $screen-sm) {
-
-      display: flex;
-      flex-direction: column;
-    }
+    flex-direction: column;
 
     @media (min-width: $screen-md) {
-
       display: flex;
       flex-direction: row;
     }
 
     .btn {
-
-      @media (min-width: $screen-xs) {
-
-        margin-right: 0;
-        margin-bottom: $base-margin;
-      }
-
-      @media (min-width: $screen-sm) {
-
-        margin-right: 0;
-        margin-bottom: $base-margin;
-      }
-
-      @media (min-width: $screen-md) {
-
-        margin-right: $base-margin;
-        margin-bottom: 0;
-      }
+      margin-bottom: 0;
 
       &:last-child {
 
@@ -56,12 +27,10 @@
   }
 
   &--search {
-
     display: flex;
   }
 
   &--flex {
-
 
     #{$block-name}__inner {
 
@@ -71,7 +40,6 @@
       align-content: center;
 
       .field-checkbox {
-
         margin-bottom: 0;
       }
     }
