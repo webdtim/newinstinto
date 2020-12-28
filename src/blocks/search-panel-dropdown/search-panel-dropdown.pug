@@ -1,0 +1,55 @@
+//- Все примеси в этом файле должны начинаться c имени блока (search-panel-dropdown)
+
+mixin search-panel-dropdown(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +search-panel-dropdown('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' search-panel-dropdown--' + modsList[i].trim();
+      }
+    }
+
+  .search-panel-dropdown(class=allMods)&attributes(attributes)
+    .search-panel-dropdown__inner
+      .search-panel-dropdown__body
+        +search-panel-dropdown-item()
+        +search-panel-dropdown-item()
+        +search-panel-dropdown-item()
+      .search-panel-dropdown__footer
+        .search-panel-dropdown__footer-text Всего 182 результата
+        a.search-panel-dropdown__footer-link(href='#') Смотреть все
+      block
+
+mixin search-panel-dropdown-item(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +search-panel-dropdown('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+      var allMods = '';
+      if(typeof(mods) !== 'undefined' && mods) {
+        var modsList = mods.split(',');
+        for (var i = 0; i < modsList.length; i++) {
+          allMods = allMods + ' search-panel-dropdown--' + modsList[i].trim();
+        }
+      }
+
+  .search-panel-dropdown-item(class=allMods)&attributes(attributes)
+    .search-panel-dropdown-item__inner
+      .search-panel-dropdown-item__image
+      .search-panel-dropdown-item__header Комплект белья obsessive
+      .search-panel-dropdown-item__price 4 943 ₽
+      block

@@ -1,0 +1,19 @@
+// В этом файле должны быть стили для БЭМ-блока header-catalog, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-catalog {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: none;
+
+
+  &--open {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #fbfbfb;
+  }
+}

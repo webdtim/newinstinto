@@ -1,0 +1,29 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header-nav-menu)
+
+mixin header-nav-menu(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +header-nav-menu('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' header-nav-menu--' + modsList[i].trim();
+      }
+    }
+
+  .header-nav-menu(class=allMods)&attributes(attributes)
+    a.header-nav-menu__inner(href='catalog.html') Косметика
+    a.header-nav-menu__inner(href='catalog.html') Литература
+    a.header-nav-menu__inner(href='blog.html')
+      svg(width='12', height='12')
+        use(xlink:href='img/sprite.svg#icon-book')
+      span Интимный блог
+      .header-nav-menu__blog-age 18+
+      block

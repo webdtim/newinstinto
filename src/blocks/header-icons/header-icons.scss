@@ -1,0 +1,74 @@
+// В этом файле должны быть стили для БЭМ-блока header-icons, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-icons {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 130px;
+
+  @media (min-width: $screen-xs) {
+    width: 160px;
+  }
+
+  @media (min-width: $screen-sm) {
+    width: 180px;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 200px;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 450px;
+
+    #icon-search-header svg {
+      margin-right: 20px;
+    }
+  }
+
+  &__inner {
+    display: inline-flex;
+  }
+
+  &__text-sub-icon {
+    // скрываем текст иконок на моб. девайсах
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      // показываем текст иконок на десктопе
+      display: inline-flex;
+      // стилизация счётчиков
+      div {
+        margin-left: 10px;
+      }
+
+      #count-favorites {
+        color: $gray-lighter;
+      }
+
+      #count-basket {
+        width: 20px;
+        height: 20px;
+        background: $black;
+        border-radius: 19px;
+        color: $white;
+        text-align: center;
+      }
+    }
+  }
+
+  &__icon {
+
+    @media (min-width: $screen-xl) {
+      // скрываем svg иконки на десктопе
+      &--hide {
+        display: none;
+      }
+    }
+  }
+}

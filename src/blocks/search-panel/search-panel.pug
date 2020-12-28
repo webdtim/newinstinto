@@ -1,0 +1,34 @@
+//- Все примеси в этом файле должны начинаться c имени блока (search-panel)
+
+mixin search-panel(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +search-panel('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' search-panel--' + modsList[i].trim();
+      }
+    }
+
+  .search-panel(class=allMods)&attributes(attributes)#search-panel
+    .search-panel__inner
+      +btn-group('','search')
+        +field-text({
+          mods: 'material',
+          val: '',
+          attrs: {
+            name: 'comment',
+            placeholder: 'Введите слово для поиска',
+          }
+        })
+        +btn('Искать', 'blank, md, icon')
+          svg.btn__icon
+            use(xlink:href='img/sprite.svg#icon-arrow-right')

@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (preview-tem)
+
+mixin preview-tem(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +preview-tem('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' preview-tem--' + modsList[i].trim();
+      }
+    }
+
+  .preview-tem(class=allMods)&attributes(attributes)
+    .preview-tem__inner
+      block

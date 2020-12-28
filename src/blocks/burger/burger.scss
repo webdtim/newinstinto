@@ -1,0 +1,145 @@
+// В этом файле должны быть стили для БЭМ-блока burger, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.burger {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  align-items: center;
+  align-self: center;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  border: none;
+  background: transparent;
+  user-select: none;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  outline: none;
+  padding-left: 24px;
+  color: $black;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $text-color;
+    // border-color: darken($gray-lighter, 12%);
+  }
+
+  &__container {
+    height: 45px;
+    padding-left: 10px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      height: 60px;
+      padding-left: 50px;
+    }
+  }
+  // изменения активной кнопки
+  &__container--active {
+    background: $color-main;
+
+    @media (min-width: $screen-md) {
+      padding-right: 10px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-right: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-right: 0;
+    }
+
+    .burger__inner {
+      color: $white;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+
+  &__caption {
+
+    display: none;
+    align-self: center;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+      width: 53px;
+      font-size: 14px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 83px;
+      padding-right: 30px;
+    }
+  }
+
+  &__icon { // stylelint-disable-line  selector-combinator-blacklist
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 14px;
+    height: $toggler-part-height;
+    vertical-align: middle;
+    font-size: 0;
+    color: transparent;
+    background: $toggler-part-bg-color;
+    transition: background $transition-time $transition-time;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: $toggler-part-height;
+      background: $toggler-part-bg-color;
+      transform-origin: 50% 50%;
+      transition: top $transition-time $transition-time, transform $transition-time;
+    }
+
+    &:before {
+      top: -5px;
+    }
+
+    &:after {
+      top: 5px;
+    }
+  }
+
+  &--close {
+
+    #{$block-name}__icon { // stylelint-disable-line  selector-combinator-blacklist
+
+      transition: background $transition-time 0s;
+      background: transparent;
+
+      &:before,
+      &:after {
+        top: 0;
+        background: $white;
+        transition: top $transition-time, transform $transition-time $transition-time;
+      }
+
+      &:before {
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+
+      &:after {
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+    }
+  }
+}

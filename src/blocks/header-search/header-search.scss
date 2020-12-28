@@ -1,0 +1,25 @@
+// В этом файле должны быть стили для БЭМ-блока header-search, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-search {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  max-height: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #fbfbfb;
+
+  &--open {
+    max-height: 1000px;
+    overflow: visible;
+    transition: max-height 0.6s;
+  }
+}

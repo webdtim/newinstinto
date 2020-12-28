@@ -1,0 +1,31 @@
+// В этом файле должны быть стили для БЭМ-блока search-panel, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.search-panel {
+
+  $block-name:                &; // #{$block-name}__element
+  width: 1000px;
+  margin: auto;
+
+  &__inner {
+
+    display: flex;
+  }
+
+  .btn-group {
+
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+
+  .field-text__input {
+
+    @media (min-width: $screen-xxl) {
+
+      min-width: 1000px;
+      font-size: 18px;
+    }
+  }
+}

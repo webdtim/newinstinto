@@ -1,0 +1,102 @@
+// В этом файле должны быть стили для БЭМ-блока main-nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.main-nav {
+
+  $block-name: &; // #{$block-name}__element
+  margin-top: 10px*1.5;
+  margin-bottom: 10px*1.5;
+
+  // первый уровень
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    // настольный вид списка
+    @media (min-width: $screen-xl) {
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+
+      &--lvl-2 {
+        display: block;
+      }
+
+      &--lvl-3 {
+        display: block;
+      }
+    }
+
+    &-col {
+
+      // мобильный вид списка
+      @media (max-width: $screen-xl) {
+
+        width: 100%;
+      }
+
+      // настольный вид списка
+      @media (min-width: $screen-xl) {
+
+        width: 20%;
+      }
+    }
+  }
+
+  &__item {
+
+    position: relative;
+
+    // настольный вид списка
+    @media (min-width: $screen-xl) {
+      margin-right: 10px;
+    }
+
+    &--active {
+
+      & > #{$block-name}__link { // stylelint-disable-line  selector-combinator-blacklist
+        color: #000;
+        font-weight: 600;
+      }
+    }
+
+    &--has-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $color-accent;
+    }
+
+    &--lvl-1 {
+
+      font-weight: 600;
+    }
+
+    &--lvl-2 {
+
+      @media (max-width: $screen-xl) {
+        padding-left: 2em;
+      }
+    }
+
+    &--lvl-3 {
+
+      @media (max-width: $screen-xl) {
+        padding-left: 3em;
+      }
+    }
+  }
+}

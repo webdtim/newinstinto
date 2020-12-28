@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (header-catalog)
+
+mixin header-catalog(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +header-catalog('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' header-catalog--' + modsList[i].trim();
+      }
+    }
+
+  .header-catalog(class=allMods)&attributes(attributes)#header-catalog
+    .header-catalog__inner
+      block

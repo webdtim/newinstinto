@@ -1,0 +1,45 @@
+// В этом файле должны быть стили для БЭМ-блока header-nav-menu, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-nav-menu {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: none;
+
+  @media (min-width: $screen-md) {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &__inner {
+
+    @media (min-width: $screen-md) {
+      display: inline-flex;
+      align-items: center;
+      padding-left: 22px;
+      white-space: nowrap;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding-left: 30px;
+    }
+
+    span {
+      padding-left: 6px;
+    }
+  }
+
+  &__blog-age {
+    width: 30px;
+    height: 17px;
+    margin-left: 5px;
+    padding-left: 6px;
+    background: $gray-lightest;
+    border-radius: 38px;
+    font-size: $font-size-12;
+    color: $gray;
+  }
+}

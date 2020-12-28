@@ -1,0 +1,35 @@
+// В этом файле должны быть стили для БЭМ-блока header-container, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-container {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 45px;
+
+  @media (min-width: $screen-xl) {
+    height: 60px;
+  }
+
+  // линия разделяющая в header элементы
+  &__line {
+
+    @media (min-width: $screen-xl) {
+      width: 0;
+      height: 20px;
+      padding-left: 0;
+      border-right: solid 2px $gray-lightest;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
