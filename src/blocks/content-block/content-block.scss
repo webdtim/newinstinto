@@ -1,0 +1,72 @@
+// В этом файле должны быть стили для БЭМ-блока content-block, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.content-block {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: grid;
+  padding-left: $m-def;
+  padding-right: $m-def;
+  padding-bottom: 30px;
+  background-color: #cfb53b;
+
+  @media (min-width: $screen-md) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &--img {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  &--main {
+
+    @media (min-width: $screen-md) {
+      grid-column: span 2;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-column: span 1;
+    }
+
+    h1,h2 {
+      font-size: $font-size-h2;
+      font-weight: $font-weight-400;
+      
+      @media(min-width: $screen-xxl) {
+        font-size: $font-size-h1;
+      }
+    }
+  }
+
+  &--large {
+    background-color: blue;
+
+    @media (min-width: $screen-md) {
+      grid-column: span 2;
+    }
+  }
+
+  &--m-top {
+
+    @media (min-width: $screen-xl) {
+      margin-top: 213px;
+    }
+  }
+
+  &--pos-relative {
+
+    @media (min-width: $screen-xl) {
+      position: relative;
+      top: -210px;
+    }
+  }
+}

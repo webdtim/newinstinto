@@ -11,14 +11,14 @@
 
   &__inner--padding {
     padding-left: 0;
-    padding-right: 10px;
+    padding-right: $m-def;
 
     @media (min-width: $screen-md) {
-      padding-right: 20px;
+      padding-right: $m-md;
     }
 
     @media (min-width: $screen-xl) {
-      padding-right: 50px;
+      padding-right: $m-xl;
     }
   }
 }

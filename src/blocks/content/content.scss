@@ -5,4 +5,82 @@
 .content {
 
   $block-name:                &; // #{$block-name}__element
+
+  &__container {
+    display: grid;
+    margin-right: 0;
+    margin-left: 0;
+
+    @media (min-width: $screen-md) {
+      margin-left: $m-md;
+      margin-right: $m-md;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 240px 1fr;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: $m-xl;
+      margin-right: $m-xl;
+    }
+
+    &--sidebar {
+
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 240px 1fr;
+        grid-column-gap: 10px;
+      }
+
+      @media (min-width: $screen-xl) {
+        grid-column-gap: 40px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        grid-template-columns: 290px 1fr;
+        grid-column-gap: 60px;
+      }
+    }
+  }
+
+  &__main {
+    display: grid;
+    width: 100%;
+    background: gray;
+  }
+
+  &__inner {
+    display: grid;
+    width: 100%;
+    margin-top: 50px;
+    background-color: #3e3e3e;
+
+    @media (min-width: $screen-sm) {
+      
+    }
+
+    @media (min-width: $screen-md) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 40px;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &--home {
+
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (min-width: $screen-xl) {
+        grid-template-columns: 1fr 1fr 0.46fr;
+      }
+    }
+  }
 }

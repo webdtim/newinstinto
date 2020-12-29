@@ -1,0 +1,40 @@
+//- Все примеси в этом файле должны начинаться c имени блока (sidebar)
+
+mixin sidebar(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +sidebar('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' sidebar--' + modsList[i].trim();
+      }
+    }
+
+  .sidebar(class=allMods)&attributes(attributes)
+    .sidebar__inner
+      nav.sidebar__nav
+        ul.sidebar__list
+          li.sidebar__list-item
+            a Распродажа
+          li.sidebar__list-item
+            a Трусы
+          li.sidebar__list-item
+            a Носки
+          li.sidebar__list-item
+            a Теплые носочки
+          li.sidebar__list-item
+            a Корректирующие корсеты
+          li.sidebar__list-item
+            a Тепло
+          li.sidebar__list-item БДСМ
+          li.sidebar__list-item Косметика
+          li.sidebar__list-item Литература
+      block

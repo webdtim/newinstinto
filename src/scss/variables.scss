@@ -46,8 +46,8 @@ $font-size:                   16px;
 $font-size-14:                14px;
 $font-size-12:                12px;
 
-$font-size-h1:                40px;
-$font-size-h2:                32px;
+$font-size-h1:                64px;
+$font-size-h2:                48px;
 $font-size-h3:                24px;
 $font-size-h4:                18px;
 $font-size-h5:                16px;
@@ -58,6 +58,7 @@ $font-size-sm:                0.75em; // 12px от 16px
 $line-height:                 1.5;
 
 $font-weight-500:             500;
+$font-weight-400:             400;
 
 $typo-margin-vertical:        1em;
 
@@ -88,6 +89,12 @@ $container-xxl:               $screen-xxl - 30;
 
 $grid-columns:                12;
 $grid-gutter-width:           30px;
+
+
+// отступы
+$m-def:												10px;
+$m-md:												20px;
+$m-xl:												50px;
 
 
 

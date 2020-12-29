@@ -1,12 +1,12 @@
-//- Все примеси в этом файле должны начинаться c имени блока (content)
+//- Все примеси в этом файле должны начинаться c имени блока (content-block)
 
-mixin content(text, mods)
+mixin content-block(mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +content('Текст', 'some-mod')
+        +content-block('Текст', 'some-mod')
 
   -
     // список модификаторов
@@ -14,9 +14,10 @@ mixin content(text, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' content--' + modsList[i].trim();
+        allMods = allMods + ' content-block--' + modsList[i].trim();
       }
     }
 
-  .content(class=allMods)&attributes(attributes)
-    block
+  .content-block(class=allMods)&attributes(attributes)
+    .content-block__inner
+      block

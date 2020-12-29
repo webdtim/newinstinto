@@ -7,6 +7,30 @@ block meta
 
 block content
   .content
-    .content__container--and-sidebar
+    .content__container.content__container--sidebar
+      +sidebar()
+      main.content__main
+        .content__inner.content__inner--home
+          +content-block('main')
+            h1 Место, <br>где начинается <b>твой секрет.</b>
+            p Стань вновь желанной с новым бельем от Инстинто.
+            +btn('Перейти в каталог','main')(href="catalog.html")
+          +content-block('large, img')
+            img.content-block__img(src='img/hero.jpg')
+        .content__inner.content__inner--home
+          +content-block()
+          +content-block()
+        .content__inner.content__inner--home
+          +content-block()
+          +content-block('large, m-top')
+        .content__inner.content__inner--home
+          +content-block('large, main')
+            h2 Огромный ассортимент боди, сорочков и чулков у нас в каталоге
+        .content__inner.content__inner--home
+          +content-block()
+          +content-block()
+        .content__inner.content__inner--home
+          +content-block('large')
+          +content-block('pos-relative')
 //- block append page-bottom
 //-   script(src='js/some.js')
