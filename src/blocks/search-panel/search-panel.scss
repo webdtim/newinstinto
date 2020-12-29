@@ -5,34 +5,12 @@
 .search-panel {
 
   $block-name:                &; // #{$block-name}__element
-  
+
   display: flex;
   justify-content: center;
   width: 100%;
   margin: 0;
   background-color: $gray-fb;
-
-  &__inner {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    @media (min-width: $screen-md) {
-      width: 600px;
-    }
-
-    @media (min-width: $screen-lg) {
-      width: 800px;
-    }
-
-    @media (min-width: $screen-xl) {
-      width: 1000px;
-    }
-
-    @media (min-width: $screen-xxl) {
-      width: 1120px;
-    }
-  }
 
   .btn {
     padding: 10px 15px;
@@ -60,6 +38,28 @@
     @media (min-width: $screen-xxl) {
       width: 900px;
       font-size: 18px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (min-width: $screen-md) {
+      width: 600px;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 800px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 1000px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 1120px;
     }
   }
 }
