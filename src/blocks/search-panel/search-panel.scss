@@ -6,25 +6,59 @@
 
   $block-name:                &; // #{$block-name}__element
   
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin: 0;
-  padding-left: 10px;
-  padding-right: 10px;
+  background-color: $gray-fb;
 
   &__inner {
     display: flex;
+    justify-content: space-between;
     width: 100%;
+
+    @media (min-width: $screen-md) {
+      width: 600px;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 800px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 1000px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 1120px;
+    }
   }
 
-  .btn-group {
-    display: flex;
-    margin: 0;
+  .btn {
+    padding: 10px 15px;
+
+    @media (min-width: $screen-sm) {
+      padding: 10px 24px;
+    }
   }
 
   .field-text__input {
+    width: 200px;
+
+    @media (min-width: $screen-md) {
+      width: 240px;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 400px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 700px;
+    }
 
     @media (min-width: $screen-xxl) {
-
-      min-width: 1000px;
+      width: 900px;
       font-size: 18px;
     }
   }

@@ -8,13 +8,13 @@
   max-width: 100%;
   margin: 0;
   border-radius: $border-radius;
-  padding: $field-padding-vertical $field-padding-horizontal*2;
+  padding: 8px 24px;
   vertical-align: middle;
   white-space: nowrap;
   text-overflow: ellipsis;
   user-select: none;
   text-align: center;
-  font-size: 1em;
+  font-size: 18px;
   font-family: inherit;
   line-height: $line-height;
   text-decoration: none;
@@ -63,8 +63,8 @@
      align-self: center;
      width: 12px;
      height: 12px;
-     margin-left: $base-margin/2;
-     margin-top: -5px;
+     margin-top: -2px;
+     margin-left: 10px;
    }
 
   &--main {

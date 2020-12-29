@@ -20,15 +20,14 @@ mixin search-panel(text, mods)
 
   .search-panel(class=allMods)&attributes(attributes)#search-panel
     .search-panel__inner
-      +btn-group('','search')
-        +field-text({
-          mods: 'material',
-          val: '',
-          attrs: {
-            name: 'comment',
-            placeholder: 'Введите слово для поиска',
-          }
-        })
-        +btn('Искать', 'blank, md, icon')
-          svg.btn__icon
-            use(xlink:href='img/sprite.svg#icon-arrow-right')
+      +field-text({
+        mods: 'material',
+        val: '',
+        attrs: {
+          name: 'comment',
+          placeholder: 'Введите слово для поиска',
+        }
+      })
+      +btn('Искать', 'blank, md, icon')
+        svg.btn__icon
+          use(xlink:href='img/sprite.svg#icon-arrow-right')
