@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (seo-text)
+
+mixin seo-text(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +seo-text('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' seo-text--' + modsList[i].trim();
+      }
+    }
+
+  .seo-text(class=allMods)&attributes(attributes)
+    .seo-text__inner
+      block

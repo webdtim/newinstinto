@@ -46,18 +46,12 @@
   &__main {
     display: grid;
     width: 100%;
-    background: gray;
   }
 
   &__inner {
     display: grid;
     width: 100%;
     margin-top: 50px;
-    background-color: #3e3e3e;
-
-    @media (min-width: $screen-sm) {
-      
-    }
 
     @media (min-width: $screen-md) {
       grid-template-columns: 1fr 1fr;

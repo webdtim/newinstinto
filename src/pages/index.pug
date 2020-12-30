@@ -13,24 +13,59 @@ block content
         .content__inner.content__inner--home
           +content-block('main')
             h1 Место, <br>где начинается <b>твой секрет.</b>
-            p Стань вновь желанной с новым бельем от Инстинто.
-            +btn('Перейти в каталог','main')(href="catalog.html")
+            p.content-block__description Стань вновь желанной с новым бельем от Инстинто.
+            +btn('Перейти в каталог','main')(href='catalog.html')
           +content-block('large, img')
-            img.content-block__img(src='img/hero.jpg')
+            img.content-block__img(src='img/hero.jpg', alt='альт')
+            .content-block__stick-img
+              svg
+                use(xlink:href='img/sprite.svg#hero-figure')
         .content__inner.content__inner--home
           +content-block()
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+            h3.content-block__title Косметика
+            p.content-block__description Будь неотразимой
           +content-block()
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+            h3.content-block__title Косметика
+            p.content-block__description Будь неотразимой
         .content__inner.content__inner--home
           +content-block()
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+            h3.content-block__title Косметика
+            p.content-block__description Будь неотразимой
           +content-block('large, m-top')
+            img.content-block__img(src='img/hero.jpg', alt='альт')
+            h3.content-block__title Косметика
+            p.content-block__description Будь неотразимой
         .content__inner.content__inner--home
-          +content-block('large, main')
+          +content-block('main')
             h2 Огромный ассортимент боди, сорочков и чулков у нас в каталоге
-        .content__inner.content__inner--home
-          +content-block()
           +content-block()
         .content__inner.content__inner--home
           +content-block('large')
+            img.content-block__img(src='img/hero.jpg', alt='альт')
+            h3.content-block__title Косметика
+            p.content-block__description Будь неотразимой
+            +btn('отправиться в путь','main')(href='catalog.html')
           +content-block('pos-relative')
+            svg
+              use(xlink:href='img/sprite.svg#icon-to-surprise')
+        .content__inner.content__inner--home
+          +content-block()
+            img.content-block__img(src='img/hero.jpg', alt='альт')
+            h3.content-block__title Косметика
+            p.content-block__description Будь неотразимой
+            +btn('Выбрать пижаму','main')(href='catalog.html')
+          +content-block()
+            img.content-block__img(src='img/hero.jpg', alt='альт')
+            h3.content-block__title Косметика
+            p.content-block__description Будь неотразимой
+            +btn('Тсс, мы никому не скажем','main')(href='catalog.html')
+          +content-block()
+            h3.content-block__title Информация о доставке и т.д.
+            p.content-block__description Будь неотразимой
+        +seo-text()
+          p Вы следите за модой и интересуетесь последними тенденциями в мире нижнего белья и одежды? Тогда не пропустите женскую коллекцию. разнообразие моделей вас приятно удивит. Наша коллекция создана, чтобы учитывать потребности каждой женщины в любое время суток и в любой период жизни. Эта коллекция поможет безупречно выглядеть в офисе
 //- block append page-bottom
 //-   script(src='js/some.js')
