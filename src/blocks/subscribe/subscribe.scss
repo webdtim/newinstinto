@@ -1,0 +1,21 @@
+// В этом файле должны быть стили для БЭМ-блока subscribe, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.subscribe {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    width: 100%;
+
+    @media (min-width: $screen-sm) {
+      max-width: 400px;
+    }
+  }
+
+  input {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}

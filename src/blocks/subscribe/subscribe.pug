@@ -1,0 +1,35 @@
+//- Все примеси в этом файле должны начинаться c имени блока (subscribe)
+
+mixin subscribe(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +subscribe('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' subscribe--' + modsList[i].trim();
+      }
+    }
+
+  .subscribe(class=allMods)&attributes(attributes)
+    .subscribe__inner
+      svg(width='50px', height='35px')
+        use(xlink:href="img/sprite.svg#icon-mail")
+      h3.content-block__title Подпишись на рассылку и получи скидку 10%
+      +form('subscribe')
+        +field-text({
+          helpText: '',
+          attrs: {
+            placeholder: 'Ваша почта'
+          }
+        })
+        +field-actions()
+          +btn('Подписаться','default')
+      block

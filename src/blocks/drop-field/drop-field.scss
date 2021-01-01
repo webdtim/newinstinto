@@ -1,0 +1,167 @@
+// В этом файле должны быть стили для БЭМ-блока drop-field, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.drop-field {
+
+  $block-name:                &; // #{$block-name}__element
+
+  width: 100%;
+  font-size: 14px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column: span 1;
+    margin-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr 1fr;
+      grid-column: span 2;
+      grid-column-gap: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column: span 3;
+    }
+  }
+
+  &__global-accept {
+    margin-top: 30px;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 40px;
+    }
+  }
+
+  &__inner {
+    margin-top: 10px;
+
+    @media (min-width: $screen-xl) {
+      margin-top: 20px;
+    }
+
+    &--open {
+      margin: 10px;
+      padding: 20px; 
+      box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+
+      @media (min-width: $screen-sm) {
+        padding: 30px;
+      }
+
+      @media (min-width: $screen-md) {
+        margin: 0;
+        padding: 20px;
+      }
+
+      @media (min-width: $screen-big) {
+        padding: 30px;
+      }
+
+      .drop-field__title {
+        color: $white;
+        background-color: $black;
+        border: none;
+      }
+
+      .drop-field__title:after {
+        border-color: $white;
+        transform: translateY(-30%) rotate(225deg);
+      }
+
+      .drop-field__item-wrapper {
+        display: block;
+        overflow: auto;
+        max-height: 250px;
+      }
+
+      .drop-field__accept {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-weight: $font-weight-500;
+    border: 1px solid $gray-lighter;
+    background-color: $white;
+    padding-left: 20px;
+    padding-right: 25px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-bottom: 2px solid $black;
+      border-right: 2px solid $black;
+      transform: translateY(-70%) rotate(45deg);
+      transition: transform $transition-time, border-color $transition-time;
+    }
+  }
+
+  &__item-wrapper {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    font-weight: $font-weight-400;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border: 1px solid $gray-lighter;
+
+    &--active {
+      border: 1px solid $color-accent;
+    }
+  }
+
+  &__input-wrap{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    span {
+      padding-left: 20px;
+    }
+  }
+
+  &__input {
+
+    &--none {
+      // здесь модификация, стилизация в другом блоке
+      display: none;
+    }
+  }
+
+  &__accept {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+
+    @media (min-width: $screen-big) {
+      padding-top: 30px;
+    }
+  }
+}

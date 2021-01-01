@@ -13,6 +13,7 @@ $gray-lightest:               hsl(0, 0%, 90%);
 $white:                       hsl(0, 0%, 100%);
 
 $gray-fb:											#fbfbfb;
+$gray-d3:											#d3d3d3;
 
 $color-main:                  #000000;
 $color-accent:								#e72378;
@@ -76,6 +77,7 @@ $screen-md:                   650px;
 $screen-lg:                   992px;
 $screen-xl:                   1200px;
 $screen-xxl:                  1400px;
+$screen-big:									1700px;
 
 $container-sm:                100%;
 $container-md:                100%;
@@ -103,7 +105,7 @@ $m-xl:												50px;
 $field-padding-vertical:      5px;
 $field-padding-horizontal:    12px;
 
-$border-radius:               3px;
+$border-radius:               none;
 $opacity:                     0.7;
 $transition-time:             0.3s;
 $shadow:                      0 4px 2px -2px rgba(0, 0, 0, 0.3);

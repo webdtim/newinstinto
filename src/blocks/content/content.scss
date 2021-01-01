@@ -8,16 +8,13 @@
 
   &__container {
     display: grid;
+    grid-template-columns: 1fr;
     margin-right: 0;
     margin-left: 0;
 
     @media (min-width: $screen-md) {
       margin-left: $m-md;
       margin-right: $m-md;
-    }
-
-    @media (min-width: $screen-lg) {
-      grid-template-columns: 240px 1fr;
     }
 
     @media (min-width: $screen-xl) {
@@ -66,7 +63,20 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
+    &--mob-hide {
+      display: none;
+
+      @media (min-width: $screen-md) {
+        display: grid;
+      }
+    }
+
     &--home {
+      margin-top: 0;
+
+      @media (min-width: $screen-md) {
+        margin-top: 50px;
+      }
 
       @media (min-width: $screen-lg) {
         grid-template-columns: 1fr 1fr;
@@ -75,6 +85,10 @@
       @media (min-width: $screen-xl) {
         grid-template-columns: 1fr 1fr 0.46fr;
       }
+    }
+    
+    &--none-margin {
+      margin: 0;
     }
   }
 }

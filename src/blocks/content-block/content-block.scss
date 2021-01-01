@@ -6,17 +6,42 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  padding-left: 0;
+  padding-right: 0;
   display: grid;
-  padding-left: $m-def;
-  padding-right: $m-def;
-  padding-bottom: 30px;
 
-  @media (min-width: $screen-md) {
-    padding-left: 0;
-    padding-right: 0;
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__text-wrapper {
+    order: 1;
+    width: 100%;
+    padding-left: $m-def;
+    padding-right: $m-def;
+    padding-top: 30px;
+
+    @media (min-width: $screen-sm) {
+      padding-left: $m-md;
+      padding-right: $m-md;
+    }
+
+    @media (min-width: $screen-md) {
+      order: 2;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+      padding-bottom: 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-bottom: 0;
+    }
   }
 
   &__img {
+    order: 2;
     width: 100%;
   }
 
@@ -26,14 +51,21 @@
     @media (min-width: $screen-xl) {
       display: block;
       position: absolute;
-      z-index: 2;
       right: 66px;
-      bottom: -500px;
+      top: 370px;
 
       svg {
         width: 66px;
         height: 575px;
       }
+    }
+
+    @media (min-width: $screen-xxl) {
+      top: 400px;
+    }
+
+    @media (min-width: $screen-big) {
+      top: 520px;
     }
   }
 
@@ -41,7 +73,7 @@
     margin: 0;
     padding: 0;
     font-size: $font-size-h3;
-    font-weight: $font-weight-400;
+    font-weight: $font-weight-500;
   }
 
   &__description {
@@ -52,9 +84,7 @@
 
   &--img {
     position: relative;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
+    padding: 0;
   }
 
   &--main {
@@ -73,7 +103,7 @@
       font-size: $font-size-h2;
       font-weight: $font-weight-400;
 
-      @media (min-width: $screen-xxl) {
+      @media (min-width: $screen-big) {
         font-size: $font-size-h1;
       }
     }
@@ -86,9 +116,33 @@
     }
   }
 
+  &--big {
+    grid-column: span 1;
+
+    @media (min-width: $screen-md) {
+      grid-column: span 2;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-column: span 3;
+    }
+  }
+
+  &--full-width {
+    grid-column: span 4;
+  }
+
   &--m-top {
 
     @media (min-width: $screen-xl) {
+      margin-top: 130px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      margin-top: 170px;
+    }
+
+    @media (min-width: $screen-big) {
       margin-top: 213px;
     }
   }

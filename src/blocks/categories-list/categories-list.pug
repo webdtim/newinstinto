@@ -1,0 +1,55 @@
+//- Все примеси в этом файле должны начинаться c имени блока (categories-list)
+
+mixin categories-list(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +categories-list('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' categories-list--' + modsList[i].trim();
+      }
+    }
+
+  .categories-list(class=allMods)&attributes(attributes)
+    ul.categories-list__wrap
+      li
+        a(href='#') Трусы
+      li
+        a(href='#') Лифчики
+      li
+        a(href='#') Комплект белья
+      li
+        a(href='#') Трусы
+      li
+        a(href='#') шорты
+      li
+        a(href='#') Лифчики
+      li
+        a(href='#') Комплект белья
+      li
+        a(href='#') майки
+      li
+        a(href='#') Трусы
+      li
+        a(href='#') Лифчики
+      li
+        a(href='#') Комплект белья
+      li
+        a(href='#') корсеты
+      li
+        a(href='#') Трусы
+      li
+        a(href='#') Лифчики
+      li
+        a(href='#') Комплект белья
+      li
+        a(href='#') плавки
+      block

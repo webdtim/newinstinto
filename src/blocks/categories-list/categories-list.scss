@@ -1,0 +1,25 @@
+// В этом файле должны быть стили для БЭМ-блока categories-list, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.categories-list {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+
+  &__wrap {
+    display: inline;
+
+    li {
+      display: inline;
+      margin-right: 30px;
+      font-weight: $font-weight-500;
+
+      @media (min-width: $screen-xl) {
+        margin-right: 40px;
+        line-height: 1.8em;
+      }
+    }
+  }
+}
