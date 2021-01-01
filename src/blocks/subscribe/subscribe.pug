@@ -21,7 +21,7 @@ mixin subscribe(text, mods)
   .subscribe(class=allMods)&attributes(attributes)
     .subscribe__inner
       svg(width='50px', height='35px')
-        use(xlink:href="img/sprite.svg#icon-mail")
+        use(xlink:href='img/sprite.svg#icon-mail')
       h3.content-block__title Подпишись на рассылку и получи скидку 10%
       +form('subscribe')
         +field-text({
