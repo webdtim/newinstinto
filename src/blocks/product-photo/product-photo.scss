@@ -1,0 +1,15 @@
+// В этом файле должны быть стили для БЭМ-блока product-photo, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.product-photo {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: grid;
+
+  @media (min-width: $screen-md) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+}

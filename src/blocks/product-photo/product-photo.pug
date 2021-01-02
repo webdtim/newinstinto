@@ -1,12 +1,12 @@
-//- Все примеси в этом файле должны начинаться c имени блока (product-card)
+//- Все примеси в этом файле должны начинаться c имени блока (product-photo)
 
-mixin product-card(text, mods)
+mixin product-photo(text, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +product-card('Текст', 'some-mod')
+        +product-photo('Текст', 'some-mod')
 
   -
     // список модификаторов
@@ -14,10 +14,10 @@ mixin product-card(text, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' product-card--' + modsList[i].trim();
+        allMods = allMods + ' product-photo--' + modsList[i].trim();
       }
     }
 
-  a.product-card__link(href='product.html')
-    .product-card(class=allMods)&attributes(attributes)
+  .product-photo(class=allMods)&attributes(attributes)
+    .product-photo__inner
       block

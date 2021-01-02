@@ -87,6 +87,23 @@
       }
     }
 
+    &--product {
+      height: 500px;
+
+      @media (min-width: $screen-md) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+
+      @media (min-width: $screen-xl) {
+        grid-template-columns: 0.7fr 2fr 0.7fr;
+        grid-column-gap: 60px;
+      }
+    }
+
     &--none-margin {
       margin: 0;
     }

@@ -1,3 +1,39 @@
 extends ../pug/layout.pug
 
+block meta
+  title Страница товара
+  meta(name='description', content='')
 
+block content
+  .content
+    .content__container
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', 'index.html')
+        +breadcrumbs-item('Название Категории', 'catalog.html')
+        +breadcrumbs-item('Название Товара')
+      main.content__main
+        .content__inner.content__inner--product
+          +content-block()
+            .product-info
+              .product-info__container
+                .product-info__name Бюстгальтер Афины пуш ап из микрофибры
+                .product-info__description Утягивающие велосипедки из микрофибры с легким моделирующим эффектом на талии, ягодицах и бедрах. Удлиненные штанишки. Высокая талия, обрезанные лазером края, ластовица.
+                .product-info__contains 100% polyamide. Trim 1: 82% polyamide, 18% elastane. Trim 2: 100% cotton. Trim 3: 80% polyester, 10% polyamide, 10% elastane.
+                .product-info__block
+                  .product-info__block-section
+                    .product-info__block-title Параметры модели
+                    p 90/60/90 обхват 55см, чашечка 43 / размер M
+                  .product-info__block-section
+                    .product-info__block-title Информация о доставке
+                    p Доставим анонимно и бесплатно за 5 000 р
+                  .product-info__block-section
+                    .product-info__block-title Информация о стирке
+                    p Только ручная стирка
+          +content-block()
+            +product-photo()
+              .product-photo__img
+                img(src='img/product-image.png', alt='фото товара')
+              .product-photo__img
+                img(src='img/product-image.png', alt='фото товара')
+          +content-block()
+            p Тут возможность купить

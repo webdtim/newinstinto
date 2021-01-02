@@ -4,6 +4,9 @@ const ready = require('../../js/utils/documentReady.js');
 
 ready(function(){
 
+  const catalogFilter = document.querySelector('#catalogFilter');
+  const catalogDropFilterButton = document.querySelector('#catalogDropFilterButton');
+
   function selectCheckbox(e) {
 
     if (!e.target.classList.contains('drop-field__input')) return;
@@ -14,7 +17,7 @@ ready(function(){
     }
   }
 
-  document.querySelector('#catalogFilter').addEventListener('change', selectCheckbox);
+  catalogFilter.addEventListener('change', selectCheckbox);
 
   function openCheckboxList(e) {
 
@@ -23,12 +26,12 @@ ready(function(){
     e.target.closest('.drop-field__inner').classList.toggle('drop-field__inner--open');
   }
 
-  document.querySelector('#catalogFilter').addEventListener('click', openCheckboxList);
+  catalogFilter.addEventListener('click', openCheckboxList);
 
   function dropField() {
 
-    document.querySelector('#catalogFilter').classList.toggle('close');
+    catalogFilter.classList.toggle('close');
   }
 
-  document.querySelector('#catalogDropFilterButton').addEventListener('click', dropField);
+  catalogDropFilterButton.addEventListener('click', dropField);
 });
