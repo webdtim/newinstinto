@@ -1,7 +1,7 @@
 /* global document */
 
-// const ready = require('../../js/utils/documentReady.js');
+const ready = require('../../js/utils/documentReady.js');
 
-// ready(function(){
-//   
-// });
+ready(function(){
+  
+});

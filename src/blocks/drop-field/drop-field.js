@@ -16,22 +16,21 @@ ready(function(){
       e.target.closest('.drop-field__item').classList.add('drop-field__item--active');
     }
   }
-
-  catalogFilter.addEventListener('change', selectCheckbox);
-
   function openCheckboxList(e) {
 
     if (!e.target.classList.contains('drop-field__title')) return;
     if (!e.target.closest('.drop-field__inner')) return;
     e.target.closest('.drop-field__inner').classList.toggle('drop-field__inner--open');
   }
-
-  catalogFilter.addEventListener('click', openCheckboxList);
-
   function dropField() {
 
     catalogFilter.classList.toggle('close');
   }
 
-  catalogDropFilterButton.addEventListener('click', dropField);
+  // проверяем наличие элемента на странице
+  if (catalogFilter) {
+    catalogFilter.addEventListener('change', selectCheckbox);
+    catalogFilter.addEventListener('click', openCheckboxList);
+  }
+  if (catalogDropFilterButton) catalogDropFilterButton.addEventListener('click', dropField);
 });

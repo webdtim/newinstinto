@@ -43,16 +43,33 @@ block content
             .product-option
               .product-option__inner
                 .product-option__price
-                  .product-option__old-price 4582
+                  .product-option__old-price 4 582 ₽
                   .product-option__actual-price
-                    span 2999
-                    label.product-option__like
-                      input(type='checkbox', name='like')
-                      svg(width='21', height='20')
-                        use(xlink:href='img/sprite.svg#icon-favorites')
+                    span 4 990 ₽
+                    form.product-option__like
+                      label
+                        input(type='checkbox', name='like')
+                        svg(width='21', height='20')
+                          use(xlink:href='img/sprite.svg#icon-favorites')
                 .product-option__name Название товра
-                .product-option__color Доступные цвета
-                .product-option__button-select
-                  .product-option__size
-                  .product-option__count
-                +btn('Добавить в корзину')
+                form#product-option
+                  .product-option__color Доступные цвета
+                  .product-option__button-select
+                    .product-option__size.product-option__size--active Размер
+                    .product-option__count 1
+                  .product-option__button-inner 
+                    .product-option__size-wrapper.product-option--open
+                      .product-option__item 12D
+                      .product-option__item 75C
+                      .product-option__item.product-option__item--select small
+                      .product-option__item big
+                      .product-option__item 12D
+                      .product-option__item 75C
+                      .product-option__item small
+                      .product-option__item big
+                    .product-option__count-wrapper
+                      .product-option__item.product-option__item--select 1
+                      .product-option__item 2
+                      .product-option__item 3
+                      .product-option__item 4
+                  +btn('Добавить в корзину','accent')(type='submit')
