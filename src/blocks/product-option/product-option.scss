@@ -5,4 +5,27 @@
 .product-option {
 
   $block-name:                &; // #{$block-name}__element
+
+  &__like {
+    cursor: pointer;
+
+    svg {
+      fill: none;
+
+      &:hover,
+      :focus {
+        fill: $color-accent;
+        stroke-width: 0;
+      }
+    }
+
+    input {
+      display: none;
+    }
+
+    input:checked + svg {
+      fill: $color-accent;
+      stroke-width: 0;
+    }
+  }
 }

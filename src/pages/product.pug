@@ -35,6 +35,10 @@ block content
                 img(src='img/product-image.png', alt='фото товара')
               .product-photo__img
                 img(src='img/product-image.png', alt='фото товара')
+              .product-photo__img
+                img(src='img/product-image.png', alt='фото товара')
+              .product-photo__img
+                img(src='img/product-image.png', alt='фото товара')
           +content-block()
             .product-option
               .product-option__inner
@@ -42,8 +46,10 @@ block content
                   .product-option__old-price 4582
                   .product-option__actual-price
                     span 2999
-                    svg(width='21')
-                      use(xlink:href='img/sprite.svg#icon-favorites')
+                    label.product-option__like
+                      input(type='checkbox', name='like')
+                      svg(width='21', height='20')
+                        use(xlink:href='img/sprite.svg#icon-favorites')
                 .product-option__name Название товра
                 .product-option__color Доступные цвета
                 .product-option__button-select

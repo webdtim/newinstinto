@@ -8,8 +8,12 @@
 
   display: grid;
 
-  @media (min-width: $screen-md) {
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 40px;
+  &__inner {
+    display: grid;
+
+    @media (min-width: $screen-md) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 40px;
+    }
   }
 }
