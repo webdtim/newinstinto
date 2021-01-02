@@ -36,4 +36,17 @@ block content
               .product-photo__img
                 img(src='img/product-image.png', alt='фото товара')
           +content-block()
-            p Тут возможность купить
+            .product-option
+              .product-option__inner
+                .product-option__price
+                  .product-option__old-price 4582
+                  .product-option__actual-price
+                    span 2999
+                    svg(width='21')
+                      use(xlink:href='img/sprite.svg#icon-favorites')
+                .product-option__name Название товра
+                .product-option__color Доступные цвета
+                .product-option__button-select
+                  .product-option__size
+                  .product-option__count
+                +btn('Добавить в корзину')
