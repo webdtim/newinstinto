@@ -9,6 +9,15 @@
   margin-top: 50px;
   font-size: 12px;
   font-weight: 400;
+  padding: 0 20px;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 0;
+  }
 
   &__name {
     font-size: 24px;

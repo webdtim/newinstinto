@@ -6,14 +6,78 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  display: grid;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+
+  @media (min-width: $screen-md) {
+    height: auto;
+    overflow: visible;
+  }
 
   &__inner {
     display: grid;
 
     @media (min-width: $screen-md) {
+      display: grid;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 40px;
+    }
+  }
+
+  &__img {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    transition: 0.5s;
+    top: 0;
+    right: -1000px;
+    bottom: 0;
+
+    @media (min-width: $screen-md) {
+      position: static;
+      overflow: visible;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    &--active {
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__ellips-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 20px;
+    justify-content: space-between;
+    width: 40%;
+
+    @media (min-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  &__ellips {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid $gray-lightest;
+    background-color: $white;
+
+    &--active {
+      border: none;
+      background-color: $color-accent;
     }
   }
 }

@@ -7,6 +7,15 @@
   $block-name:                &; // #{$block-name}__element
 
   width: 100%;
+  padding: 0 20px;
+
+  @media (min-width: $screen-sm) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: $screen-md) {
+    padding: 0;
+  }
 
   &__old-price {
     font-size: 24px;
@@ -49,6 +58,37 @@
     input:checked + svg {
       fill: $color-accent;
       stroke-width: 0;
+    }
+  }
+
+  &__name {
+    font-size: 12px;
+    color: $gray;
+  }
+
+  &__color {
+    margin-top: 20px;
+    font-style: 12px;
+    font-weight: 500;
+  }
+
+  &__color-list {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  }
+
+  &__color-item {
+    overflow: hidden;
+    width: 42px;
+    height: 56px;
+    border: 1px solid $gray-lightest;
+    margin-right: 5px;
+    padding: 4px;
+    cursor: pointer;
+
+    &--active {
+      border: 1px solid $black;
     }
   }
 

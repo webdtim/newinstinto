@@ -13,7 +13,7 @@ block content
         +breadcrumbs-item('Название Товара')
       main.content__main
         .content__inner.content__inner--product
-          +content-block()
+          +content-block('mob-last')
             .product-info
               .product-info__container
                 .product-info__name Бюстгальтер Афины пуш ап из микрофибры
@@ -31,14 +31,20 @@ block content
                     p Только ручная стирка
           +content-block()
             +product-photo()
-              .product-photo__img
-                img(src='img/product-image.png', alt='фото товара')
-              .product-photo__img
-                img(src='img/product-image.png', alt='фото товара')
-              .product-photo__img
-                img(src='img/product-image.png', alt='фото товара')
-              .product-photo__img
-                img(src='img/product-image.png', alt='фото товара')
+              .product-photo__inner
+                .product-photo__img.product-photo__img--active
+                  img(src='img/product-image.png', alt='фото товара')
+                .product-photo__img
+                  img(src='img/product-image.png', alt='фото товара')
+                .product-photo__img
+                  img(src='img/product-image.png', alt='фото товара')
+                .product-photo__img
+                  img(src='img/product-image.png', alt='фото товара')
+              .product-photo__ellips-wrap
+                .product-photo__ellips.product-photo__ellips--active
+                .product-photo__ellips
+                .product-photo__ellips
+                .product-photo__ellips
           +content-block()
             .product-option
               .product-option__inner
@@ -53,7 +59,17 @@ block content
                           use(xlink:href='img/sprite.svg#icon-favorites')
                 .product-option__name Название товра
                 form#product-option
-                  .product-option__color Доступные цвета
+                  .product-option__color
+                    p Доступные цвета
+                    .product-option__color-list
+                      .product-option__color-item.product-option__color-item--active
+                        img(src='img/img1.png', alt='Название товара')
+                      .product-option__color-item
+                        img(src='img/img2.jpg', alt='Название товара')
+                      .product-option__color-item
+                        img(src='img/img3.jpg', alt='Название товара')
+                      .product-option__color-item
+                        img(src='img/img1.png', alt='Название товара')
                   .product-option__button-select
                     .product-option__size.product-option__size--active Размер
                     .product-option__count 1
@@ -73,3 +89,19 @@ block content
                       .product-option__item 3
                       .product-option__item 4
                   +btn('Добавить в корзину','accent')(type='submit')
+        .content__inner.content__inner--product
+          +content-block()
+            +sidebar()
+          +content-block()
+            +product-photo()
+              .product-photo__inner
+                .product-photo__img.product-photo__img--active
+                  img(src='img/product-image.png', alt='фото товара')
+                .product-photo__img
+                  img(src='img/product-image.png', alt='фото товара')
+                .product-photo__img
+                  img(src='img/product-image.png', alt='фото товара')
+                .product-photo__img
+                  img(src='img/product-image.png', alt='фото товара')
+          +content-block()
+            

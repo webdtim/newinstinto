@@ -88,10 +88,11 @@
     }
 
     &--product {
-      height: 500px;
+      margin-top: 20px;
 
       @media (min-width: $screen-md) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 0.7fr;
+        margin-top: 50px;
       }
 
       @media (min-width: $screen-lg) {
