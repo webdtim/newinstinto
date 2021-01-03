@@ -20,7 +20,14 @@
   }
 
   &__inner {
-    display: grid;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    width: 4000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
 
     @media (min-width: $screen-md) {
       display: grid;
@@ -30,28 +37,15 @@
   }
 
   &__img {
-    display: flex;
+    display: block;
     overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    transition: 0.5s;
-    top: 0;
-    right: -1000px;
-    bottom: 0;
+    width: 100vw;
 
     @media (min-width: $screen-md) {
       position: static;
       overflow: visible;
       width: 100%;
       margin-bottom: 40px;
-    }
-
-    &--active {
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
     }
   }
 
