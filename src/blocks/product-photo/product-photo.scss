@@ -9,42 +9,46 @@
   display: flex;
   justify-content: center;
   position: relative;
-  height: 80vh;
   width: 100%;
+  height: 80vh;
   margin-bottom: 30px;
   overflow: hidden;
 
   @media (min-width: $screen-md) {
     height: auto;
     overflow: visible;
+    margin-bottom: 0;
   }
 
   &__inner {
+    // контейнер с элементами карусели, на моб устройствах абсолютно позиционируем и задаем фикс. ширину
     display: inline-flex;
     flex-wrap: nowrap;
     justify-content: start;
-    width: 4000px;
     position: absolute;
     top: 0;
     left: 0;
+    width: 4000px;
     transition: 0.5s;
 
+    // размещаем элементы по сетке на широкихх экранах
     @media (min-width: $screen-md) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 40px;
+      position: static;
+      width: 100%;
     }
   }
 
   &__img {
     display: block;
-    overflow: hidden;
     width: 100vw;
+    overflow: hidden;
 
     @media (min-width: $screen-md) {
-      position: static;
-      overflow: visible;
       width: 100%;
+      overflow: visible;
       margin-bottom: 40px;
     }
   }
@@ -52,9 +56,9 @@
   &__ellips-wrap {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
     position: absolute;
     bottom: 20px;
-    justify-content: space-between;
     width: 40%;
 
     @media (min-width: $screen-md) {

@@ -1,0 +1,68 @@
+// В этом файле должны быть стили для БЭМ-блока also-like, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.also-like {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: grid;
+  padding: 0;
+  background-color: $gray-fb;
+
+  @media (min-width: $screen-md) {
+    padding: 0 $m-md;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 0 $m-xl;
+  }
+
+  &__inner {
+    display: grid;
+    grid-column-gap: 40px;
+    width: 100%;
+
+    @media (min-width: $screen-md) {
+      grid-template-columns: 1fr 0.4fr;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 0.7fr 2fr 0.7fr;
+      grid-column-gap: 60px;
+    }
+  }
+
+  &__img-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+
+    @media (min-width: $screen-md) {
+      grid-column-gap: 40px;
+      margin-top: 50px;
+    }
+  }
+
+  &__img {
+    text-align: center;
+
+    p {
+      font-size: 12px;
+      margin: 0;
+
+      @media (min-width: $screen-md) {
+        font-size: 18px;
+      }
+    }
+
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}

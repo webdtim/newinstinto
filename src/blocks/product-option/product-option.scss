@@ -26,9 +26,9 @@
 
   &__actual-price {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     font-size: 48px;
     font-weight: 500;
@@ -79,12 +79,12 @@
   }
 
   &__color-item {
-    overflow: hidden;
     width: 42px;
     height: 56px;
     border: 1px solid $gray-lightest;
     margin-right: 5px;
     padding: 4px;
+    overflow: hidden;
     cursor: pointer;
 
     &--active {
@@ -94,8 +94,8 @@
 
   &__button-select {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     font-style: 14px;
     font-weight: 500;

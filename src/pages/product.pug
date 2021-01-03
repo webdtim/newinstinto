@@ -35,15 +35,11 @@ block content
                 .product-photo__img
                   img(src='img/product-image.png', alt='фото товара')
                 .product-photo__img
-                  img(src='img/img2.jpg', alt='фото товара')
+                  img(src='img/product-image.png', alt='фото товара')
                 .product-photo__img
                   img(src='img/product-image.png', alt='фото товара')
                 .product-photo__img
-                  img(src='img/img2.jpg', alt='фото товара')
-                .product-photo__img
-                  img(src='img/img2.jpg', alt='фото товара')
-                .product-photo__img
-                  img(src='img/img2.jpg', alt='фото товара')
+                  img(src='img/product-image.png', alt='фото товара')
               .product-photo__ellips-wrap
           +content-block()
             .product-option
@@ -73,7 +69,7 @@ block content
                   .product-option__button-select
                     .product-option__size.product-option__size--active Размер
                     .product-option__count 1
-                  .product-option__button-inner 
+                  .product-option__button-inner
                     .product-option__size-wrapper.product-option--open
                       .product-option__item 12D
                       .product-option__item 75C
@@ -89,19 +85,37 @@ block content
                       .product-option__item 3
                       .product-option__item 4
                   +btn('Добавить в корзину','accent')(type='submit')
-        .content__inner.content__inner--product
-          +content-block()
-            +sidebar()
-          +content-block()
-            +product-photo()
-              .product-photo__inner
-                .product-photo__img.product-photo__img--active
-                  img(src='img/product-image.png', alt='фото товара')
-                .product-photo__img
-                  img(src='img/product-image.png', alt='фото товара')
-                .product-photo__img
-                  img(src='img/product-image.png', alt='фото товара')
-                .product-photo__img
-                  img(src='img/product-image.png', alt='фото товара')
-          +content-block()
-
+    .also-like
+      .also-like__inner
+        +sidebar()
+        +content-block()
+          .also-like__img-container
+            .also-like__img
+              a(href='#')
+                img(src='img/product-image.png', alt='фото товара')
+                p Название товара
+                span 2593₽
+            .also-like__img
+              a(href='#')
+                img(src='img/product-image.png', alt='фото товара')
+                p Название товара
+                span 2593₽
+            .also-like__img
+              a(href='#')
+                img(src='img/product-image.png', alt='фото товара')
+                p Название товара
+                span 2593₽
+            .also-like__img
+              a(href='#')
+                img(src='img/product-image.png', alt='фото товара')
+                p Название товара
+                span 2593₽
+        +content-block('mob-first')
+          +info-block()
+            .info-block__inner
+              svg
+                use(xlink:href='img/sprite.svg#icon-favorites')
+            .info-block__inner
+              h3 Вам также может понравиться
+            .info-block__inner
+              p В наших подборках только лучшее для вас.

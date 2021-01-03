@@ -174,4 +174,12 @@
       order: initial;
     }
   }
+
+  &--mob-first {
+    order: -1;
+
+    @media (min-width: $screen-md) {
+      order: initial;
+    }
+  }
 }
