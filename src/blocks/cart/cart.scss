@@ -1,0 +1,27 @@
+// В этом файле должны быть стили для БЭМ-блока cart, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cart {
+
+  $block-name:                &; // #{$block-name}__element
+  display: grid;
+
+  @media (min-width: $screen-lg) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+
+  &__select {
+    width: 100%;
+  }
+
+  &__info {
+    display: grid;
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 40px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+// В этом файле должны быть стили для БЭМ-блока like, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.like {
+
+  $block-name:                &; // #{$block-name}__element
+
+  cursor: pointer;
+  margin-top: -20px;
+
+  svg {
+    fill: none;
+
+    @media (min-width: $screen-xl) {
+
+      &:hover,
+      :focus {
+        fill: $color-accent;
+        stroke-width: 0;
+      }
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + svg {
+    fill: $color-accent;
+    stroke-width: 0;
+  }
+}

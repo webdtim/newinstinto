@@ -5,20 +5,22 @@ const ready = require('../../js/utils/documentReady.js');
 ready(function(){
   
   if (!document.querySelector('#product-photo')) {
+
     return;
+
   } else {
+
     // активно только для моб. устройств
-    if (window.screen.availWidth > 650) {
+    if (document.documentElement.clientWidth > 650) {
+
       return;
+
     } else {
       // CARUSEL КАРУСЕЛЬ
       const carusel = document.querySelector('#product-photo')
       const gallery = carusel.querySelector('.product-photo__inner')
       const galItem = carusel.querySelectorAll('.product-photo__img')
       const sliderswitch = document.querySelector('.product-photo__ellips-wrap')
-      // создаем элементы переключателя
-      createSlide()
-      const slide = sliderswitch.querySelectorAll('.product-photo__ellips')
       // получаем размер изображения, чтобы понять насколько сдвинуть карусель
       const width = carusel.clientWidth
       let position = 0
@@ -26,8 +28,18 @@ ready(function(){
       let moving = false
       let initialPosition = null
 
+      // создаем переключатели карусели
+      let createSlide = function() {
+        for (let i = 0; i < gallery.children.length; i++) {
+          sliderswitch.insertAdjacentHTML('beforeend', '<div class="product-photo__ellips"></div>')
+        }
+        sliderswitch.firstElementChild.classList.add('product-photo__ellips--active')
+      };
+      // создаем элементы переключателя
+      createSlide()
+      const slide = sliderswitch.querySelectorAll('.product-photo__ellips')
 
-      function moveLeft() {
+      let moveLeft = function() {
         position += width
         position = Math.min(position, 0)// если position > 0, то position = 0
         gallery.style.transform = `translateX(${position}px)`
@@ -38,8 +50,9 @@ ready(function(){
             slide[i].classList.add('product-photo__ellips--active')
           }
         }      
-      }
-      function moveRight() {
+      };
+
+      let moveRight = function() {
         position -= width
         position = Math.max(position, -width * (galItem.length-1))
         gallery.style.transform = `translateX(${position}px)`
@@ -50,14 +63,18 @@ ready(function(){
             slide[i].classList.add('product-photo__ellips--active')
           }
         }
-      }
+      };
 
-      function moveChek(e) {
+      let moveChek = function(e) {
         initialPosition = e.clientX
         moving = true
-      }
+      };
+      // запрещаем движение
+      let moveStop = function() {
+        moving = false
+      };
       // проверяем направление движения
-      function moveTrack(e) {
+      let moveTrack = function(e) {
         if(moving){
           const currentPosition = e.pageX
           if ((currentPosition - initialPosition) > 6){
@@ -69,20 +86,10 @@ ready(function(){
             moveStop(e)
           }
         }
-      }
-      function moveStop() {
-        moving = false
-      }
+      };
 
-      // создаем переключатели карусели
-      function createSlide() {
-        for (let i = 0; i < gallery.children.length; i++) {
-          sliderswitch.insertAdjacentHTML('beforeend', '<div class="product-photo__ellips"></div>')
-        }
-        sliderswitch.firstElementChild.classList.add('product-photo__ellips--active')
-      }
 
-      function choseSlide(e) {   
+      let choseSlide = function(e) {   
       // Удаляем активные классы и переключаем на нужный слайд
         for(let i = 0; i < slide.length; i++){
           slide[i].classList.remove('product-photo__ellips--active')
@@ -93,7 +100,7 @@ ready(function(){
             slide[i].classList.add('product-photo__ellips--active')
           }
         }
-      }
+      };
       // Переключаем салйды по времени
       // let timerId = setInterval( () => {moveRight()}, 5000)
       //    setTimeout(() => { clearInterval(timerId) }, 20000 )

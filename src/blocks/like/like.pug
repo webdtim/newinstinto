@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (like)
+
+mixin like(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +like('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' like--' + modsList[i].trim();
+      }
+    }
+
+  form.like
+    label
+      input(type='checkbox', name='like')
+      svg(width='21', height='20')
+        use(xlink:href='img/sprite.svg#icon-favorites')
+      block

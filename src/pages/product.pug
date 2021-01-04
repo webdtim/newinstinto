@@ -48,11 +48,7 @@ block content
                   .product-option__old-price 4 582 ₽
                   .product-option__actual-price
                     span 4 990 ₽
-                    form.product-option__like
-                      label
-                        input(type='checkbox', name='like')
-                        svg(width='21', height='20')
-                          use(xlink:href='img/sprite.svg#icon-favorites')
+                    +like()
                 .product-option__name Название товра
                 form#product-option
                   .product-option__color

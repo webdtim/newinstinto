@@ -1,0 +1,26 @@
+extends ../pug/layout.pug
+
+block meta
+  title Страница товара
+  meta(name='description', content='')
+
+block content
+  .content
+    .content__container
+      +breadcrumbs()
+        +breadcrumbs-item('Главная', 'index.html')
+        +breadcrumbs-item('корзина')
+      main.content__main
+        .cart
+          .cart__select
+            .cart__card-wrapper
+              .cart__card
+                img(src='img/order-item-1.png', alt='название товара')
+                .cart__card-info
+                  .cart__card-price
+                    span 2 563
+                    span.cart__card-old-price 5 783
+                  .cart__card-name Название товара
+                  +like()
+              .cart__card-select
+          .cart__info

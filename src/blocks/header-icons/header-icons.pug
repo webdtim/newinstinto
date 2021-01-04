@@ -20,11 +20,6 @@ mixin header-icons(text, mods)
 
   .header-icons(class=allMods)&attributes(attributes)
     +search('Поиск','header-search','header-search--open')
-    //- a.header-icons__inner(href='search.html', id='icon-search-header')
-    //-   //- устанавливаем размер и id иконки из спрайта
-    //-   svg(width='20', height='20', class='header-icons__icon')
-    //-     use(xlink:href='img/sprite.svg#icon-search')
-    //-   .header-container__line
     a.header-icons__inner(href='profile.html')
       .header-icons__text-sub-icon Профиль
       svg(width='20', height='20', class='header-icons__icon header-icons__icon--hide')
@@ -35,7 +30,7 @@ mixin header-icons(text, mods)
           span 0
       svg(width='20', height='20', class='header-icons__icon header-icons__icon--hide')
         use(xlink:href='img/sprite.svg#icon-favorites')
-    a.header-icons__inner(href='basket.html')
+    a.header-icons__inner(href='cart.html')
       .header-icons__text-sub-icon Корзина
         #count-basket
           span 0
