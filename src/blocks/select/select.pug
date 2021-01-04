@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (select)
+
+mixin select(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +select('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' select--' + modsList[i].trim();
+      }
+    }
+
+  .select(class=allMods)&attributes(attributes)
+    select
+      block

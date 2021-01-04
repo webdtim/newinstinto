@@ -21,6 +21,10 @@ block content
                     span 2 563
                     span.cart__card-old-price 5 783
                   .cart__card-name Название товара
-                  +like()
+                  .cart__card-action
+                    .cart__card-delete
+                      form(name='delete-cart')
+                        span Удалить из корзины
+                    +like()
               .cart__card-select
           .cart__info
