@@ -21,12 +21,14 @@ mixin search-panel-dropdown(text, mods)
   .search-panel-dropdown(class=allMods)&attributes(attributes)
     .search-panel-dropdown__inner
       .search-panel-dropdown__body
-        +search-panel-dropdown-item()
-        +search-panel-dropdown-item()
-        +search-panel-dropdown-item()
+        +search-panel-dropdown-item
+        +search-panel-dropdown-item
+        +search-panel-dropdown-item
       .search-panel-dropdown__footer
-        .search-panel-dropdown__footer-text Всего 182 результата
+        .search-panel-dropdown__footer-text Всего <b>182</b> результата
         a.search-panel-dropdown__footer-link(href='#') Смотреть все
+        svg
+          use(xlink:href='img/sprite.svg#icon-arrow-right')
       block
 
 mixin search-panel-dropdown-item(text, mods)
@@ -48,8 +50,9 @@ mixin search-panel-dropdown-item(text, mods)
       }
 
   .search-panel-dropdown-item(class=allMods)&attributes(attributes)
-    .search-panel-dropdown-item__inner
-      .search-panel-dropdown-item__image
-      .search-panel-dropdown-item__header Комплект белья obsessive
+    .search-panel-dropdown-item__image
+      img(src='img/img1.png', alt='альт')
+    .search-panel-dropdown-item__text
+      .search-panel-dropdown-item__title Комплект белья obsessive
       .search-panel-dropdown-item__price 4 943 ₽
       block

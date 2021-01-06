@@ -1,0 +1,22 @@
+//- Все примеси в этом файле должны начинаться c имени блока (your-order)
+
+mixin your-order(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +your-order('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' your-order--' + modsList[i].trim();
+      }
+    }
+
+  .your-order(class=allMods)&attributes(attributes)
+    block

@@ -1,0 +1,38 @@
+// В этом файле должны быть стили для БЭМ-блока choose-block, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.choose-block {
+
+  $block-name:                &; // #{$block-name}__element
+
+  width: 100%;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &__description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: $gray-light;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  &--active {
+    border: 1px solid $color-accent;
+  }
+}

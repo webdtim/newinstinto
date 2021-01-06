@@ -7,24 +7,152 @@ block meta
 block content
   .content
     .content__container
-      +breadcrumbs()
+      +breadcrumbs
         +breadcrumbs-item('Главная', 'index.html')
         +breadcrumbs-item('корзина')
       main.content__main
         .cart
           .cart__select
+            .cart__title
+              h3 Ваша корзина
+                span  (3 товара)
+              .cart__title-info
+                span Ваши товары зарезервированны на 60 минут
             .cart__card-wrapper
               .cart__card
-                img(src='img/order-item-1.png', alt='название товара')
+                .cart__card-img
+                  img(src='img/order-item-1.png', alt='название товара')
                 .cart__card-info
                   .cart__card-price
-                    span 2 563
-                    span.cart__card-old-price 5 783
+                    span 4 990₽
+                    span.cart__card-price-old 5 783₽
                   .cart__card-name Название товара
                   .cart__card-action
-                    .cart__card-delete
-                      form(name='delete-cart')
+                    form(name='delete-cart')
+                      .cart__card-delete
+                        .cart__card-close
                         span Удалить из корзины
-                    +like()
+                    +like
               .cart__card-select
+                +select
+                  option(value='12D', selected) 12D
+                  option(value='75C') 75C
+                  option(value='small') small
+                  option(value='big') big
+                  option(value='12D') 12D
+                +select
+                  option(value='1', selected) 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+            .cart__card-wrapper
+              .cart__card
+                .cart__card-img
+                  img(src='img/order-item-1.png', alt='название товара')
+                .cart__card-info
+                  .cart__card-price
+                    span 4 990₽
+                    span.cart__card-price-old 5 783₽
+                  .cart__card-name Название товара
+                  .cart__card-action
+                    form(name='delete-cart')
+                      .cart__card-delete
+                        .cart__card-close
+                        span Удалить из корзины
+                    +like
+              .cart__card-select
+                +select
+                  option(value='12D', selected) 12D
+                  option(value='75C') 75C
+                  option(value='small') small
+                  option(value='big') big
+                  option(value='12D') 12D
+                +select
+                  option(value='1', selected) 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
+            .cart__card-wrapper
+              .cart__card
+                .cart__card-img
+                  img(src='img/order-item-1.png', alt='название товара')
+                .cart__card-info
+                  .cart__card-price
+                    span 4 990₽
+                    span.cart__card-price-old 5 783₽
+                  .cart__card-name Название товара
+                  .cart__card-action
+                    form(name='delete-cart')
+                      .cart__card-delete
+                        .cart__card-close
+                        span Удалить из корзины
+                    +like
+              .cart__card-select
+                +select
+                  option(value='12D', selected) 12D
+                  option(value='75C') 75C
+                  option(value='small') small
+                  option(value='big') big
+                  option(value='12D') 12D
+                +select
+                  option(value='1', selected) 1
+                  option(value='2') 2
+                  option(value='3') 3
+                  option(value='4') 4
           .cart__info
+            +your-order
+              .your-order__inner
+                .your-order__head
+                  span Ваш заказ
+                .your-order__price
+                  .your-order__price-big 5 783 ₽
+                  .your-order__count-wrap
+                    span Ваши вещи - 4
+                    span#total-price 5 783₽
+                .your-order__promo-code-wrap
+                  svg(width='24px', height='24px')
+                    use(xlink:href='img/sprite.svg#icon-gift-grayscale')
+                  p У вас есть промокод или подарочная карта? <br>Введи ее и получи скидку
+                  +form('subscribe')
+                    +field-text({
+                      helpText: '',
+                      attrs: {
+                        placeholder: 'Промокод на скидку'
+                      }
+                    })
+                    +field-actions()
+                      +btn('Активировать промокод', 'white')
+              .your-order__inner
+                +btn('Оформить заказ', 'accent')(href='checkout.html')
+            .cart__info-help
+              .free-shipping
+                .free-shipping__title Бесплатная доставка
+                .free-shipping__description Возьмите еще что-нибудь и мы доставим вам товар бесплатно!
+                .free-shipping__range До бесплатной доставки: <span>520₽</span>
+                .free-shipping__indicator
+                  .free-shipping__indicator-fill
+                    .free-shipping__indicator-point
+              +info-block
+                .info-block__inner
+                  svg(width='30px')
+                    use(xlink:href='img/sprite.svg#icon-shield')
+                .info-block__inner
+                  h3 Безопасность
+                .info-block__inner
+                  p Оплата производится через официальные сервисы, мы не получаем доступ к вашим картам или кошелькам
+              +info-block
+                .info-block__inner
+                  svg(width='34px')
+                    use(xlink:href='img/sprite.svg#icon-mask')
+                .info-block__inner
+                  h3 Полная анонимность при доставке
+                .info-block__inner
+                  p Транспортная компания и курьеры не будут знать детали заказа.
+              +info-block
+                .info-block__inner
+                  svg(width='26px')
+                    use(xlink:href='img/sprite.svg#icon-smile')
+                .info-block__inner
+                  h3 Нужна помощь?
+                .info-block__inner
+                  p У вас возникли вопросы?<br>Обратитесь в нашу службу поддержки клиентов по электронной почте

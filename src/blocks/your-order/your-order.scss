@@ -1,0 +1,58 @@
+// В этом файле должны быть стили для БЭМ-блока your-order, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.your-order {
+
+  $block-name:                &; // #{$block-name}__element
+
+  align-self: start;
+  width: 100%;
+  height: auto;
+  background-color: $gray-fb;
+
+  &__inner {
+    padding: 30px 50px;
+
+    &:first-child {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.4);
+
+    a {
+      color: $color-accent;
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+  }
+
+  &__price-big {
+    font-size: 48px;
+    font-weight: 500;
+  }
+
+  &__count-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  &__promo-code-wrap {
+    margin-top: 20px;
+
+    p {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

@@ -7,7 +7,7 @@ block meta
 block content
   .content
     .content__container
-      +breadcrumbs()
+      +breadcrumbs
         +breadcrumbs-item('Главная', 'index.html')
         +breadcrumbs-item('Название Категории', 'catalog.html')
         +breadcrumbs-item('Название Товара')
@@ -29,8 +29,8 @@ block content
                   .product-info__block-section
                     .product-info__block-title Информация о стирке
                     p Только ручная стирка
-          +content-block()
-            +product-photo()#product-photo
+          +content-block
+            +product-photo#product-photo
               .product-photo__inner
                 .product-photo__img
                   img(src='img/product-image.png', alt='фото товара')
@@ -41,15 +41,15 @@ block content
                 .product-photo__img
                   img(src='img/product-image.png', alt='фото товара')
               .product-photo__ellips-wrap
-          +content-block()
+          +content-block
             .product-option
               .product-option__inner
                 .product-option__price
                   .product-option__old-price 4 582 ₽
                   .product-option__actual-price
                     span 4 990 ₽
-                    +like()
-                .product-option__name Название товра
+                    +like
+                .product-option__name Название товара
                 form#product-option
                   .product-option__color
                     p Доступные цвета
@@ -64,14 +64,14 @@ block content
                         img(src='img/img1.png', alt='Название товара')
                   .product-option__button-select
                     .product-option__size
-                      +select()
+                      +select
                         option(value='12D', selected) 12D
                         option(value='75C') 75C
                         option(value='small') small
                         option(value='big') big
                         option(value='12D') 12D
                     .product-option__count
-                      +select()
+                      +select
                         option(value='1', selected) 1
                         option(value='2') 2
                         option(value='3') 3
@@ -79,8 +79,8 @@ block content
                   +btn('Добавить в корзину','accent')(type='submit')
     .also-like
       .also-like__inner
-        +sidebar()
-        +content-block()
+        +sidebar
+        +content-block
           .also-like__img-container
             .also-like__img
               a(href='#')
@@ -103,9 +103,9 @@ block content
                 p Название товара
                 span 2593₽
         +content-block('mob-first')
-          +info-block()
+          +info-block
             .info-block__inner
-              svg
+              svg(width='26px')
                 use(xlink:href='img/sprite.svg#icon-favorites')
             .info-block__inner
               h3 Вам также может понравиться

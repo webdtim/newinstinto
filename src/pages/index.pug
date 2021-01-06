@@ -8,7 +8,7 @@ block meta
 block content
   .content
     .content__container.content__container--sidebar
-      +sidebar()
+      +sidebar
       main.content__main
         .content__inner.content__inner--home
           +content-block('main')
@@ -22,66 +22,66 @@ block content
               svg
                 use(xlink:href='img/sprite.svg#hero-figure')
         .content__inner.content__inner--home
-          +content-block()
+          +content-block('center')
             img.content-block__img(src='img/preview-3.jpg', alt='альт')
             .content-block__text-wrapper
               h3.content-block__title Косметика
               p.content-block__description Будь неотразимой
-          +content-block()
+          +content-block('center')
             img.content-block__img(src='img/preview-3.jpg', alt='альт')
             .content-block__text-wrapper
-              h3.content-block__title Косметика
-              p.content-block__description Будь неотразимой
+              h3.content-block__title В главных ролях – Ты.
+              p.content-block__description Мы подобрали для тебя лучшие комплекты белья, которые помогут тебе преобразиться в его глазах
         .content__inner.content__inner--home.content__inner--mob-hide
-          +content-block()
+          +content-block('center')
             img.content-block__img(src='img/preview-3.jpg', alt='альт')
             .content-block__text-wrapper
-              h3.content-block__title Косметика
-              p.content-block__description Будь неотразимой
-          +content-block('large, m-top')
+              h3.content-block__title Подчеркнуть фигуру
+              p.content-block__description Для тех, кто знает себе цену
+          +content-block('large, m-top, center')
             img.content-block__img(src='img/hero.jpg', alt='альт')
             .content-block__text-wrapper
-              h3.content-block__title Косметика
-              p.content-block__description Будь неотразимой
+              h3.content-block__title Удиви его новым нарядом!
+              p.content-block__description Он не устоит, обещаем.
         .content__inner.content__inner--home
           +content-block('main')
             .content-block__text-wrapper
               h2 Огромный ассортимент боди, сорочков и чулков у нас в каталоге
-          +content-block()
+          +content-block
             .content-block__text-wrapper
-              +subscribe()
+              +subscribe
         .content__inner.content__inner--home
-          +content-block('large')
+          +content-block('large, center')
             img.content-block__img(src='img/hero.jpg', alt='альт')
             .content-block__text-wrapper
-              h3.content-block__title Косметика
-              p.content-block__description Будь неотразимой
+              h3.content-block__title Экстравагантная коллекция Vivelo Barcetti
+              p.content-block__description Новая коллекция трусиков от эпатажного дизайнера
               +btn('отправиться в путь','main')(href='catalog.html')
           +content-block('pos-relative')
             svg
               use(xlink:href='img/sprite.svg#icon-to-surprise')
         .content__inner.content__inner--home.content__inner--mob-hide
-          +content-block()
+          +content-block('center')
             img.content-block__img(src='img/preview-3.jpg', alt='альт')
             .content-block__text-wrapper
-              h3.content-block__title Косметика
-              p.content-block__description Будь неотразимой
+              h3.content-block__title Неотразимость во время сна
+              p.content-block__description Лучший материал для повышенного комфорта и крепкого сна
               +btn('Выбрать пижаму','main')(href='catalog.html')
-          +content-block()
+          +content-block('center')
             img.content-block__img(src='img/preview-3.jpg', alt='альт')
             .content-block__text-wrapper
-              h3.content-block__title Косметика
-              p.content-block__description Будь неотразимой
+              h3.content-block__title Верни отношениям былую страсть
+              p.content-block__description Набор вагинальных шариков
               +btn('Тсс, мы никому не скажем','main')(href='catalog.html')
-          +content-block()
+          +content-block
             .content-block__text-wrapper
               svg(width='60px', height='60px')
                 use(xlink:href='img/sprite.svg#icon-delivery')
               h3.content-block__title Информация о доставке и т.д.
               p.content-block__description Бесплатная доставка от 5000₽
         .content__inner.content__inner--home
-          +content-block('full-width')
+          +content-block('full-width, center')
             .content-block__text-wrapper
-              p Вы следите за модой и интересуетесь последними тенденциями в мире нижнего белья и одежды? Тогда не пропустите женскую коллекцию. разнообразие моделей вас приятно удивит. Наша коллекция создана, чтобы учитывать потребности каждой женщины в любое время суток и в любой период жизни. Эта коллекция поможет безупречно выглядеть в офисе
+              p.content-block__seo-text Вы следите за модой и интересуетесь последними тенденциями в мире нижнего белья и одежды? Тогда не пропустите женскую коллекцию. разнообразие моделей вас приятно удивит. Наша коллекция создана, чтобы учитывать потребности каждой женщины в любое время суток и в любой период жизни. Эта коллекция поможет безупречно выглядеть в офисе
 //- block append page-bottom
 //-   script(src='js/some.js')

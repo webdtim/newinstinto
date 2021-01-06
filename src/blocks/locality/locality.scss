@@ -1,0 +1,40 @@
+// В этом файле должны быть стили для БЭМ-блока locality, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.locality {
+
+  $block-name:                &; // #{$block-name}__element
+
+  width: 100%;
+  max-width: 350px;
+  height: 50px;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__town {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 20px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

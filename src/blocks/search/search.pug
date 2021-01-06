@@ -16,7 +16,7 @@ mixin search(label, targetId, switchableClass)
     if (typeof (switchableClass) !== 'undefined' && switchableClass !== '')
       attributes['data-target-class-toggle'] = switchableClass
 
-  a.search(aria-label=label)(role='button')&attributes(attributes)
+  a.search(role='button')&attributes(attributes)
     .search__inner
       svg.search__icon
         use(xlink:href='img/sprite.svg#icon-search')

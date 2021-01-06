@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (locality)
+
+mixin locality(mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +locality('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' locality--' + modsList[i].trim();
+      }
+    }
+
+  .locality(class=allMods)&attributes(attributes)
+    .locality__inner
+      svg
+        use(xlink:href='img/sprite.svg#icon-map-pin')
+      .locality__town
+        span Санкт-Петербург
+        svg
+          use(xlink:href='img/sprite.svg#icon-arrow-right')

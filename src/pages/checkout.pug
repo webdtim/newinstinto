@@ -1,0 +1,98 @@
+extends ../pug/layout.pug
+
+block meta
+  title Оформление заказа
+  meta(name='description', content='')
+
+block content
+  .content
+    .content__container
+      +breadcrumbs
+        +breadcrumbs-item('Главная', 'index.html')
+        +breadcrumbs-item('корзина')
+      main.content__main
+        .cart
+          .cart__select
+            .cart__title
+              h3 Оформление заказа
+              .cart__title-info
+                span Пожалуйста, заполните информацию о себе, чтобы мы могли отправить вам заказ.
+            .cart__card-wrapper.cart__card-wrapper--border-none
+              .cart__caption
+                h4 Населеный пункт
+                +locality
+            .cart__card-wrapper.cart__card-wrapper--border-none
+              +choose-block
+                .choose-block__title
+                  span Доставка Почтой
+                  input(type='checkbox', id='delivery')
+                .choose-block__description Вы получите товар в ближайшем к вам почтовом отделении вашего города. 
+                .choose-block__info
+                  span 1-2 недели
+                  span +400₽
+              +choose-block('active')
+                .choose-block__title
+                  span Доставка Почтой
+                  input(type='checkbox', id='delivery')
+                .choose-block__description Вы получите товар в ближайшем к вам почтовом отделении вашего города. 
+                .choose-block__info
+                  span 1-2 недели
+                  span +400₽
+          .cart__info
+            +your-order
+              .your-order__inner
+                .your-order__head
+                  span Ваш заказ
+                  a(href='cart.html') изменить заказ
+                .your-order__price
+                  .your-order__price-big 5 783 ₽
+                  .your-order__count-wrap
+                    span Ваши вещи - 4
+                    span#total-price 5 783₽
+                .your-order__promo-code-wrap
+                  svg(width='24px', height='24px')
+                    use(xlink:href='img/sprite.svg#icon-gift-grayscale')
+                  p У вас есть промокод или подарочная карта? <br>Введи ее и получи скидку
+                  +form('subscribe')
+                    +field-text({
+                      helpText: '',
+                      attrs: {
+                        placeholder: 'Промокод на скидку'
+                      }
+                    })
+                    +field-actions()
+                      +btn('Активировать промокод', 'white')
+              .your-order__inner
+                +btn('Оформить заказ', 'accent')
+            .cart__info-help
+              .free-shipping
+                .free-shipping__title Бесплатная доставка
+                .free-shipping__description Возьмите еще что-нибудь и мы доставим вам товар бесплатно!
+                .free-shipping__range До бесплатной доставки: <span>520₽</span>
+                .free-shipping__indicator
+                  .free-shipping__indicator-fill
+                    .free-shipping__indicator-point
+              +info-block
+                .info-block__inner
+                  svg(width='30px')
+                    use(xlink:href='img/sprite.svg#icon-shield')
+                .info-block__inner
+                  h3 Безопасность
+                .info-block__inner
+                  p Оплата производится через официальные сервисы, мы не получаем доступ к вашим картам или кошелькам
+              +info-block
+                .info-block__inner
+                  svg(width='34px')
+                    use(xlink:href='img/sprite.svg#icon-mask')
+                .info-block__inner
+                  h3 Полная анонимность при доставке
+                .info-block__inner
+                  p Транспортная компания и курьеры не будут знать детали заказа.
+              +info-block
+                .info-block__inner
+                  svg(width='26px')
+                    use(xlink:href='img/sprite.svg#icon-smile')
+                .info-block__inner
+                  h3 Нужна помощь?
+                .info-block__inner
+                  p У вас возникли вопросы?<br>Обратитесь в нашу службу поддержки клиентов по электронной почте

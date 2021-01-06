@@ -110,13 +110,12 @@
   &--default {
     color: $white;
     background-color: $gray-d3;
-    // border: 1px solid $color-main;
+    max-width: 210px;
 
     &:hover,
     &:focus {
       color: $white;
       background-color: darken($gray, 10%);
-      // border-color: darken($color-main, 12%);
     }
 
     &--disabled,

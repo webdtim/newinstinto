@@ -37,22 +37,22 @@ html(class='page  no-js', lang='ru')
     //- шпора
     //- c плюсом добавляются лишь блоки с pug
 
-    +page-header()
+    +page-header
       .page-header__inner--padding
         .header-container
           .burger__container
             +burger('Каталог', 'header-catalog', 'header-catalog--open')
           .header-container__line
           .header-container__inner
-            +header-nav-menu()
+            +header-nav-menu
             +logo('index.html', 'header')
-            +header-icons()
+            +header-icons
       .page-header__inner
-        +header-search()
-          +search-panel()
-          +search-panel-dropdown()
+        +header-search
+          +search-panel
+          +search-panel-dropdown
       .page-header__inner
-        +header-catalog()
+        +header-catalog
           .header-catalog__wrap
             .header-catalog__group
               .header-catalog__group-title
@@ -128,9 +128,97 @@ html(class='page  no-js', lang='ru')
 
     block content
 
-    footer.page-footer
+    +page-footer
+      .content__container
+        .page-footer__inner
+          +content-block('large')
+            a
+              img(src='img/Rectangle 99.png')
+          +content-block('large')
+            +subscribe
+        .page-footer__inner.page-footer__inner--border
+          +content-block
+            +logo
+          +content-block
+            +locality
+          +content-block
+            .page-footer__btn
+              +btn('Статус заказа','white')(href='#')
+              +btn('Подарочный сертификат','white')(href='#')
+          +content-block
+            .page-footer__social
+              a(htef='#')
+                .page-footer__social-item
+                  svg
+                    use(xlink:href='img/sprite.svg#icon-instagram')
+              a(htef='#')
+                .page-footer__social-item
+                  svg
+                    use(xlink:href='img/sprite.svg#icon-facebook')
+              a(htef='#')
+                .page-footer__social-item
+                  svg
+                    use(xlink:href='img/sprite.svg#icon-whatsapp')
+              a(htef='#')
+                .page-footer__social-item
+                  svg
+                    use(xlink:href='img/sprite.svg#icon-telegram')
+              a(htef='#')
+                .page-footer__social-item
+                  svg
+                    use(xlink:href='img/sprite.svg#icon-vk')
+        .page-footer__inner
+          +content-block
+            .header-catalog__group
+              .header-catalog__group-title
+                a Наш магазин
+              .header-catalog__item-wrap
+                .header-catalog__item
+                  a О магазине
+                .header-catalog__item
+                  a Адреса магазинов
+                .header-catalog__item
+                  a Работай у нас
+                .header-catalog__item
+                  a FAQ
+          +content-block
+            .header-catalog__group
+              .header-catalog__group-title
+                a Информация и помощь
+              .header-catalog__item-wrap
+                .header-catalog__item
+                  a Доставка и оплата
+                .header-catalog__item
+                  a Возврат и обмен
+                .header-catalog__item
+                  a Размерная сетка
+                .header-catalog__item
+                  a Скидки
+          +content-block
+            .header-catalog__group
+              .header-catalog__group-title
+                a Юридическая информация
+              .header-catalog__item-wrap
+                .header-catalog__item
+                  a Политика конфиденциальности
+                .header-catalog__item
+                  a Политика cookie
+                .header-catalog__item
+                  a Условия использования сайта
+                .header-catalog__item
+                  a Условия продажи
+          +content-block
+            .header-catalog__group
+              .header-catalog__group-title
+                a +7 988 396-55-55
+              .header-catalog__item-wrap
+                .header-catalog__item
+                  a Если у вас возникли вопросы, вы всегда можете связаться с нами.
+              +btn('Написать в поддержку','white')(href='#')
+
+
     block page-bottom
-      script(src='js/bundle.js')
+    script(src='js/bundle.js')
 //- базовый шаблон
     //- .page__inner
     //-   .page__content

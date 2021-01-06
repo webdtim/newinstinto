@@ -16,7 +16,7 @@ mixin burger(label, targetId, switchableClass)
     if (typeof(targetId) !== 'undefined' && targetId !== '') attributes['data-target-id'] = targetId
     if (typeof(switchableClass) !== 'undefined' && switchableClass !== '') attributes['data-target-class-toggle'] = switchableClass
 
-  a.burger(aria-label=label)(role='button')&attributes(attributes)
+  a.burger(role='button')&attributes(attributes)
     .burger__inner
       .burger__caption!= label
       .burger__icon

@@ -8,23 +8,82 @@ block meta
 block content
   .content
     .content__container
-      +breadcrumbs()
+      +breadcrumbs
         +breadcrumbs-item('Главная', 'index.html')
         +breadcrumbs-item('Каталог')
       main.content__main
         .content__inner
           +content-block('full-width')
-            h1 Нижнее белье
+            .content-block__text-wrapper
+              h1 Нижнее белье
         .content__inner
           +content-block('big')
-            +categories-list()
-          +content-block()
-            //- скрипт в drop-field.js
-            +btn('настроить отображение','white, m-top')#catalogDropFilterButton
+            .content-block__text-wrapper
+              +categories-list
+          +content-block
+            .content-block__text-wrapper
+              //- скрипт в drop-field.js
+              +btn('настроить отображение','white, m-top')#catalogDropFilterButton
         form
           .content__inner.content__inner--none-margin.close#catalogFilter
             .drop-field__wrapper
-              +content-block()
+              +content-block
+                +drop-field
+                  .drop-field__inner
+                    .drop-field__title Размер
+                    .drop-field__item-wrapper
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                    .drop-field__accept
+                      +field-actions
+                        +btn('Применить','accent')(type='submit')
+              +content-block
+                +drop-field
+                  .drop-field__inner
+                    .drop-field__title Размер
+                    .drop-field__item-wrapper
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                      .drop-field__item
+                        label.drop-field__input-wrap
+                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          span Пункт меню 1
+                    .drop-field__accept
+                      +field-actions
+                        +btn('Применить','accent')(type='submit')
+              +content-block
                 +drop-field()
                   .drop-field__inner
                     .drop-field__title Размер
@@ -52,63 +111,7 @@ block content
                     .drop-field__accept
                       +field-actions()
                         +btn('Применить','accent')(type='submit')
-              +content-block()
-                +drop-field()
-                  .drop-field__inner
-                    .drop-field__title Размер
-                    .drop-field__item-wrapper
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                    .drop-field__accept
-                      +field-actions()
-                        +btn('Применить','accent')(type='submit')
-              +content-block()
-                +drop-field()
-                  .drop-field__inner
-                    .drop-field__title Размер
-                    .drop-field__item-wrapper
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
-                        label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                    .drop-field__accept
-                      +field-actions()
-                        +btn('Применить','accent')(type='submit')
-              +content-block()
+              +content-block
                 +drop-field()
                   .drop-field__inner
                     .drop-field__title Размер
@@ -137,70 +140,78 @@ block content
                       +field-actions()
                         +btn('Применить','accent')(type='submit')
             .drop-field__all-accept
-              +field-actions()
+              +field-actions
                 +btn('Применить','accent')(type='submit')
         .content__inner
-          +content-block()
-            +product-card()
+          +content-block
+            +product-card
               img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
-              .product-card__text-wrap
-                .product-card__name трусики
-                .product-card__price-wrap
-                  .product-card__actual-price 2320₽
-                  .product-card__old-price 2593₽
-          +content-block()
-            +product-card()
+              .content-block__text-wrapper
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    .product-card__old-price 2593₽
+          +content-block
+            +product-card
               img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
-              .product-card__text-wrap
-                .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки
-                .product-card__price-wrap
-                  .product-card__actual-price 2210₽
-                  .product-card__old-price 2593₽
-          +content-block()
-            +product-card()
+              .content-block__text-wrapper
+                .product-card__text-wrap
+                  .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки. А это уже третья строка.
+                  .product-card__price-wrap
+                    .product-card__actual-price 2210₽
+                    .product-card__old-price 2593₽
+          +content-block
+            +product-card
               img.product-card__img(src='img/product-card-img (3).jpg', alt='альт')
-              .product-card__text-wrap
-                .product-card__name трусики со средним названием
-                .product-card__price-wrap
-                  .product-card__actual-price 1720₽
-                  .product-card__old-price 2593₽
-          +content-block()
-            +product-card()
+              .content-block__text-wrapper
+                .product-card__text-wrap
+                  .product-card__name трусики со средним названием
+                  .product-card__price-wrap
+                    .product-card__actual-price 1720₽
+                    .product-card__old-price 2593₽
+          +content-block
+            +product-card
               img.product-card__img(src='img/product-card-img (6).jpg', alt='альт')
-              .product-card__text-wrap
-                .product-card__name трусики короткие
-                .product-card__price-wrap
-                  .product-card__actual-price 1320₽
-                  .product-card__old-price 2593₽
-          +content-block()
-            +product-card()
+              .content-block__text-wrapper
+                .product-card__text-wrap
+                  .product-card__name трусики короткие
+                  .product-card__price-wrap
+                    .product-card__actual-price 1320₽
+                    .product-card__old-price 2593₽
+          +content-block
+            +product-card
               img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
-              .product-card__text-wrap
-                .product-card__name трусики
-                .product-card__price-wrap
-                  .product-card__actual-price 2320₽
-                  .product-card__old-price 2593₽
-          +content-block()
-            +product-card()
+              .content-block__text-wrapper
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    .product-card__old-price 2593₽
+          +content-block
+            +product-card
               img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
-              .product-card__text-wrap
-                .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки
-                .product-card__price-wrap
-                  .product-card__actual-price 2210₽
-                  .product-card__old-price 2593₽
+              .content-block__text-wrapper
+                .product-card__text-wrap
+                  .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки
+                  .product-card__price-wrap
+                    .product-card__actual-price 2210₽
+                    .product-card__old-price 2593₽
           +content-block('large')
-            +product-card()
+            +product-card
               img.product-card__img(src='img/product-card-img (2).jpg', alt='альт')
-              .product-card__text-wrap
-                .product-card__name трусики со средним названием
-                .product-card__price-wrap
-                  .product-card__actual-price 1720₽
-                  .product-card__old-price 2593₽
-          +content-block()
-            +product-card()
+              .content-block__text-wrapper
+                .product-card__text-wrap
+                  .product-card__name трусики со средним названием
+                  .product-card__price-wrap
+                    .product-card__actual-price 1720₽
+                    .product-card__old-price 2593₽
+          +content-block
+            +product-card
               img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
-              .product-card__text-wrap
-                .product-card__name трусики короткие
-                .product-card__price-wrap
-                  .product-card__actual-price 1320₽
-                  .product-card__old-price 2593₽
+              .content-block__text-wrapper
+                .product-card__text-wrap
+                  .product-card__name трусики короткие
+                  .product-card__price-wrap
+                    .product-card__actual-price 1320₽
+                    .product-card__old-price 2593₽

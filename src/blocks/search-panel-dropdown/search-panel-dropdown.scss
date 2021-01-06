@@ -17,18 +17,22 @@
   margin: auto;
 
   &__inner {
+    width: 100%;
     background: $white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    padding: 10px;
+    padding: 0 10px;
+
+    @media (min-width: $screen-sm) {
+      width: auto;
+    }
 
     @media (min-width: $screen-md) {
-      padding: 20px;
+      padding: 0 20px;
     }
   }
 
   &__body {
     width: 100%;
-    min-width: 300px;
 
     @media (min-width: $screen-sm) {
       width: 400px;
@@ -53,29 +57,55 @@
 
   &__footer {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    height: 50px;
 
-    &-text {
-      font-weight: 600;
+    svg {
+      width: 14px;
+      height: 12px;
+      margin-left: 10px;
     }
+  }
+
+  &__footer-text {
+    font-weight: 400;
+  }
+
+  &__footer-link {
+    margin-left: 20px;
+    color: $color-accent;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
   }
 }
 
 .search-panel-dropdown-item {
-
-  padding: 20px/2 0;
-  margin-bottom: 20px/2;
+  display: flex;
+  align-items: center;
+  height: 50px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
-  &__inner {
+  &__image {
+    display: block;
+    width: 30px;
+    height: 42px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__text {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding-left: 10px;
+    font-size: 18px;
   }
 
-  &__header {
-
-    margin-left: 0;
-    margin-right: auto;
+  &__price {
+    white-space: nowrap;
   }
 }

@@ -1,0 +1,22 @@
+//- Все примеси в этом файле должны начинаться c имени блока (choose-block)
+
+mixin choose-block(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +choose-block('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' choose-block--' + modsList[i].trim();
+      }
+    }
+
+  .choose-block(class=allMods)&attributes(attributes)
+    block

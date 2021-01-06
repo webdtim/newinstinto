@@ -6,7 +6,7 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  margin-top: -20px;
+  margin: 0;
 
   svg {
     cursor: pointer;
@@ -16,7 +16,7 @@
 
       &:hover,
       :focus {
-        fill: $color-accent;
+        fill: $color-accent-light;
         stroke-width: 0;
       }
     }
