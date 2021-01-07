@@ -15,7 +15,7 @@ block content
         .content__inner
           +content-block('full-width')
             .content-block__text-wrapper
-              h1 Нижнее белье
+              h2 Нижнее белье
         .content__inner
           +content-block('big')
             .content-block__text-wrapper
@@ -140,8 +140,9 @@ block content
                       +field-actions()
                         +btn('Применить','accent')(type='submit')
             .drop-field__all-accept
-              +field-actions
-                +btn('Применить','accent')(type='submit')
+              .content-block__wrap-mob
+                +field-actions
+                  +btn('Применить','accent')(type='submit')
         .content__inner
           +content-block
             +product-card

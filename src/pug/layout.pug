@@ -130,7 +130,7 @@ html(class='page  no-js', lang='ru')
 
     +page-footer
       .content__container
-        .page-footer__inner
+        .page-footer__inner.page-footer__inner--carusel
           +content-block('large')
             .content-block__wrap-mob
               a
@@ -225,11 +225,11 @@ html(class='page  no-js', lang='ru')
                   .header-catalog__item
                     a Если у вас возникли вопросы, вы всегда можете связаться с нами.
                 +btn('Написать в поддержку','white')(href='#')
-        .page-footer__inner
+        .page-footer__inner.page-footer__inner--bg-gray
           +content-block
-            .content-block__wrap-mob
-
-
+            .content-block__wrap-mob © Instinto, 2020
+          +content-block
+            .content-block__wrap-mob store@instinto.ru
 
     block page-bottom
     script(src='js/bundle.js')

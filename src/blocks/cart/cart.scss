@@ -23,6 +23,14 @@
     span {
       font-weight: 400;
     }
+
+    h3 {
+      font-size: 26px;
+
+      @media (min-width: $screen-sm) {
+        font-size: 36px;
+      }
+    }
   }
 
   &__title-info {
@@ -36,9 +44,12 @@
 
   &__card-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 40px;
     border-top: 1px solid $gray-lightest;
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 40px;
+    }
 
     &--border-none {
       border-top: none;

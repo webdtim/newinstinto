@@ -7,8 +7,17 @@
 
   // здесь модификация, стилизован в своём блоке
   .btn {
-    padding: 14px 24px;
+    padding: 14px 0;
     font-size: 14px;
+  }
+
+  // здесь модификация, стилизован в своём блоке
+  .subscribe {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
   }
 
 	&__inner {
@@ -31,14 +40,51 @@
       padding: 32px 0;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+      .content-block {
+        margin-top: 20px;
+
+        @media (min-width: $screen-lg) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &--carusel {
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    &--bg-gray {
+      height: 50px;
+      margin-top: 50px;
+      padding-top: 12px;
+      background-color: #fcfcfc;
     }
   }
 
   &__btn {
     display: grid;
-    grid-template-columns: 1fr 1.45fr;
-    grid-column-gap: 40px;
     width: 100%;
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr 1.4fr;
+      grid-column-gap: 20px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 1fr 1.4fr;
+      grid-column-gap: 40px;
+    }
+
+    // модификация
+    .btn:first-child {
+      margin-bottom: 20px;
+
+      @media (min-width: $screen-xl) {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__social {
