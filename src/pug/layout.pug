@@ -46,7 +46,25 @@ html(class='page  no-js', lang='ru')
           .header-container__inner
             +header-nav-menu
             +logo('index.html', 'header')
+              img.logo__icon(src='img/logo-icon.svg', alt='Logo icon')
+              img.logo__text(src='img/logo-text.svg', alt='logo text')
             +header-icons
+              +search('Поиск','header-search','header-search--open')
+              a.header-icons__inner(href='profile.html')
+                .header-icons__text-sub-icon Профиль
+                svg(width='20', height='20', class='header-icons__icon header-icons__icon--hide')
+                  use(xlink:href='img/sprite.svg#icon-person')
+              a.header-icons__inner(href='favorites.html')
+                .header-icons__text-sub-icon Желаемое
+                  #count-favorites
+                    span 0
+                img(class='header-icons__icon header-icons__icon--hide', src='img/logo-icon.svg', alt='Logo icon')
+              a.header-icons__inner(href='cart.html')
+                .header-icons__text-sub-icon Корзина
+                  #count-basket
+                    span 0
+                svg(width='20', height='20', class='header-icons__icon header-icons__icon--hide')
+                  use(xlink:href='img/sprite.svg#icon-basket')
       .page-header__inner
         +header-search
           +search-panel
@@ -227,7 +245,7 @@ html(class='page  no-js', lang='ru')
                 +btn('Написать в поддержку','white')(href='#')
         .page-footer__inner.page-footer__inner--bg-gray
           +content-block
-            .content-block__wrap-mob © Instinto, 2020
+            .content-block__wrap-mob © Instinto, 2021
           +content-block
             .content-block__wrap-mob store@instinto.ru
 

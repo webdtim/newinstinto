@@ -1,0 +1,50 @@
+// В этом файле должны быть стили для БЭМ-блока content-wrap, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.content-wrap {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: grid;
+  align-self: start;
+
+  @media (min-width: $screen-lg) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    grid-column: span 2;
+    
+  }
+
+
+  &--secondary {
+    grid-column: span 1;
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr;
+      grid-column: span 1;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr;
+      grid-column: span 2;
+    }
+
+    // здесь модификация, стили в другом файле
+    .content-block {
+
+      &--large {
+        grid-column: span 1;
+
+        @media (min-width: $screen-xl) {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+
+  &--gray {
+    padding: 20px 50px 50px 50px;
+    background-color: $gray-fb;
+  }
+}

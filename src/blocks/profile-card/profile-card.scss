@@ -1,0 +1,73 @@
+// В этом файле должны быть стили для БЭМ-блока profile-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.profile-card {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  @media (min-width: $screen-md) {
+    
+  }
+
+  @media (min-width: $screen-lg) {
+    height: 380px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $screen-xl) {
+    height: 420px;
+  }
+
+  @media (min-width: $screen-xxl) {
+    height: 380px;
+  }
+
+  @media (min-width: $screen-big) {
+    padding: 50px;
+  }
+
+  svg {
+    width: 36px;
+    height: 36px;
+    fill: none;
+  }
+
+  &__title {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  &__description {
+    margin: 20px 0;
+    font-size: 18px;
+
+    @media (min-width: $screen-lg) {
+      margin-bottom: 0;
+    }
+
+    p {
+
+      span,
+      a {
+        padding-left: 10px;
+      }
+    }
+
+    span {
+      font-weight: 500;
+    }
+
+    a {
+      color: $color-accent;
+    }
+  }
+}

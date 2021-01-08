@@ -19,21 +19,4 @@ mixin header-icons(text, mods)
     }
 
   .header-icons(class=allMods)&attributes(attributes)
-    +search('Поиск','header-search','header-search--open')
-    a.header-icons__inner(href='profile.html')
-      .header-icons__text-sub-icon Профиль
-      svg(width='20', height='20', class='header-icons__icon header-icons__icon--hide')
-        use(xlink:href='img/sprite.svg#icon-person')
-    a.header-icons__inner(href='favorites.html')
-      .header-icons__text-sub-icon Желаемое
-        #count-favorites
-          span 0
-      svg(width='20', height='20', class='header-icons__icon header-icons__icon--hide')
-        use(xlink:href='img/sprite.svg#icon-favorites')
-    a.header-icons__inner(href='cart.html')
-      .header-icons__text-sub-icon Корзина
-        #count-basket
-          span 0
-      svg(width='20', height='20', class='header-icons__icon header-icons__icon--hide')
-        use(xlink:href='img/sprite.svg#icon-basket')
     block
