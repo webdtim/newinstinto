@@ -4,13 +4,14 @@
 
 .btn {
   box-sizing: border-box;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 50px;
   margin: 0;
   border: none;
   border-radius: none;
-  padding: 10px 0;
   vertical-align: middle;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -144,12 +145,6 @@
     width: 100%;
   }
 
-  &--footer {
-
-    height: 40px;
-    padding: $field-padding-vertical $field-padding-horizontal*4;
-  }
-
   &--md {
 
     min-height: 50px;
@@ -161,16 +156,7 @@
     width: 130px;
   }
 
-  &--m-top {
-    margin-top: 20px;
-
-    @media (min-width: $screen-lg) {
-      margin-top: 0;
-    }
-  }
-
   &--small-text {
-    padding: 14px 0;
     font-size: 14px;
   }
 }
