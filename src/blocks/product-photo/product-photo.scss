@@ -22,9 +22,9 @@
 
   &__inner {
     // контейнер с элементами карусели, на моб устройствах абсолютно позиционируем и задаем фикс. ширину
-    display: inline-flex;
+    display: flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: flex-start;
     position: absolute;
     top: 0;
     left: 0;

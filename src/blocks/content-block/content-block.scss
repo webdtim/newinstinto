@@ -7,13 +7,13 @@
   $block-name:                &; // #{$block-name}__element
 
   display: grid;
-  align-items: start;
   padding-right: 0;
   padding-left: 0;
 
   &__inner {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   &__text-wrapper {

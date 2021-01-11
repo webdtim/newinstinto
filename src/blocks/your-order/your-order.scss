@@ -6,7 +6,7 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  align-self: start;
+  align-self: flex-start;
   width: 100%;
   height: auto;
   background-color: $gray-fb;

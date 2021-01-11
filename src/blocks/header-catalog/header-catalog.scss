@@ -33,7 +33,7 @@
   &__wrap {
     display: grid;
     grid-template-columns: 1fr;
-    align-self: start;
+    align-self: flex-start;
 
     @media (min-width: $screen-sm) {
       grid-template-columns: 1fr 1fr;
