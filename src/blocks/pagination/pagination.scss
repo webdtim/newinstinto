@@ -5,20 +5,44 @@
 .pagination {
   display: flex;
   flex-wrap: wrap;
-  margin-top: $typo-margin-vertical;
-  margin-bottom: $typo-margin-vertical;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+
+    @media (min-width: $screen-md) {
+      justify-content: space-between;
+    }
+
+    @media (min-width: $screen-xl) {
+      justify-content: center;
+    }
+  }
 
   &__item {
-    display: block;
-    min-width: 2em;
-    // border: 1px solid $border-color;
-    padding: 0.3em 0.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 14px;
     text-decoration: none;
     text-align: center;
-    color: $text-color;
 
-    & + & {
-      border-left: 0;
+    @media (min-width: $screen-xl) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media (min-width: $screen-big) {
+      width: 50px;
+      height: 50px;
     }
 
     &:hover,
@@ -41,6 +65,35 @@
 
     &--active {
       background-color: $gray-lightest;
+    }
+  }
+
+  &__btn {
+    width: 270px;
+  }
+
+  &__container {
+    display: none;
+    align-items: center;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+    }
+
+    @media (min-width: $screen-xl) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__info {
+    display: none;
+    padding-right: 5px;
+    font-size: 14px;
+
+    @media (min-width: $screen-lg) {
+      display: block;
     }
   }
 }

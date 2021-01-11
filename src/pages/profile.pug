@@ -22,9 +22,9 @@ block content
               +categories-list
                 ul.categories-list__wrap
                   li
-                    a(href='#') Кабинет
+                    a(href='profile.html') Кабинет
                   li
-                    a(href='#') Мои данные
+                    a(href='changeprofile.html') Мои данные
                   li
                     a(href='#') Мои заказы
                   li
@@ -78,7 +78,7 @@ block content
                 p пол: <span>Мужской</span>
                 p Дата рождения: <span>06.09.1995</span>
                 p Пароль:
-                  a(href='#')  изменить
+                  a(href='changeprofile.html')  изменить
             +content-block('large')
               .profile-card__title Ваши адреса
               .profile-card__description Добавьте сюда свои адреса, чтобы не вводить их заного при оформлении заказа
@@ -88,4 +88,4 @@ block content
                 p микрорайон 4, приморский жилой район, 374935, Махачкала (Дагестан), кв 39
                 p +7 988 302-92-92
             +content-block
-              +btn('Редактировать', 'white')
+              +btn('Редактировать', 'white')(href='changeprofile.html')

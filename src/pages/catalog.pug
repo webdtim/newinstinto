@@ -42,7 +42,7 @@ block content
               //- скрипт в drop-field.js
               +btn('настроить отображение','white, m-top')#catalogDropFilterButton
         form
-          .content__inner.content__inner--none-margin.close#catalogFilter
+          .content__inner.content__inner--none-margin.content__inner--close#catalogFilter
             .drop-field__wrapper
               +content-block
                 +drop-field
@@ -160,7 +160,9 @@ block content
               .content-block__wrap-mob
                 +field-actions
                   +btn('Применить','accent')(type='submit')
+        //- контейнер товаров
         .content__inner
+          //- блок с товаром
           +content-block
             +product-card
               img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
@@ -233,3 +235,15 @@ block content
                   .product-card__price-wrap
                     .product-card__actual-price 1320₽
                     .product-card__old-price 2593₽
+        //- пагинация
+        .pagination__wrapper
+            .pagination__btn
+              +btn('Показать больше','white, small-text')
+            .pagination__container
+              .pagination__info <span>12</span> товаров из <span>60</span>
+              +pagination()
+                +pagination-item('1', '#', true)
+                +pagination-item('2', '#')
+                +pagination-item('3', '#')
+                +pagination-item('...')
+                +pagination-item('99', '#')

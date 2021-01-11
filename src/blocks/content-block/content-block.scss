@@ -226,4 +226,14 @@
       text-align: center;
     }
   }
+
+  &--al-center {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .content-block__inner {
+      width: 100%;
+    }
+  }
 }

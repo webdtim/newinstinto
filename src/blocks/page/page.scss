@@ -15,14 +15,17 @@
 
 
 /* stylelint-disable */
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../fonts/FONTNAME.woff2') format('woff2'),
-//        url('../fonts/FONTNAME.woff') format('woff');
-//   font-weight: 400;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('fonts/ApercuPro-Regular.woff2') format('woff2'),
+  url('fonts/ApercuPro-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('../fonts/ApercuPro-Medium.woff2') format('woff2'),
+  url('../fonts/ApercuPro-Medium.woff') format('woff');
+}
 /* stylelint-enable */
 
 
@@ -341,8 +344,3 @@ pre {
     background: transparent;
   }
 }
-
-.close {
-  display: none;
-}
-

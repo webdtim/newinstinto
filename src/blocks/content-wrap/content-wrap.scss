@@ -46,5 +46,10 @@
   &--gray {
     padding: 20px 50px 50px 50px;
     background-color: $gray-fb;
+    order: -1;
+
+    @media (min-width: $screen-md) {
+      order: inherit;
+    }
   }
 }

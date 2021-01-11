@@ -22,7 +22,7 @@
 
   function dropField() {
 
-    catalogFilter.classList.toggle('close');
+    catalogFilter.classList.toggle('content__inner--close');
   }
 
   // проверяем наличие элемента на странице
