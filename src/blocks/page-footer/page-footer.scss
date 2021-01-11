@@ -97,6 +97,16 @@
     background: #F4F4F4;
     cursor: pointer;
 
+    @media (min-width: $screen-xl) {
+      width: 35px;
+      height: 35px;
+    }
+
+    @media (min-width: $screen-big) {
+      width: 42px;
+      height: 42px;
+    }
+
     svg {
       width: 20px;
       height: 20px;
