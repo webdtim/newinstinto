@@ -10,12 +10,8 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  padding: 30px;
   border: 1px solid rgba(0, 0, 0, 0.05);
-
-  @media (min-width: $screen-md) {
-    
-  }
+  padding: 30px;
 
   @media (min-width: $screen-lg) {
     height: 380px;

@@ -111,11 +111,11 @@
 
     &:before,
     &:after {
+      content: ' ';
       position: absolute;
       left: 5px;
-      content: ' ';
-      height: 12px;
       width: 1px;
+      height: 12px;
       background-color: $black;
     }
 

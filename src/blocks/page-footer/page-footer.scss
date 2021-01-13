@@ -3,7 +3,7 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .page-footer {
-	display: grid;
+  display: grid;
 
   // здесь модификация, стилизован в своём блоке
   .subscribe {
@@ -14,7 +14,7 @@
     }
   }
 
-	&__inner {
+  &__inner {
     display: grid;
 
     @media (min-width: $screen-md) {
@@ -35,12 +35,15 @@
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-      .content-block {
-        margin-top: 20px;
-
-        @media (min-width: $screen-lg) {
+      @media (min-width: $screen-lg) {
+        // модификация блока
+        .content-block {
           margin-top: 0;
         }
+      }
+      // модификация блока
+      .content-block {
+        margin-top: 20px;
       }
     }
 
@@ -94,7 +97,7 @@
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background: #F4F4F4;
+    background: #f4f4f4;
     cursor: pointer;
 
     @media (min-width: $screen-xl) {

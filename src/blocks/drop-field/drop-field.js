@@ -1,3 +1,9 @@
+  /* global document */
+
+const ready = require('../../js/utils/documentReady.js');
+
+ready(function(){
+  
   const catalogFilter = document.querySelector('#catalogFilter');
   const catalogDropFilterButton = document.querySelector('#catalogDropFilterButton');
 
@@ -32,3 +38,4 @@
   }
 
   if (catalogDropFilterButton) catalogDropFilterButton.addEventListener('click', dropField);
+});

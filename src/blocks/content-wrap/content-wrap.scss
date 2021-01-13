@@ -13,7 +13,6 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
     grid-column: span 2;
-    
   }
 
 
@@ -33,20 +32,23 @@
     // здесь модификация, стили в другом файле
     .content-block {
 
-      &--large {
-        grid-column: span 1;
+      @media (min-width: $screen-xl) {
 
-        @media (min-width: $screen-xl) {
+        &--large {
           grid-column: span 2;
         }
+      }
+
+      &--large {
+        grid-column: span 1;
       }
     }
   }
 
   &--gray {
-    padding: 20px 50px 50px 50px;
-    background-color: $gray-fb;
     order: -1;
+    padding: 20px 50px 50px;
+    background-color: $gray-fb;
 
     @media (min-width: $screen-md) {
       order: inherit;
