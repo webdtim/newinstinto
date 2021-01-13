@@ -25,7 +25,7 @@ block content
                   li
                     a(href='profile.html') Кабинет
                   li
-                    a(href='changeprofile.html') Мои данные
+                    a.categories-list__active(href='changeprofile.html') Мои данные
                   li
                     a(href='#') Мои заказы
                   li
@@ -35,7 +35,7 @@ block content
         +form('personal-data')
           .content__inner
             .content-wrap
-              +content-block
+              +content-block('p-mob')
                 .profile-card__description
                   p ФИО
                   +field-text({
@@ -52,6 +52,26 @@ block content
                       placeholder: 'К примеру: +7 (000) 000-00-00'
                     }
                   })
+              +content-block('p-mob')
+                .profile-card__description
+                  p Дата рождения
+                  .profile-card__select-wrapper
+                    +select('profile')(name='day' id='day')
+                      option(value='01', selected) 01
+                      option(value='02') 02
+                      option(value='03') 03
+                      option(value='04') 04
+                    +select('profile')(name='month' id='month')
+                      option(value='1', selected) Сентябрь
+                      option(value='1', selected) Октябрь
+                      option(value='1', selected) Ноябрь
+                    +select('profile')(name='year' id='year')
+                      option(value='1', selected) 1997
+                      option(value='2') 2001
+                      option(value='3') 2002
+                      option(value='4') 2003
+                  span Получайте поздравления и дополнительные скидки от Instinto
+              +content-block('p-mob')
                 .profile-card__description
                   p Ваша электронная почта
                   +field-text({
@@ -74,3 +94,50 @@ block content
                       placeholder: 'Повторите новый пароль'
                     }
                   })
+              +content-block('p-mob')
+                .profile-card__description
+                  p Пол
+                  +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'К примеру: +7 (000) 000-00-00'
+                    }
+                  })
+            +content-block('p-mob')
+              .your-adress
+                h3 Ваш адрес
+                .profile-card__description
+                  p Улица
+                  +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'Название улицы'
+                    }
+                  })
+                .profile-card__description
+                  p Дом
+                  +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'Номер дома'
+                    }
+                  })
+                .profile-card__description
+                  p Квартира
+                  +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'Номер квартиры'
+                    }
+                  })
+                .profile-card__description
+                  p Почтовый индекс
+                  +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'Номер'
+                    }
+                  })
+          .content__inner
+            +content-block('p-mob')
+              +btn('Применить изменения','accent')

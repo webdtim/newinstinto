@@ -1,0 +1,12 @@
+.your-adress {
+
+  $block-name:                &; // #{$block-name}__element
+
+  width: 100%;
+  padding: 10px 30px 20px;
+  background-color: $gray-fb;
+
+  @media (min-width: $screen-big) {
+    padding: 30px 50px 40px;
+  }
+}

@@ -23,7 +23,14 @@
     outline: none;
   }
 
-  option {
-    width: 100%;
+  &--profile {
+    padding-right: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.02);
+
+    select {
+      padding-left: 15px;
+      box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.02);
+    }
   }
 }

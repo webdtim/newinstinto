@@ -27,4 +27,8 @@
       white-space: nowrap;
     }
   }
+
+  &__active {
+    color: $color-accent;
+  }
 }
