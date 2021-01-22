@@ -81,4 +81,13 @@
   &__count {
     width: 35%;
   }
+
+  &__size-tab {
+    margin-bottom: 20px;
+  }
+
+  // модификация блока, стили хранятся в файле блока
+  .btn {
+    margin-bottom: 20px;
+  }
 }

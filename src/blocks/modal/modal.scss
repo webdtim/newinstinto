@@ -20,6 +20,15 @@
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
 
+  h4 {
+    font-size: 24px;
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 20px;
+  }
+
   .js-modal-open & {
     overflow-x: hidden;
     overflow-y: auto;
@@ -57,7 +66,8 @@
 
   &__header {
     flex-shrink: 0;
-    padding: 0 40px 0 15px;
+    padding: 10px 40px 5px 20px;
+    border-bottom: 2px solid $color-accent;
   }
 
   &__title {
@@ -71,13 +81,29 @@
 
   &__close {
     position: absolute !important; // stylelint-disable-line  declaration-no-important
-    top: 5px;
-    right: 5px;
+    top: 15px;
+    right: 20px;
   }
 
   &__body {
-    flex-grow: 1;
-    padding: 0 15px;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: auto;
+    margin-top: 15px;
+
+    td,
+    th {
+      text-align: center;
+      padding: 10px 20px;
+    }
+
+    th {
+      color: $gray;
+    }
+
+    td:nth-child(even) {
+      background-color: $gray-lightest;
+    }
   }
 
   &__footer {
