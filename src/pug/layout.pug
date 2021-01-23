@@ -50,7 +50,7 @@ html(class='page  no-js', lang='ru')
               img.logo__text(src='img/logo-text.svg', alt='logo text')
             +header-icons
               +search('Поиск','header-search','header-search--open')
-              a.header-icons__inner(href='profile.html')
+              a.header-icons__inner(data-toggle='modal', data-target='#modal-sign-up', href='#')
                 .header-icons__text-sub-icon Профиль
                 svg(width='20', height='20', class='header-icons__icon header-icons__icon--hide')
                   use(xlink:href='img/sprite.svg#icon-person')
@@ -250,6 +250,7 @@ html(class='page  no-js', lang='ru')
             .content-block__wrap-mob © Instinto, 2021
           +content-block
             .content-block__wrap-mob store@instinto.ru
+    +modals
 
     block page-bottom
     script(src='js/bundle.js')

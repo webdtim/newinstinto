@@ -1,0 +1,263 @@
+//- Все примеси в этом файле должны начинаться c имени блока (modals)
+
+mixin modals(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +modals('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' modals--' + modsList[i].trim();
+      }
+    }
+
+  .modals(class=allMods)&attributes(attributes)
+    +modal('modal-size-table-anais','Anais')
+      .modal__body.modal__body--table
+        h5 Соответсвие размеров чаши
+        .modal__table-container
+          table
+            tr
+              th Под грудью
+              th Размер
+              th.modal__th Чаша <br> A
+              th Чаша <br> B
+              th Чаша <br> C
+              th Чаша <br> D
+              th Чаша <br> E
+              th Чаша <br> F
+              th Чаша <br> G
+              th Чаша <br> H
+              th Чаша <br> I
+              th Чаша <br> J
+              th Чаша <br> K
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+            tr
+              td 63-67
+              td 65
+              td 77-79
+              td 79-81
+              td 81-83
+              td 83-85
+              td 85-87
+              td 87-89
+              td 89-91
+              td 91-93
+              td 93-95
+              td 95-97
+              td 97-99
+      .modal__footer.modal__footer--table
+        +btn('Закрыть', 'white')(type='button', data-dismiss='modal')
+    +modal('modal-log-in', 'Войти в профиль')
+      .modal__body
+        p У вас нет профиля?&emsp;
+          a.modal__ankor(data-toggle='modal', data-target='#modal-sign-up', data-dismiss='modal', href='#') Зарегистрируйтесь
+        form(name='logIn')
+          +field-text({
+                      helpText: '',
+                      attrs: {
+                        placeholder: 'yourmail@mail.ru'
+                      }
+                    })
+          +field-text({
+                      helpText: '',
+                      attrs: {
+                        placeholder: 'password'
+                      }
+                    })
+          +field-checkbox([
+            {
+              title: 'Запомнить меня',
+              helpText: '',
+              attrs: {
+                name: 'rememberMe',
+              }
+            },
+          ])
+      .modal__footer.modal__footer--two-buttons
+        +btn('Войти', 'accent')(href='profile.html')
+        +btn('Забыл пароль', 'white')(data-toggle='modal', data-target='#modal-remind-password', data-dismiss='modal',  href='#')
+    +modal('modal-sign-up', 'Регистрация')
+      .modal__body
+        p Уже покупали у нас раньше?&emsp;
+          a.modal__ankor(data-toggle='modal', data-target='#modal-log-in', data-dismiss='modal',  href='#') Войти в профиль
+        form(name='signUp')
+          .modal__main-text Ваш email
+          +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'yourmail@mail.ru'
+                    }
+                  })
+          .modal__main-text Придумайте пароль
+          +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'password'
+                    }
+                  })
+          .modal__main-text Повторите пароль
+          +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'password'
+                    }
+                  })
+          .modal__main-text Как вас зовут?
+          +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'Имя'
+                    }
+                  })
+      .modal__footer
+        +btn('Зарегистрироваться', 'accent')(href='profile.html')
+        +field-checkbox([
+          {
+            title: 'Запомнить меня',
+            helpText: '',
+            attrs: {
+              name: 'rememberMe',
+            }
+          },
+        ])
+        p.modal__info-text Нажимая кнопку «Продолжить», вы соглашаетесь с <a class='modal__ankor' href='#'>офертой</a> и <a class='modal__ankor' href='#'>политикой конфиденциальности</a>
+    +modal('modal-remind-password', 'Напомнить пароль')
+      .modal__body
+        p У вас нет профиля?
+          a.modal__ankor(data-toggle='modal', data-target='#modal-sign-up', data-dismiss='modal',  href='#')  Зарегистрируйтесь
+        form(name='remindPassword')
+          .modal__main-text Укажите свою почту, чтобы мы выслали вам проверочный код
+          +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'yourmail@mail.ru'
+                    }
+                  })
+      .modal__footer.modal__footer--two-buttons
+        +btn('Отправить', 'accent')(data-toggle='modal', data-target='#modal-remind-password-sucсess', data-dismiss='modal',  href='#')
+        +btn('Войти', 'white')(data-toggle='modal', data-target='#modal-log-in', data-dismiss='modal',  href='#')
+    +modal('modal-remind-password-sucсess', 'Пароль отправлен')
+      .modal__body
+        .modal__main-text Вам на почту пришло письмо с ссылкой на восстановление пароля. Удачи =)
+      .modal__footer
+        +btn('Отлично', 'accent')(data-dismiss='modal')
+    block
