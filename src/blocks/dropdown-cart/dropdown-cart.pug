@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (dropdown-cart)
+
+mixin dropdown-cart(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +dropdown-cart('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' dropdown-cart--' + modsList[i].trim();
+      }
+    }
+
+  .dropdown-cart(class=allMods)&attributes(attributes)
+    .dropdown-cart__inner
+      block

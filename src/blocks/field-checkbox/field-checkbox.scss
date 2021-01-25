@@ -6,8 +6,9 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  display: block;
+  display: flex;
   margin: 0;
+  align-self: flex-start;
 
   &__title {
     @include field-name;
@@ -24,6 +25,35 @@
       #{$block-name}__name-text,
       #{$block-name}__help-text {
         color: $color-danger;
+      }
+    }
+  }
+
+  &__input-wrap--square {
+    margin-top: 12px;
+
+    #{$block-name}__name-text {
+      padding-left: 5px;
+      
+      &:before {
+        top: 3px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $black;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 4px;
+        width: 10px;
+        height: 10px;
+        border: 1px solid $black;
+        background-color: $black;
+        transition: none;
+        transform: none;
+        box-shadow: none;
       }
     }
   }
@@ -75,7 +105,6 @@
       width: 14px;
       height: 14px;
       border: 2px solid currentColor;
-      border-radius: $border-radius;
     }
 
     @at-root input:focus ~ &:before {

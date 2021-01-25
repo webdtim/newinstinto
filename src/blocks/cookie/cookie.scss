@@ -1,0 +1,20 @@
+// В этом файле должны быть стили для БЭМ-блока cookie, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.cookie {
+
+  $block-name:                &; // #{$block-name}__element
+
+  // position: fixed;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  // height: 10%;
+  // background-color: $gray;
+
+  // &__container {
+  //   display: grid;
+  //   grid-template-columns: 1fr 250px;
+  // }
+}

@@ -154,6 +154,7 @@
       padding: 20px 50px 50px;
     }
 
+    // модификаци блока
     .btn {
       margin-bottom: 20px;
     }
@@ -169,6 +170,7 @@
   }
 
   &__info-text {
+    margin-top: 20px;
     margin-bottom: 0;
     grid-column: span 2;
   }

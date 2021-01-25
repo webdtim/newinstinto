@@ -7,6 +7,11 @@
   $block-name:                &; // #{$block-name}__element
   display: grid;
 
+  // @media (min-width: $screen-md) {
+  //   grid-template-columns: 1fr 1fr;
+  //   grid-column-gap: 40px;
+  // }
+
   @media (min-width: $screen-lg) {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
@@ -45,10 +50,12 @@
   &__card-wrapper {
     display: grid;
     border-top: 1px solid $gray-lightest;
+    margin-bottom: 20px;
 
     @media (min-width: $screen-xl) {
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 40px;
+      margin-bottom: 0;
     }
 
     &--border-none {
