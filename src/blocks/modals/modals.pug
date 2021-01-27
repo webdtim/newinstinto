@@ -195,11 +195,11 @@ mixin modals(text, mods)
           ])
       .modal__footer.modal__footer--two-buttons
         +btn('Войти', 'accent')(href='profile.html')
-        +btn('Забыл пароль', 'white')(data-toggle='modal', data-target='#modal-remind-password', data-dismiss='modal',  href='#')
+        +btn('Забыл пароль', 'white')(data-toggle='modal', data-target='#modal-remind-password', data-dismiss='modal', href='#')
     +modal('modal-sign-up', 'Регистрация')
       .modal__body
         p Уже покупали у нас раньше?&emsp;
-          a.modal__ankor(data-toggle='modal', data-target='#modal-log-in', data-dismiss='modal',  href='#') Войти в профиль
+          a.modal__ankor(data-toggle='modal', data-target='#modal-log-in', data-dismiss='modal', href='#') Войти в профиль
         form(name='signUp')
           .modal__main-text Ваш email
           +field-text({
@@ -245,7 +245,7 @@ mixin modals(text, mods)
     +modal('modal-remind-password', 'Напомнить пароль')
       .modal__body
         p У вас нет профиля?
-          a.modal__ankor(data-toggle='modal', data-target='#modal-sign-up', data-dismiss='modal',  href='#')  Зарегистрируйтесь
+          a.modal__ankor(data-toggle='modal', data-target='#modal-sign-up', data-dismiss='modal', href='#')  Зарегистрируйтесь
         form(name='remindPassword')
           .modal__main-text Укажите свою почту, чтобы мы выслали вам проверочный код
           +field-text({
@@ -255,8 +255,8 @@ mixin modals(text, mods)
                     }
                   })
       .modal__footer.modal__footer--two-buttons
-        +btn('Отправить', 'accent')(data-toggle='modal', data-target='#modal-remind-password-sucсess', data-dismiss='modal',  href='#')
-        +btn('Войти', 'white')(data-toggle='modal', data-target='#modal-log-in', data-dismiss='modal',  href='#')
+        +btn('Отправить', 'accent')(data-toggle='modal', data-target='#modal-remind-password-sucсess', data-dismiss='modal', href='#')
+        +btn('Войти', 'white')(data-toggle='modal', data-target='#modal-log-in', data-dismiss='modal', href='#')
     +modal('modal-remind-password-sucсess', 'Пароль отправлен')
       .modal__body
         .modal__main-text Вам на почту пришло письмо с ссылкой на восстановление пароля. Удачи =)

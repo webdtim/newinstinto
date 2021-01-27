@@ -11,7 +11,7 @@ block content
         +breadcrumbs-item('Главная', 'index.html')
         +breadcrumbs-item('корзина')
       main.content__main
-        .cart
+        .cart.cart--chekout
           .cart__select
             .cart__title
               h3 Оформление заказа
@@ -21,19 +21,17 @@ block content
               .cart__caption
                 h4 Населеный пункт
                 +locality
-            .cart__card-wrapper.cart__card-wrapper--border-none
-              +choose-block
+            .cart__card-wrapper.cart__card-wrapper--border-none.choose-block__wrap
+              +choose-block('delivery')
                 .choose-block__title
                   span Доставка Почтой
-                  input(type='checkbox', id='delivery')
                 .choose-block__description Вы получите товар в ближайшем к вам почтовом отделении вашего города.
                 .choose-block__info
                   span 1-2 недели
                   span +400₽
-              +choose-block('active')
+              +choose-block('delivery')
                 .choose-block__title
                   span Доставка Почтой
-                  input(type='checkbox', id='delivery')
                 .choose-block__description Вы получите товар в ближайшем к вам почтовом отделении вашего города.
                 .choose-block__info
                   span 1-2 недели

@@ -6,9 +6,11 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  position: relative;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 20px;
+  cursor: pointer;
 
   &__title {
     display: flex;
@@ -33,6 +35,6 @@
   }
 
   &--active {
-    border: 1px solid $color-accent;
+    border: 2px solid $color-accent;
   }
 }

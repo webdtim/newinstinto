@@ -7,8 +7,9 @@
   $block-name:                &; // #{$block-name}__element
 
   display: flex;
-  margin: 0;
   align-self: flex-start;
+  position: relative;
+  margin: 0;
 
   &__title {
     @include field-name;
@@ -34,9 +35,10 @@
 
     #{$block-name}__name-text {
       padding-left: 5px;
-      
+
       &:before {
         top: 3px;
+        left: 0;
         width: 18px;
         height: 18px;
         border: 1px solid $black;
@@ -51,9 +53,34 @@
         height: 10px;
         border: 1px solid $black;
         background-color: $black;
-        transition: none;
         transform: none;
+        transition: none;
         box-shadow: none;
+      }
+    }
+  }
+
+  &__input-wrap--black {
+    position: absolute;
+    right: 0;
+
+    #{$block-name}__name-text {
+
+      &:before {
+        right: 0;
+        width: 16px;
+        height: 16px;
+        border: 2px solid $gray-lightest;
+        background: $white;
+        border-radius: 2px;
+      }
+
+      &:after {
+        top: 8px;
+        right: 2px;
+        width: 12px;
+        border-radius: 2px;
+        color: $white;
       }
     }
   }
@@ -101,14 +128,14 @@
       content: '';
       position: absolute;
       top: 5px;
-      left: 0;
       width: 14px;
       height: 14px;
       border: 2px solid currentColor;
     }
 
-    @at-root input:focus ~ &:before {
-      @include field-focus;
+    .field-checkbox__input--choose:checked ~ &:before {
+      border: none;
+      background: $black;
     }
 
     @at-root input:disabled ~ &:before {
@@ -120,7 +147,6 @@
       content: '';
       position: absolute;
       top: 6px;
-      left: 3px;
       width: 14px;
       height: 6px;
       opacity: 0;
@@ -128,7 +154,6 @@
       border-bottom: 2px solid currentColor;
       transform: rotate(-45deg);
       transition: opacity $transition-time;
-      box-shadow: 1px 2px 0 #fff, inset 0 -2px 0 #fff;
 
       @at-root input:checked ~ & {
         opacity: 1;

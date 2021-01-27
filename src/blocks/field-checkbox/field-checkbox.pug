@@ -8,6 +8,7 @@ mixin field-checkbox(checkboxes, title)
   //-       title: ''         {string} - текст рядом с чекбоксом
   //-       helpText: ''      {string} - пояснение под полем
   //-       mods: ''          {string} - модификаторы обертки чекбокса
+  //-       modscheckbox: ''  {string} - модификаторы чекбокса
   //-       attrs:            {object} - любые атрибуты для input
   //-         name:           {string}
   //-     ...
@@ -53,9 +54,17 @@ mixin field-checkbox(checkboxes, title)
             allMods = allMods + ' field-checkbox__input-wrap--' + modsList[i].trim();
           }
         }
+      -
+        var allModscheckbox = '';
+        if(typeof(checkbox.modscheckbox) !== 'undefined' && checkbox.modscheckbox) {
+          var modsList = checkbox.modscheckbox.split(',');
+          for (var i = 0; i < modsList.length; i++) {
+            allModscheckbox = allModscheckbox + ' field-checkbox__input--' + modsList[i].trim();
+          }
+        }
       .field-checkbox__input-wrap(class=allMods)
         label.field-checkbox__name
-          input.field-checkbox__input(type='checkbox')&attributes(checkbox.attrs)
+          input.field-checkbox__input(class=allModscheckbox, type='checkbox')&attributes(checkbox.attrs)
           span.field-checkbox__name-text!= checkbox.title
         if(typeof(checkbox.helpText) !== 'undefined' && checkbox.helpText)
           .field-checkbox__help-text-wrap

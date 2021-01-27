@@ -79,10 +79,14 @@
 
   &__news {
     margin-top: 40px;
-    padding-bottom: 40px;
+    margin-bottom: 20px;
 
     img {
       width: 100%;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 0;
     }
   }
 
@@ -108,10 +112,15 @@
   &--open {
     display: grid;
     position: absolute;
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 100%;
     height: 100vh;
+    padding-bottom: 40px;
     background: #fbfbfb;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+
+    @media (min-width: $screen-xl) {
+      height: auto;
+    }
   }
 }

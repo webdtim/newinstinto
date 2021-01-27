@@ -7,12 +7,7 @@
   $block-name:                &; // #{$block-name}__element
   display: grid;
 
-  // @media (min-width: $screen-md) {
-  //   grid-template-columns: 1fr 1fr;
-  //   grid-column-gap: 40px;
-  // }
-
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 40px;
   }
@@ -148,6 +143,27 @@
     @media (min-width: $screen-lg) {
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 40px;
+    }
+  }
+
+  &--chekout {
+
+    @media (min-width: $screen-md) {
+      grid-template-columns: 0.7fr 1fr;
+      grid-column-gap: 20px;
+    }
+
+    #{$block-name}__info {
+
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+      }
+
+      @media (min-width: $screen-xxl) {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 40px;
+      }
     }
   }
 }

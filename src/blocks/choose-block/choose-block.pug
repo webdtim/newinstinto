@@ -3,7 +3,7 @@
 mixin choose-block(text, mods)
 
   //- Принимает:
-  //-   text    {string} - текст
+  //-   text    {string} - атрибут name для input
   //-   mods    {string} - список модификаторов
   //- Вызов:
         +choose-block('Текст', 'some-mod')
@@ -19,4 +19,15 @@ mixin choose-block(text, mods)
     }
 
   .choose-block(class=allMods)&attributes(attributes)
+    +field-checkbox([
+          {
+            helpText: '',
+            mods: 'black',
+            modscheckbox: 'choose',
+            attrs: {
+              name: 'choose-delivery',
+            }
+          },
+        ])
+    //- input(type='checkbox', name=text)
     block
