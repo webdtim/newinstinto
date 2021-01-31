@@ -95,14 +95,12 @@ block content
                     }
                   })
               +content-block('p-mob')
-                .profile-card__description
+                .profile-card__description.choose-block__wrap
                   p Пол
-                  +field-text({
-                    helpText: '',
-                    attrs: {
-                      placeholder: 'К примеру: +7 (000) 000-00-00'
-                    }
-                  })
+                  +choose-block('gender')
+                    span Мужской
+                  +choose-block('gender')
+                    span Женский
             +content-block('p-mob')
               .your-adress
                 h3 Ваш адрес

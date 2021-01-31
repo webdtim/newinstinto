@@ -19,15 +19,12 @@ mixin choose-block(text, mods)
     }
 
   .choose-block(class=allMods)&attributes(attributes)
-    +field-checkbox([
+    +field-radio([
           {
             helpText: '',
-            mods: 'black',
-            modscheckbox: 'choose',
             attrs: {
-              name: 'choose-delivery',
+              name: text,
             }
           },
         ])
-    //- input(type='checkbox', name=text)
     block

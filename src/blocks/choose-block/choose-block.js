@@ -7,24 +7,36 @@ ready(function(){
   const chooseBlockWrap = document.querySelector('.choose-block__wrap')
 
   let chooseCheckbox = function(e) {
-
+    // если клик не по элементу, прерываем
     if (!e.target.closest('.choose-block')) return
 
     const chooseBlock = e.target.closest('.choose-block'),
-          checkbox = chooseBlock.querySelector('input')
+          checkbox = chooseBlock.querySelector('input'),
+          allChooseBlock = e.target.closest('.choose-block__wrap').querySelectorAll('.choose-block')
 
-    if (e.target.type == 'checkbox') {
-      checkbox.checked = !checkbox.checked
-      return
+    if (e.target.type == 'radio') return
+
+    // если инпут активен, то прерываем функцию
+    if (checkbox.checked === true) return
+
+    // удаляем активные классы
+    for (let i = 0; i < allChooseBlock.length; i++) {
+      allChooseBlock[i].classList.remove('choose-block--active')
     }
 
-    if (!chooseBlock) return
+    // добавляем активный класс и состояние инпута
+    chooseBlock.classList.add('choose-block--active')
     checkbox.checked = !checkbox.checked
-    chooseBlock.classList.toggle('choose-block--active')
+
   }
 
   if (chooseBlockWrap){
-    chooseBlockWrap.addEventListener('click', chooseCheckbox)
+    // Записываем коллекцию в переменную
+    let chooseArray = document.querySelectorAll(".choose-block__wrap")
+    // перебираем коллекцию и навешиваем обработчик событий
+    for (let i = 0; i < chooseArray.length; i++) {
+      chooseArray[i].addEventListener('click', chooseCheckbox)
+    }
   }
 
 });
