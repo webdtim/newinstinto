@@ -1,0 +1,33 @@
+//- Все примеси в этом файле должны начинаться c имени блока (product-modal)
+
+mixin product-modal(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +product-modal('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' product-modal--' + modsList[i].trim();
+      }
+    }
+
+  .product-modal(class=allMods)&attributes(attributes)
+    .product-modal__img
+      img(src='img/order-item-1.png', alt='Название товара')
+    .product-modal__info
+      .product-model__main-info
+        .product-modal__price 4 990₽
+        .product-modal__description Black Silk Luxe Bra подушка еще что-то там и это испытание текста в 2 строки
+      .product-modal__size-wrap
+        .product-modal__label Размер:
+          span 75C
+        .product-modal__label Кол-во:
+          span 1
+    block

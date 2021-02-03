@@ -27,7 +27,7 @@ block content
                   li
                     a.categories-list__active(href='changeprofile.html') Мои данные
                   li
-                    a(href='#') Мои заказы
+                    a(href='my-order.html') Мои заказы
                   li
                     a(href='#') Желаемое (<span>8</span>)
                   li
@@ -36,16 +36,16 @@ block content
           .content__inner
             .content-wrap
               +content-block('p-mob')
-                .profile-card__description
-                  p ФИО
+                .profile-info
+                  p.profile-info__label--m-top ФИО
                   +field-text({
                     helpText: '',
                     attrs: {
                       placeholder: 'Фамилия Имя Отчество'
                     }
                   })
-                .profile-card__description
-                  p Мобильный телефон (для статуса заказа)
+                .profile-info
+                  p.profile-info__label--m-top Мобильный телефон (для статуса заказа)
                   +field-text({
                     helpText: '',
                     attrs: {
@@ -53,9 +53,9 @@ block content
                     }
                   })
               +content-block('p-mob')
-                .profile-card__description
-                  p Дата рождения
-                  .profile-card__select-wrapper
+                .profile-info
+                  p.profile-info__label--m-top Дата рождения
+                  .profile-info__select-wrapper
                     +select('profile')(name='day', id='day')
                       option(value='01', selected) 01
                       option(value='02') 02
@@ -70,18 +70,18 @@ block content
                       option(value='2') 2001
                       option(value='3') 2002
                       option(value='4') 2003
-                  span Получайте поздравления и дополнительные скидки от Instinto
+                  span.profile-info__gray-text Получайте поздравления и дополнительные скидки от Instinto
               +content-block('p-mob')
-                .profile-card__description
-                  p Ваша электронная почта
+                .profile-info
+                  p.profile-info__label--m-top Ваша электронная почта
                   +field-text({
                     helpText: '',
                     attrs: {
                       placeholder: 'neyxsem@gmail.com'
                     }
                   })
-                .profile-card__description
-                  p Новый пароль
+                .profile-info
+                  p.profile-info__label--m-top Новый пароль
                   +field-text({
                     helpText: '',
                     attrs: {
@@ -95,47 +95,48 @@ block content
                     }
                   })
               +content-block('p-mob')
-                .profile-card__description.choose-block__wrap
-                  p Пол
-                  +choose-block('gender')
-                    span Мужской
-                  +choose-block('gender')
-                    span Женский
+                .profile-info.choose-block__wrap
+                  p.profile-info__label--m-top Пол
+                  .profile-info__gender
+                    +choose-block('gender','h-50')
+                      span.profile-info__gray-text Мужской
+                    +choose-block('gender','h-50')
+                      span.profile-info__gray-text Женский
             +content-block('p-mob')
               .your-adress
                 h3 Ваш адрес
-                .profile-card__description
-                  p Улица
+                .profile-info
+                  p.profile-info__label--m-top Улица
                   +field-text({
                     helpText: '',
                     attrs: {
                       placeholder: 'Название улицы'
                     }
                   })
-                .profile-card__description
-                  p Дом
+                .profile-info
+                  p.profile-info__label--m-top Дом
                   +field-text({
                     helpText: '',
                     attrs: {
                       placeholder: 'Номер дома'
                     }
                   })
-                .profile-card__description
-                  p Квартира
+                .profile-info
+                  p.profile-info__label--m-top Квартира
                   +field-text({
                     helpText: '',
                     attrs: {
                       placeholder: 'Номер квартиры'
                     }
                   })
-                .profile-card__description
-                  p Почтовый индекс
+                .profile-info
+                  p.profile-info__label--m-top Почтовый индекс
                   +field-text({
                     helpText: '',
                     attrs: {
                       placeholder: 'Номер'
                     }
                   })
-          .content__inner
+          .content__inner.content__inner--none-margin
             +content-block('p-mob')
               +btn('Применить изменения','accent')

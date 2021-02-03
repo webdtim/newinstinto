@@ -26,7 +26,7 @@ block content
                   li
                     a(href='changeprofile.html') Мои данные
                   li
-                    a(href='#') Мои заказы
+                    a(href='my-order.html') Мои заказы
                   li
                     a(href='#') Желаемое <span>(8)</span>
                   li
@@ -69,21 +69,26 @@ block content
             +content-block('large')
               .profile-card__title Ваши данные
             +content-block
-              .profile-card__description
-                p ФИО: <span>Абдулаев Тимур Мурадович</span>
-                p E-mail: <span>webdtim@gmail.com</span>
-                p Мобильный: <span>+7 989 474-43-84</span>
+              .profile-info
+                p.profile-info__label ФИО:
+                  span.profile-info__bold Абдулаев Тимур Мурадович
+                p.profile-info__label E-mail:
+                  span.profile-info__bold webdtim@gmail.com
+                p.profile-info__label Мобильный:
+                  span.profile-info__bold +7 989 474-43-84
             +content-block
-              .profile-card__description
-                p пол: <span>Мужской</span>
-                p Дата рождения: <span>06.09.1995</span>
-                p Пароль:
-                  a(href='changeprofile.html')  изменить
+              .profile-info
+                p.profile-info__label пол:
+                  span.profile-info__bold Мужской
+                p.profile-info__label Дата рождения:
+                  span.profile-info__bold 06.09.1995
+                p.profile-info__label Пароль:
+                  a.profile-info__accent(href='changeprofile.html')  изменить
             +content-block('large')
               .profile-card__title Ваш адрес
-              .profile-card__description
-                h5 Абдулаев Тимур Мурадович
+              .profile-info
+                p Абдулаев Тимур Мурадович
                 p микрорайон 4, приморский жилой район, 374935, Махачкала (Дагестан), кв 39
                 p +7 988 302-92-92
             +content-block
-              +btn('Редактировать', 'white')(href='changeprofile.html')
+              +btn('Редактировать', 'white, m-t')(href='changeprofile.html')

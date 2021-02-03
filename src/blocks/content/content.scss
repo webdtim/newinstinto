@@ -121,5 +121,20 @@
     &--none-margin {
       margin: 0;
     }
+
+    &--order {
+
+      @media (min-width: $screen-md) {
+        grid-column-gap: 20px;
+      }
+
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      @media (min-width: $screen-xxl) {
+        grid-column-gap: 40px;
+      }
+    }
   }
 }

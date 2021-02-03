@@ -1,0 +1,54 @@
+// В этом файле должны быть стили для БЭМ-блока product-modal, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.product-modal {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 20px;
+
+  &__img {
+    width: 75px;
+    height: 105px;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 20px;
+
+    @media (min-width: $screen-lg) {
+      margin: 0 20px;
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &__size-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+
+    @media (min-width: $screen-lg) {
+      margin-right: 40px;
+    }
+  }
+
+  &__label {
+
+    span {
+      margin-left: 5px;
+      font-weight: 500;
+    }
+  }
+}

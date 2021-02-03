@@ -1,0 +1,117 @@
+// В этом файле должны быть стили для БЭМ-блока order-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.order-card {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: span 2;
+  margin-bottom: 40px;
+  padding: 20px;
+  font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  @media (min-width: $screen-lg) {
+    
+  }
+
+  @media (min-width: $screen-xxl) {
+    padding: 40px 50px;
+  }
+
+  &__number {
+    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &__status {
+
+    span {
+      margin-left: 5px;
+    }
+  }
+
+  &__sucsess {
+    color: $green;
+  }
+
+  &__danger {
+    color: $red;
+  }
+
+  &__wait {
+    color: $orange;
+  }
+
+  &__img-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  &__img {
+    overflow: hidden;
+    width: 43px;
+    height: 60px;
+    margin-right: 10px;
+
+    &--more {
+      position: relative;
+    }
+  }
+
+  &__more-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 10px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  &__action {
+    //модификация блока
+    .btn:first-child {
+      margin-bottom: 20px;
+    }
+
+    width: 100%;
+    margin-top: 30px;
+
+    @media (min-width: $screen-sm) {
+      width: 170px;
+    }
+
+    @media (min-width: $screen-md) {
+      width: 100%;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: auto;
+      margin-top: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 220px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 250px;
+    }
+
+    @media (min-width: $screen-big) {
+      min-width: 290px;
+    }
+  }
+}

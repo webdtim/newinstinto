@@ -50,32 +50,5 @@
     @media (min-width: $screen-lg) {
       margin-bottom: 0;
     }
-
-    p {
-      margin-bottom: 5px;
-
-      span,
-      a {
-        padding-left: 10px;
-      }
-    }
-
-    span {
-      font-weight: 500;
-    }
-
-    a {
-      color: $color-accent;
-    }
-  }
-
-  &__select-wrapper {
-    display: grid;
-    grid-template-columns: 0.5fr 0.85fr 0.65fr;
-    grid-column-gap: 10px;
-
-    .select{
-      margin: 10px 0;
-    }
   }
 }

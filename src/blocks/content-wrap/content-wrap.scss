@@ -54,4 +54,18 @@
       order: inherit;
     }
   }
+
+  &--order {
+
+    @media (min-width: $screen-md) {
+      grid-template-columns: 1fr;
+      grid-column: span 1;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr;
+      grid-column-gap: 40px;
+      grid-column: span 2;
+    }
+  }
 }

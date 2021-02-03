@@ -1,0 +1,57 @@
+// В этом файле должны быть стили для БЭМ-блока profile-info, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.profile-info {
+
+  $block-name:                &; // #{$block-name}__element
+
+  width: 100%;
+  margin: 10px 0;
+  font-size: 18px;
+
+  @media (min-width: $screen-lg) {
+    margin: 20px 0;
+    margin-bottom: 0;
+  }
+
+  &__label {
+    margin-bottom: 20px;
+  }
+
+  &__label--m-top {
+    margin-bottom: 0;
+  }
+
+  &__bold {
+    font-weight: 500;
+    margin-left: 15px;
+  }
+
+  &__accent {
+    color: $color-accent;
+    margin-left: 15px;
+  }
+
+  &__gray-text {
+    color: $gray-light;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__select-wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 0.85fr 0.65fr;
+    grid-column-gap: 10px;
+
+    .select{
+      margin: 10px 0;
+    }
+  }
+
+  &__gender {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+  }
+}

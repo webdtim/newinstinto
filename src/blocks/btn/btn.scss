@@ -132,8 +132,12 @@
     border: 1px solid $gray-lightest;
   }
 
-  &--blank {
+  &--black {
+    color: #fff;
+    background-color: $black;
+  }
 
+  &--blank {
     background-color: transparent;
     border: 0;
   }
@@ -158,5 +162,9 @@
   &--small-text {
     font-size: 14px;
     padding-bottom: 0;
+  }
+
+  &--m-t {
+    margin-top: 30px;
   }
 }

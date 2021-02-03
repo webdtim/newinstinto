@@ -1,0 +1,116 @@
+// В этом файле должны быть стили для БЭМ-блока show-order, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.show-order {
+
+  $block-name:                &; // #{$block-name}__element
+
+  padding: 15px 0;
+  background-color: $gray-fb;
+
+  @media (min-width: $screen-xl) {
+    grid-column: span 2;
+  }
+
+  // модификация блока
+  .btn {
+    align-self: center;
+    margin-top: 20px;
+
+    @media (min-width: $screen-lg) {
+      margin-top: 0;
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $screen-big) {
+      margin: 0 50px;
+      padding: 25px 0;
+
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--border {
+      grid-template-columns: 1fr;
+      margin: 0;
+      padding: 15px 20px 25px;
+
+      @media (min-width: $screen-lg) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @media (min-width: $screen-big) {
+        margin: 0;
+        padding: 25px 50px 35px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  &__block {
+    grid-column: span 1;
+
+    &--full {
+      grid-column: span 2;
+    }
+
+    &--center {
+      align-self: center;
+    }
+
+    &--product {
+      display: grid;
+      grid-column: span 2;
+      grid-template-columns: 1fr;
+
+      @media (min-width: $screen-xxl) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+
+    &--regular {
+      font-weight: 400;
+    }
+  }
+
+  &__value {
+    margin-left: 5px;
+    font-weight: 400;
+
+    &--bold {
+      font-weight: 500;
+    }
+  }
+
+  &__price-total {
+    font-size: 48px;
+    font-weight: 500;
+  }
+
+  &__text-bold {
+    
+  }
+}

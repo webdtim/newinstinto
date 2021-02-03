@@ -1,0 +1,148 @@
+extends ../pug/layout.pug
+
+block meta
+  title Личный кабинет
+  meta(name='description', content='')
+
+
+block content
+  .content
+    .content__container
+      +breadcrumbs
+        +breadcrumbs-item('Главная', 'index.html')
+        +breadcrumbs-item('Личный кабинет')
+      main.content__main
+        .content__inner
+          +content-block('full-width')
+            .content-block__text-wrapper
+              h2 Заказы
+        .content__inner
+          +content-block('full-width')
+            .content-block__text-wrapper
+              +categories-list
+                ul.categories-list__wrap
+                  li
+                    a(href='profile.html') Кабинет
+                  li
+                    a(href='changeprofile.html') Мои данные
+                  li
+                    a.categories-list__active(href='my-order.html') Мои заказы
+                  li
+                    a(href='#') Желаемое <span>(8)</span>
+                  li
+                    a(href='#') Подарочный сертификат
+        .content__inner
+          +content-block('full-width')
+            .content-block__text-wrapper
+              h3 Всего 4 заказа
+        .content__inner.content__inner--order
+          .content-wrap.content-wrap--order
+            .order-card
+              .order-card__info
+                .order-card__number.order-card__danger Заказ №:
+                  span 482750106
+                .order-card__status Статус:
+                  span.order-card__danger Не оплачено
+                p 9 марта 2020
+                .order-card__img-wrap
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img
+                    img(src='img/img2.jpg', alt='Название товара')
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img.order-card__img--more
+                    .order-card__more-img +
+                      span 2
+                    img(src='img/order-item-1.png', alt='Название товара')
+              .order-card__action
+                +btn('Смотреть заказ','white')
+                +btn('Оплатить', 'accent')
+            .order-card
+              .order-card__info
+                .order-card__number Заказ №:
+                  span 482750106
+                .order-card__status Статус:
+                  span.order-card__sucsess Получен
+                p 9 марта 2020
+                .order-card__img-wrap
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img
+                    img(src='img/img2.jpg', alt='Название товара')
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img.order-card__img--more
+                    .order-card__more-img +
+                      span 2
+                    img(src='img/order-item-1.png', alt='Название товара')
+              .order-card__action
+                +btn('Возврат','white')
+                +btn('Смотреть заказ', 'black')
+            .order-card
+              .order-card__info
+                .order-card__number Заказ №:
+                  span 482750106
+                .order-card__status Статус:
+                  span.order-card__wait Ожидается
+                p 9 марта 2020
+                .order-card__img-wrap
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img
+                    img(src='img/img2.jpg', alt='Название товара')
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img
+                    img(src='img/order-item-1.png', alt='Название товара')
+                  .order-card__img.order-card__img--more
+                    .order-card__more-img +
+                      span 2
+                    img(src='img/order-item-1.png', alt='Название товара')
+              .order-card__action
+                +btn('Возврат','white')
+                +btn('Смотреть заказ', 'black')
+          .content-wrap.content-wrap--order
+            .show-order
+              .show-order__inner.show-order__inner--border
+                .show-order__block
+                  .show-order__title Заказ №:
+                    span.show-order__value.show-order__value--bold 482750106
+                  .show-order__label Статус:
+                    span.show-order__value.order-card__wait Ожидается
+                  p 9 марта 2020
+                +btn('Возврат','white')
+              .show-order__inner
+                .show-order__block
+                  p.show-order__label Курьерская доставка
+                .show-order__block
+                  p.show-order__label Оплата наличными
+              .show-order__inner
+                .show-order__block.show-order__block--full
+                  .show-order__label Адрес доставки:
+                  p микрорайон 4, приморский жилой район, 374935, Махачкала (Дагестан), кв 39
+              .show-order__inner
+                .show-order__block
+                  .show-order__label Предполагаемая дата доставки:
+                  p Четверг 12-е марта 2020
+                .show-order__block
+                  .show-order__label Нахибашев О. М.
+                  .show-order__label +7 (988) 302-92-92
+              .show-order__inner
+                .show-order__block.show-order__block--full
+                  .show-order__title 3 товара
+                .show-order__block.show-order__block--product
+                  +product-modal
+                  +product-modal
+                  +product-modal
+              .show-order__inner
+                .show-order__price-total 14 900₽
+                .show-order__block.show-order__block--center
+                  .show-order__label.show-order__label--regular Доставка:
+                    span.show-order__value.show-order__value--bold Бесплатно
+                  .show-order__label.show-order__label--regular Сумма заказа:
+                    span.show-order__value.show-order__value--bold 14 900₽

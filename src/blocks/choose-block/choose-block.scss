@@ -36,5 +36,18 @@
 
   &--active {
     border: 2px solid $color-accent;
+    color: $black;
+
+    // модификация блока
+    .profile-info__gray-text {
+      color: $black;
+    }
+  }
+
+  &--h-50 {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 10px 0;
   }
 }

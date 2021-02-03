@@ -17,8 +17,8 @@
 /* stylelint-disable */
 @font-face {
   font-family: 'Apercu Pro';
-  src: url('fonts/ApercuPro-Regular.woff2') format('woff2'),
-  url('fonts/ApercuPro-Regular.woff') format('woff');
+  src: url('../fonts/ApercuPro-Regular.woff2') format('woff2'),
+  url('../fonts/ApercuPro-Regular.woff') format('woff');
   font-weight: 400;
 }
 
@@ -80,7 +80,7 @@ body {
   font-size: $font-size;
   line-height: $line-height;
   text-align: left;
-  color: $text-color;
+  color: $black;
   background-color: $body-bg;
 
   -webkit-font-smoothing: antialiased;
@@ -233,8 +233,7 @@ blockquote,
 pre,
 address,
 figure {
-  margin-top: 0;
-  margin-bottom: $typo-margin-vertical;
+  margin: 0;
 }
 
 p {
