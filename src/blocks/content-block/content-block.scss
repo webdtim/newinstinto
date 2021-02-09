@@ -245,4 +245,15 @@
       padding: 0;
     }
   }
+
+  &--empty {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    order: 100;
+
+    @media (min-width: $screen-lg) {
+      order: inherit;
+    }
+  }
 }

@@ -107,10 +107,10 @@ block content
                   .your-order__head
                     span Ваш заказ
                   .your-order__price
-                    .your-order__price-big 5 783 ₽
+                    .your-order__price-big 4 000₽
                     .your-order__count-wrap
                       span Ваши вещи - 4
-                      span#total-price 5 783₽
+                      span 4 000₽
                   .your-order__promo-code-wrap
                     svg(width='24px', height='24px')
                       use(xlink:href='img/sprite.svg#icon-gift-grayscale')
@@ -134,7 +134,7 @@ block content
               .free-shipping__indicator
                 .free-shipping__indicator-fill
                   .free-shipping__indicator-point
-            .cart__empty
+            +content-block('empty')
             .cart__info-help
               +info-block
                 .info-block__inner
