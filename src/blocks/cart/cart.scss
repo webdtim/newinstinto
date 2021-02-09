@@ -30,7 +30,12 @@
 
   &__title {
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+
+    @media (min-width: $screen-md) {
+      padding: 0;
+    }
 
     span {
       font-weight: 400;
@@ -49,9 +54,27 @@
     color: $gray;
   }
 
-  &__caption {
+  &__local {
+    padding: 0 20px;
+
+    @media (min-width: $screen-md) {
+      padding: 0;
+    }
+  }
+
+  &__name-group {
+    padding: 0 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
     font-size: 24px;
-    font-weight: 500;
+
+    @media (min-width: $screen-md) {
+      padding: 0;
+    }
+  }
+
+  &__field-title {
+    font-size: 18px;
   }
 
   &__card-wrapper {
@@ -72,9 +95,33 @@
     @media (min-width: $screen-big) {
       grid-template-columns: 1fr 1fr;
     }
+  }
 
-    &--border-none {
-      border-top: none;
+  &__checkout-wrap {
+    display: grid;
+    grid-row-gap: 20px;
+    margin-top: 10px;
+    padding: 0 20px;
+
+    @media (min-width: $screen-md) {
+      padding: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+    }
+
+    @media (min-width: $screen-big) {
+      grid-column-gap: 40px;
+      grid-row-gap: 30px;
+    }
+
+    &--full {
+
+      @media (min-width: $screen-xl) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 
@@ -262,6 +309,7 @@
 
   &__info {
     display: grid;
+    align-self: flex-start;
     grid-column-gap: 20px;
 
     @media (min-width: $screen-xl) {
@@ -279,26 +327,5 @@
 
   &__empty {
     height: 0;
-  }
-
-  &--chekout {
-
-    @media (min-width: $screen-md) {
-      grid-template-columns: 0.7fr 1fr;
-      grid-column-gap: 20px;
-    }
-
-    #{$block-name}__info {
-
-      @media (min-width: $screen-lg) {
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 20px;
-      }
-
-      @media (min-width: $screen-xxl) {
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 40px;
-      }
-    }
   }
 }

@@ -20,9 +20,7 @@
     @include field-text;
 
     @at-root textarea#{&} {
-      $textarea-height: ($line-height * 2) + ($field-padding-vertical * 2);
-      height: auto;
-      min-height: calc(#{$textarea-height} + 2px);
+      height: 100px;
       resize: vertical;
     }
   }

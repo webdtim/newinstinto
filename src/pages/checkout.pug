@@ -11,18 +11,17 @@ block content
         +breadcrumbs-item('Главная', 'index.html')
         +breadcrumbs-item('корзина')
       main.content__main
-        .cart.cart--chekout
+        .cart
           .cart__select
             .cart__title
               h3 Оформление заказа
               .cart__title-info
                 span Пожалуйста, заполните информацию о себе, чтобы мы могли отправить вам заказ.
-            .cart__card-wrapper.cart__card-wrapper--border-none
-              .cart__caption
-                h4 Населеный пункт
-                +locality
-            .cart__card-wrapper.cart__card-wrapper--border-none.choose-block__wrap
-              .cart__name-group Выберите способ доставки
+            .cart__name-group Населеный пункт
+            .cart__local
+              +locality
+            .cart__name-group Выберите способ доставки
+            .cart__checkout-wrap.choose-block__wrap
               +choose-block('delivery')
                 .choose-block__title
                   span Доставка Почтой
@@ -44,8 +43,8 @@ block content
                 .choose-block__info
                   span 1-2 недели
                   span +400₽
-            .cart__card-wrapper.cart__card-wrapper--border-none
-              .cart__name-group Заполните информацию
+            .cart__name-group Заполните информацию
+            .cart__checkout-wrap
               .cart__field-group
                 .cart__field-group-inner
                   .cart__field-title ФИО
@@ -103,6 +102,7 @@ block content
                       placeholder: 'Номер'
                     }
                   })
+            .cart__checkout-wrap.cart__checkout-wrap--full
               .cart__field-group
                 .cart__field-group-inner
                   .cart__field-title Комментарий к заказу
@@ -113,8 +113,8 @@ block content
                       placeholder: 'Может у вас есть какие-нибудь пожелания?'
                     }
                   })
-              .cart__name-group Оплатить с помощью
-            .cart__card-wrapper.cart__card-wrapper--border-none.choose-block__wrap
+            .cart__name-group Оплатить с помощью
+            .cart__checkout-wrap.choose-block__wrap
               +choose-block('methodPay')
                 .choose-block__title
                   span ApplePay  / GooglePay
@@ -128,39 +128,41 @@ block content
                   span Наличными
                 .choose-block__description Распратитесь с курьером при получении товара
           .cart__info
-            +your-order
-              .your-order__inner
-                .your-order__head
-                  span Ваш заказ
-                  a(href='cart.html') изменить заказ
-                .your-order__price
-                  .your-order__price-big 5 783 ₽
-                  .your-order__count-wrap
-                    span Ваши вещи - 4
-                    span#total-price 5 783₽
-                .your-order__promo-code-wrap
-                  svg(width='24px', height='24px')
-                    use(xlink:href='img/sprite.svg#icon-gift-grayscale')
-                  p У вас есть промокод или подарочная карта? <br>Введи ее и получи скидку
-                  +form('subscribe')
-                    +field-text({
-                      helpText: '',
-                      attrs: {
-                        placeholder: 'Промокод на скидку'
-                      }
-                    })
-                    +field-actions()
-                      +btn('Активировать промокод', 'white')
-              .your-order__inner
-                +btn('Перейти к оплате', 'accent')
-            .cart__info-help
-              .free-shipping
+            .your-order__wrap
+              +your-order
+                .your-order__inner
+                  .your-order__head
+                    span Ваш заказ
+                  .your-order__price
+                    .your-order__price-big 4 000₽
+                    .your-order__count-wrap
+                      span Ваши вещи - 4
+                      span 4 000₽
+                  .your-order__promo-code-wrap
+                    svg(width='24px', height='24px')
+                      use(xlink:href='img/sprite.svg#icon-gift-grayscale')
+                    p У вас есть промокод или подарочная карта? <br>Введи ее и получи скидку
+                    +form('promocode')
+                      +field-text({
+                        helpText: '',
+                        attrs: {
+                          placeholder: 'Промокод на скидку'
+                        }
+                      })
+                      +field-actions()
+                        +btn('Активировать промокод', 'white')
+                .your-order__inner
+                  +btn('Оформить заказ', 'accent')(href='checkout.html')
+            .free-shipping
+              .free-shipping__text
                 .free-shipping__title Бесплатная доставка
                 .free-shipping__description Возьмите еще что-нибудь и мы доставим вам товар бесплатно!
                 .free-shipping__range До бесплатной доставки: <span>520₽</span>
-                .free-shipping__indicator
-                  .free-shipping__indicator-fill
-                    .free-shipping__indicator-point
+              .free-shipping__indicator
+                .free-shipping__indicator-fill
+                  .free-shipping__indicator-point
+            +content-block('empty')
+            .cart__info-help
               +info-block
                 .info-block__inner
                   svg(width='30px')
