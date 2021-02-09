@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (old-price)
+
+mixin old-price(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +old-price('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' old-price--' + modsList[i].trim();
+      }
+    }
+
+  span.old-price(class=allMods)&attributes(attributes)
+    =text
+    block

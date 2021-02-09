@@ -26,6 +26,14 @@
   &__inner {
     padding: 30px 50px;
 
+    @media (min-width: $screen-md) {
+      padding: 15px 25px;
+    }
+
+    @media (min-width: $screen-lg) {
+      padding: 30px 50px;
+    }
+
     &:first-child {
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }

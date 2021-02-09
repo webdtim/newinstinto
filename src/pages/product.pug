@@ -45,7 +45,7 @@ block content
             .product-option
               .product-option__inner
                 .product-option__price
-                  .product-option__old-price 4 582 ₽
+                  +old-price('3300₽')
                   .product-option__actual-price
                     span 4 990 ₽
                     +like
@@ -93,11 +93,13 @@ block content
                 img(src='img/product-image.png', alt='фото товара')
                 p Название товара
                 span 2593₽
+                +old-price('3300₽')
             .also-like__img
               a(href='#')
                 img(src='img/product-image.png', alt='фото товара')
                 p Название товара
                 span 2593₽
+                +old-price('3300₽')
             .also-like__img
               a(href='#')
                 img(src='img/product-image.png', alt='фото товара')

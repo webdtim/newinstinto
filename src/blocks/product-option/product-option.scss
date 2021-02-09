@@ -17,11 +17,8 @@
     padding: 0;
   }
 
-  &__old-price {
+  &__price {
     font-size: 24px;
-    font-weight: 400;
-    text-decoration-line: line-through;
-    color: $gray-lighten;
   }
 
   &__actual-price {

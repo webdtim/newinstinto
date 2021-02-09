@@ -112,7 +112,10 @@
   &__card-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+    @media (min-width: $screen-xl) {
+      justify-content: space-between;
+    }
   }
 
   &__card-price {
@@ -122,14 +125,6 @@
 
   &__card-price-actual {
     white-space: nowrap;
-  }
-
-  &__card-price-old {
-    margin-left: 20px;
-    font-weight: 400;
-    text-decoration-line: line-through;
-    white-space: nowrap;
-    color: $gray-light;
   }
 
   &__card-name {
