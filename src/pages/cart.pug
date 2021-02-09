@@ -25,14 +25,14 @@ block content
                     img(src='img/order-item-1.png', alt='название товара')
                   .cart__card-info
                     .cart__card-price
-                      span 4 990₽
+                      span.cart__card-price-actual 4 990₽
                       span.cart__card-price-old 5 783₽
-                    .cart__card-name Название товара
+                    .cart__card-name Black Silk Luxe Bra подушка еще что-то там и это испытание текста в 3 строки
                     .cart__card-action
                       form(name='delete-cart')
                         .cart__card-delete
                           .cart__card-close
-                          span Удалить из корзины
+                          span.cart__card-delete-text Удалить из корзины
                       +like
                 .cart__card-select
                   +select
@@ -52,14 +52,14 @@ block content
                     img(src='img/order-item-1.png', alt='название товара')
                   .cart__card-info
                     .cart__card-price
-                      span 4 990₽
+                      span.cart__card-price-actual 4 990₽
                       span.cart__card-price-old 5 783₽
-                    .cart__card-name Название товара
+                    .cart__card-name Black Silk Luxe Bra подушка
                     .cart__card-action
                       form(name='delete-cart')
                         .cart__card-delete
                           .cart__card-close
-                          span Удалить из корзины
+                          span.cart__card-delete-text Удалить из корзины
                       +like
                 .cart__card-select
                   +select
@@ -79,14 +79,14 @@ block content
                     img(src='img/order-item-1.png', alt='название товара')
                   .cart__card-info
                     .cart__card-price
-                      span 4 990₽
+                      span.cart__card-price-actual 4 990₽
                       span.cart__card-price-old 5 783₽
-                    .cart__card-name Название товара
+                    .cart__card-name Black Silk Luxe Bra подушка еще что-то там и это испытание текста в 3 строки
                     .cart__card-action
                       form(name='delete-cart')
                         .cart__card-delete
                           .cart__card-close
-                          span Удалить из корзины
+                          span.cart__card-delete-text Удалить из корзины
                       +like
                 .cart__card-select
                   +select
@@ -101,39 +101,41 @@ block content
                     option(value='3') 3
                     option(value='4') 4
           .cart__info
-            +your-order
-              .your-order__inner
-                .your-order__head
-                  span Ваш заказ
-                .your-order__price
-                  .your-order__price-big 5 783 ₽
-                  .your-order__count-wrap
-                    span Ваши вещи - 4
-                    span#total-price 5 783₽
-                .your-order__promo-code-wrap
-                  svg(width='24px', height='24px')
-                    use(xlink:href='img/sprite.svg#icon-gift-grayscale')
-                  p У вас есть промокод или подарочная карта? <br>Введи ее и получи скидку
-                  +form('promocode')
-                    +field-text({
-                      helpText: '',
-                      attrs: {
-                        placeholder: 'Промокод на скидку'
-                      }
-                    })
-                    +field-actions()
-                      +btn('Активировать промокод', 'white')
-              .your-order__inner
-                +btn('Оформить заказ', 'accent')(href='checkout.html')
+            .your-order__wrap
+              +your-order
+                .your-order__inner
+                  .your-order__head
+                    span Ваш заказ
+                  .your-order__price
+                    .your-order__price-big 5 783 ₽
+                    .your-order__count-wrap
+                      span Ваши вещи - 4
+                      span#total-price 5 783₽
+                  .your-order__promo-code-wrap
+                    svg(width='24px', height='24px')
+                      use(xlink:href='img/sprite.svg#icon-gift-grayscale')
+                    p У вас есть промокод или подарочная карта? <br>Введи ее и получи скидку
+                    +form('promocode')
+                      +field-text({
+                        helpText: '',
+                        attrs: {
+                          placeholder: 'Промокод на скидку'
+                        }
+                      })
+                      +field-actions()
+                        +btn('Активировать промокод', 'white')
+                .your-order__inner
+                  +btn('Оформить заказ', 'accent')(href='checkout.html')
+            .free-shipping
+              .free-shipping__text
+                .free-shipping__title Бесплатная доставка
+                .free-shipping__description Возьмите еще что-нибудь и мы доставим вам товар бесплатно!
+                .free-shipping__range До бесплатной доставки: <span>520₽</span>
+              .free-shipping__indicator
+                .free-shipping__indicator-fill
+                  .free-shipping__indicator-point
+            .cart__empty
             .cart__info-help
-              .content-block__wrap-mob
-                .free-shipping
-                  .free-shipping__title Бесплатная доставка
-                  .free-shipping__description Возьмите еще что-нибудь и мы доставим вам товар бесплатно!
-                  .free-shipping__range До бесплатной доставки: <span>520₽</span>
-                  .free-shipping__indicator
-                    .free-shipping__indicator-fill
-                      .free-shipping__indicator-point
               +info-block
                 .info-block__inner
                   svg(width='30px')

@@ -1,0 +1,38 @@
+extends ../pug/layout.pug
+
+block meta
+  title Личный кабинет
+  meta(name='description', content='')
+
+
+block content
+  .content
+    .content__container
+      +breadcrumbs
+        +breadcrumbs-item('Главная', 'index.html')
+        +breadcrumbs-item('Личный кабинет', 'profile.html')
+        +breadcrumbs-item('Желаемое')
+      main.content__main
+        .content__inner
+          +content-block('full-width')
+            .content-block__text-wrapper
+              h2 Заказы
+        .content__inner
+          +content-block('full-width')
+            .content-block__text-wrapper
+              +categories-list
+                ul.categories-list__wrap
+                  li
+                    a(href='profile.html') Кабинет
+                  li
+                    a(href='changeprofile.html') Мои данные
+                  li
+                    a.categories-list__active(href='my-order.html') Мои заказы
+                  li
+                    a(href='desired.html') Желаемое <span>(8)</span>
+                  li
+                    a(href='#') Подарочный сертификат
+        .empty
+          .empty__text Ой, тут пусто...<br>Посмотрите наш каталог, вам понравится
+          .empty__btn
+            +btn('Перейти в каталог', 'main')

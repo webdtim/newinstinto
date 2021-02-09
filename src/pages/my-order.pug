@@ -10,7 +10,8 @@ block content
     .content__container
       +breadcrumbs
         +breadcrumbs-item('Главная', 'index.html')
-        +breadcrumbs-item('Личный кабинет')
+        +breadcrumbs-item('Личный кабинет', 'profile.html')
+        +breadcrumbs-item('Заказы')
       main.content__main
         .content__inner
           +content-block('full-width')
@@ -28,7 +29,7 @@ block content
                   li
                     a.categories-list__active(href='my-order.html') Мои заказы
                   li
-                    a(href='#') Желаемое <span>(8)</span>
+                    a(href='desired.html') Желаемое <span>(8)</span>
                   li
                     a(href='#') Подарочный сертификат
         .content__inner

@@ -1,0 +1,32 @@
+// В этом файле должны быть стили для БЭМ-блока empty, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.empty {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+  text-align: center;
+  font-size: 36px;
+
+  @media (min-width: $screen-xl) {
+    font-size: 48px;
+  }
+
+  @media (min-width: $screen-big) {
+    margin: 100px 0;
+    font-size: 64px;
+  }
+
+  &__text {
+    max-width: 880px;
+  }
+
+  &__btn {
+    margin-top: 30px;
+  }
+}

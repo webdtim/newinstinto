@@ -40,7 +40,7 @@ block content
           +content-block
             .content-block__text-wrapper
               //- скрипт в drop-field.js
-              +btn('настроить отображение','white')#catalogDropFilterButton
+              +btn('настроить фильтр','white')#catalogDropFilterButton
         form
           .content__inner.content__inner--none-margin.content__inner--close#catalogFilter
             .drop-field__wrapper
@@ -172,6 +172,7 @@ block content
                   .product-card__price-wrap
                     .product-card__actual-price 2320₽
                     .product-card__old-price 2593₽
+              .product-card__discount -30%
           +content-block
             +product-card
               img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
@@ -179,8 +180,7 @@ block content
                 .product-card__text-wrap
                   .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки. А это уже третья строка.
                   .product-card__price-wrap
-                    .product-card__actual-price 2210₽
-                    .product-card__old-price 2593₽
+                    .product-card__price 2210₽
           +content-block
             +product-card
               img.product-card__img(src='img/product-card-img (3).jpg', alt='альт')
@@ -190,6 +190,7 @@ block content
                   .product-card__price-wrap
                     .product-card__actual-price 1720₽
                     .product-card__old-price 2593₽
+              .product-card__discount -30%
           +content-block
             +product-card
               img.product-card__img(src='img/product-card-img (6).jpg', alt='альт')
@@ -199,6 +200,7 @@ block content
                   .product-card__price-wrap
                     .product-card__actual-price 1320₽
                     .product-card__old-price 2593₽
+              .product-card__discount -30%
           +content-block
             +product-card
               img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
@@ -208,6 +210,7 @@ block content
                   .product-card__price-wrap
                     .product-card__actual-price 2320₽
                     .product-card__old-price 2593₽
+              .product-card__discount -30%
           +content-block
             +product-card
               img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
@@ -217,6 +220,7 @@ block content
                   .product-card__price-wrap
                     .product-card__actual-price 2210₽
                     .product-card__old-price 2593₽
+              .product-card__discount -30%
           +content-block('large')
             +product-card
               img.product-card__img(src='img/product-card-img (2).jpg', alt='альт')
@@ -226,6 +230,7 @@ block content
                   .product-card__price-wrap
                     .product-card__actual-price 1720₽
                     .product-card__old-price 2593₽
+              .product-card__discount -30%
           +content-block
             +product-card
               img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
@@ -235,6 +240,7 @@ block content
                   .product-card__price-wrap
                     .product-card__actual-price 1320₽
                     .product-card__old-price 2593₽
+              .product-card__discount -30%
         //- пагинация
         .pagination__wrapper
             .pagination__btn

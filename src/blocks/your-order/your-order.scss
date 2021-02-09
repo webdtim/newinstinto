@@ -11,6 +11,18 @@
   height: auto;
   background-color: $gray-fb;
 
+  @media (min-width: $screen-xl) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &__wrap {
+    width: 100%;
+    position: relative;
+  }
+
   &__inner {
     padding: 30px 50px;
 

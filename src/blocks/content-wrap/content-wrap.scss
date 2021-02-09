@@ -11,8 +11,12 @@
 
   @media (min-width: $screen-lg) {
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 40px;
+    grid-column-gap: 20px;
     grid-column: span 2;
+  }
+
+  @media (min-width: $screen-xxl) {
+    grid-column-gap: 40px;
   }
 
 

@@ -7,8 +7,20 @@
   $block-name:                &; // #{$block-name}__element
   display: grid;
 
-  @media (min-width: $screen-xl) {
+  @media (min-width: $screen-md) {
+    grid-template-columns: 1.2fr 1fr;
+    grid-column-gap: 20px;
+  }
+
+  @media (min-width: $screen-lg) {
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $screen-xl) {
+    grid-template-columns: 1fr 1.2fr;
+  }
+
+  @media (min-width: $screen-xxl) {
     grid-column-gap: 40px;
   }
 
@@ -44,13 +56,21 @@
 
   &__card-wrapper {
     display: grid;
-    border-top: 1px solid $gray-lightest;
+    grid-template-columns: 0.7fr 0.3fr;
+    grid-column-gap: 10px;
+    position: relative;
     margin-bottom: 20px;
+    border-top: none;
 
     @media (min-width: $screen-xl) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 0.4fr;
       grid-column-gap: 40px;
       margin-bottom: 0;
+      border-top: 1px solid $gray-lightest;
+    }
+
+    @media (min-width: $screen-big) {
+      grid-template-columns: 1fr 1fr;
     }
 
     &--border-none {
@@ -60,13 +80,33 @@
 
   &__card {
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
-    grid-column-gap: 20px;
-    padding: 20px 0;
+    grid-template-columns: 85px 1fr;
+    grid-column-gap: 10px;
+
+    @media (min-width: $screen-sm) {
+      grid-column-gap: 20px;
+    }
+
+    @media (min-width: $screen-md) {
+      grid-column-gap: 10px;
+    }
+
+    @media (min-width: $screen-lg) {
+      grid-template-columns: 100px 1fr;
+      grid-column-gap: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 20px 0;
+    }
   }
 
   &__card-img {
     width: 100%;
+
+    img {
+      width: 100%;
+    }
   }
 
   &__card-info {
@@ -80,21 +120,51 @@
     font-weight: 500;
   }
 
+  &__card-price-actual {
+    white-space: nowrap;
+  }
+
   &__card-price-old {
-    text-decoration-line: line-through;
-    color: $gray-light;
     margin-left: 20px;
+    font-weight: 400;
+    text-decoration-line: line-through;
+    white-space: nowrap;
+    color: $gray-light;
+  }
+
+  &__card-name {
+    font-size: 12px;
+
+    @media (min-width: $screen-md) {
+      font-size: 16px;
+    }
   }
 
   &__card-action {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 10px;
+    font-size: 14px;
     color: $color-accent;
-    cursor: pointer;
+
+    @media (min-width: $screen-xl) {
+      padding-right: 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
     &:hover {
       color: $color-accent-dark;
+    }
+  }
+
+  // модификация блока
+  .like {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: block;
     }
   }
 
@@ -102,23 +172,50 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    width: 180px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+
+    @media (min-width: $screen-xl) {
+      position: static;
+      width: 100%;
+    }
+  }
+
+  &__card-delete-text {
+    display: none;
+
+    @media (min-width: $screen-xl) {
+      display: inline;
+    }
   }
 
   &__card-close {
     position: relative;
-    width: 12px;
-    height: 12px;
-    margin-right: 6px;
+    width: 22px;
+    height: 22px;
+    margin-right: 0;
+
+    @media (min-width: $screen-xl) {
+      width: 12px;
+      height: 12px;
+      margin-right: 6px;
+    }
 
     &:before,
     &:after {
       content: ' ';
       position: absolute;
       left: 5px;
-      width: 1px;
-      height: 12px;
+      width: 1.5px;
+      height: 22px;
       background-color: $black;
+
+      @media (min-width: $screen-xl) {
+        width: 1px;
+        height: 16px;
+      }
     }
 
     &:before {
@@ -132,18 +229,61 @@
 
   &__card-select {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 40px;
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
     align-self: center;
-  }
+    margin-top: 30px;
 
-  &__info {
-    display: grid;
+    @media (min-width: $screen-xl) {
+      margin-top: 0;
+    }
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-big) {
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 40px;
     }
+  }
+
+  // модификация блока, стили находятся в файле блока
+  .select {
+    height: 40px;
+    padding-right: 5px;
+  }
+  .select select {
+    padding-left: 10px;
+  }
+
+  @media (min-width: $screen-xl) {
+    .select {
+      height: 50px;
+      padding-right: 15px;
+    }
+    .select select {
+      padding-left: 20px;
+    }
+  }
+  // конец модификации
+
+  &__info {
+    display: grid;
+    grid-column-gap: 20px;
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: 1.2fr 1fr;
+    }
+
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $screen-big) {
+      grid-column-gap: 40px;
+    }
+  }
+
+  &__empty {
+    height: 0;
   }
 
   &--chekout {
