@@ -22,9 +22,19 @@
   }
 
   &__text-wrap {
-    margin-top: 20px;
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 10px;
     font-size: $font-size-h4;
     text-align: center;
+
+    @media (min-width: $screen-md) {
+      padding: 0;
+    }
+  }
+
+  &__name {
+    line-height: 1.2;
   }
 
   &__price-wrap {
@@ -53,5 +63,29 @@
     padding: 5px 20px;
     background-color: $color-accent;
     color: $white;
+  }
+
+  &__like {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__action {
+    width: 100%;
+    padding: 20px 30px 10px;
+
+    @media (min-width: $screen-big) {
+      padding: 20px 50px 10px;
+    }
+  }
+
+  &__select {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-column-gap: 40px;
+    margin-bottom: 15px;
   }
 }

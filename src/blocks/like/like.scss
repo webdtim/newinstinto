@@ -9,8 +9,10 @@
   margin: 0;
 
   svg {
+    max-width: 22px;
+    max-height: 22px;
     cursor: pointer;
-    fill: none;
+    fill: $white;
 
     @media (min-width: $screen-xl) {
 

@@ -20,12 +20,6 @@
     width: 100%;
     margin-bottom: 10px;
 
-    svg {
-      max-width: 32px;
-      max-height: 38px;
-      // fill: none;
-    }
-
     h3 {
       font-size: 24px;
       font-weight: 500;
@@ -35,6 +29,15 @@
       padding-top: 10px;
       font-weight: 400;
       font-size: 18px;
+    }
+  }
+
+  &__icon {
+    max-width: 32px;
+    max-height: 38px;
+
+    &--no-fill {
+      fill: none;
     }
   }
 }

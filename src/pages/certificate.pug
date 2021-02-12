@@ -1,0 +1,67 @@
+extends ../pug/layout.pug
+
+block meta
+  title Личный кабинет
+  meta(name='description', content='')
+
+
+block content
+  .content
+    .content__container
+      +breadcrumbs
+        +breadcrumbs-item('Главная', 'index.html')
+        +breadcrumbs-item('Личный кабинет', 'profile.html')
+        +breadcrumbs-item('Желаемое')
+      main.content__main
+        .content__inner
+          +content-block('full-width')
+            .content-block__text-wrapper
+              h2 Подарочный сертификат
+        .content__inner
+          +content-block('full-width')
+            .content-block__text-wrapper
+              +categories-list
+                ul.categories-list__wrap
+                  li
+                    a(href='profile.html') Кабинет
+                  li
+                    a(href='changeprofile.html') Мои данные
+                  li
+                    a(href='my-order.html') Мои заказы
+                  li
+                    a(href='desired.html') Желаемое <span>(8)</span>
+                  li
+                    a.categories-list__active(href='certificate.html') Подарочный сертификат
+        .content__inner
+          .certificate
+            img(src='img/Rectangle86.jpg', alt='')
+            .certificate__wrap
+              .certificate__info
+                .certificate__price 1000₽
+                .certificate__text Главное ведь внимание, не так ли?
+              .certificate__btn
+                +btn('подарить', 'black')
+          .certificate
+            img(src='img/Rectangle 289.jpg', alt='')
+            .certificate__wrap
+              .certificate__info
+                .certificate__price 3000₽
+                .certificate__text Главное ведь внимание, не так ли?
+              .certificate__btn
+                +btn('подарить', 'black')
+          .certificate
+            img(src='img/Rectangle 293.jpg', alt='')
+            .certificate__wrap
+              .certificate__info
+                .certificate__price 5000₽
+                .certificate__text Главное ведь внимание, не так ли?
+              .certificate__btn
+                +btn('подарить', 'black')
+          .certificate
+            img(src='img/Rectangle 296.jpg', alt='')
+            .certificate__wrap
+              .certificate__info
+                .certificate__price 10 000₽
+                .certificate__text Главное ведь внимание, не так ли?
+              .certificate__btn
+                +btn('подарить', 'black')

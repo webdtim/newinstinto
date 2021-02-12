@@ -76,7 +76,7 @@ block content
               .cart__card-wrapper
                 .cart__card
                   .cart__card-img
-                    img(src='img/order-item-1.png', alt='название товара')
+                    img(src='img/product-card-img (5).jpg', alt='название товара')
                   .cart__card-info
                     .cart__card-price
                       span.cart__card-price-actual 4 990₽
@@ -138,7 +138,7 @@ block content
             .cart__info-help
               +info-block
                 .info-block__inner
-                  svg(width='30px')
+                  svg.info-block__icon
                     use(xlink:href='img/sprite.svg#icon-shield')
                 .info-block__inner
                   h3 Безопасность
@@ -146,7 +146,7 @@ block content
                   p Оплата производится через официальные сервисы, мы не получаем доступ к вашим картам или кошелькам
               +info-block
                 .info-block__inner
-                  svg(width='34px')
+                  svg.info-block__icon
                     use(xlink:href='img/sprite.svg#icon-mask')
                 .info-block__inner
                   h3 Полная анонимность при доставке
@@ -154,7 +154,7 @@ block content
                   p Транспортная компания и курьеры не будут знать детали заказа.
               +info-block
                 .info-block__inner
-                  svg
+                  svg.info-block__icon.info-block__icon--no-fill
                     use(xlink:href='img/sprite.svg#icon-smile')
                 .info-block__inner
                   h3 Нужна помощь?
