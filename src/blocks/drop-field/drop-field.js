@@ -38,4 +38,5 @@ ready(function(){
   }
 
   if (catalogDropFilterButton) catalogDropFilterButton.addEventListener('click', dropField);
+
 });

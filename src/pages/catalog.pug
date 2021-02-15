@@ -43,119 +43,139 @@ block content
               +btn('настроить фильтр','white')#catalogDropFilterButton
         form
           .content__inner.content__inner--none-margin.content__inner--close#catalogFilter
-            .drop-field__wrapper
-              +content-block
-                +drop-field
-                  .drop-field__inner
-                    .drop-field__title Размер
-                    .drop-field__item-wrapper
-                      .drop-field__item
+            +drop-field
+              .drop-field__wrap-item
+                .drop-field__title.drop-field__title--active Цена
+                .drop-field__body-wrap
+                  .drop-field__body
+                    .drop-field__caption Выберите диапазон
+                    .drop-field__range__wrap
+                      .drop-field__range-input
+                        +field-text
+                        .drop-field__line
+                        +field-text
+                      +range
+                    .drop-field__option-wrap
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span до 1 000₽
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span до 2 000₽
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span до 3 000₽
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span до 5 000₽
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                    .drop-field__accept
-                      +field-actions
-                        +btn('Применить','accent')(type='submit')
-              +content-block
-                +drop-field
-                  .drop-field__inner
-                    .drop-field__title Размер
-                    .drop-field__item-wrapper
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span до 10 000₽
+                  .drop-field__accept
+                    +btn('Применить','accent')(type='submit')
+              .drop-field__wrap-item
+                .drop-field__title Бренд
+                .drop-field__body-wrap
+                  .drop-field__body
+                    .drop-field__caption Выберите интересующий вас бренд
+                    .drop-field__option-wrap
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          input.drop-field__input(name='chek0', type='checkbox')
                           span Пункт меню 1
-                      .drop-field__item
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          input.drop-field__input(name='chek0', type='checkbox')
                           span Пункт меню 1
-                      .drop-field__item
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          input.drop-field__input(name='chek0', type='checkbox')
                           span Пункт меню 1
-                      .drop-field__item
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          input.drop-field__input(name='chek0', type='checkbox')
                           span Пункт меню 1
-                      .drop-field__item
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          input.drop-field__input(name='chek0', type='checkbox')
                           span Пункт меню 1
-                    .drop-field__accept
-                      +field-actions
-                        +btn('Применить','accent')(type='submit')
-              +content-block
-                +drop-field()
-                  .drop-field__inner
-                    .drop-field__title Размер
-                    .drop-field__item-wrapper
-                      .drop-field__item
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          input.drop-field__input(name='chek0', type='checkbox')
                           span Пункт меню 1
-                      .drop-field__item
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
+                          input.drop-field__input(name='chek0', type='checkbox')
                           span Пункт меню 1
-                      .drop-field__item
+                  .drop-field__accept
+                    +btn('Применить','accent')(type='submit')
+              .drop-field__wrap-item
+                .drop-field__title Цвет
+                .drop-field__body-wrap
+                  .drop-field__body
+                    .drop-field__caption Какие цвета вас интересуют?
+                    .drop-field__option-wrap
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Красный
+                        .drop-field__color
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Белый
+                        .drop-field__color
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                    .drop-field__accept
-                      +field-actions()
-                        +btn('Применить','accent')(type='submit')
-              +content-block
-                +drop-field()
-                  .drop-field__inner
-                    .drop-field__title Размер
-                    .drop-field__item-wrapper
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Черный
+                        .drop-field__color
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Синий
+                        .drop-field__color
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Желтый
+                        .drop-field__color
+                  .drop-field__accept
+                    +btn('Применить','accent')(type='submit')
+              .drop-field__wrap-item
+                .drop-field__title Размер
+                .drop-field__body-wrap
+                  .drop-field__body
+                    .drop-field__caption Выберите интересующие вас размеры
+                    .drop-field__option-wrap.drop-field__option-wrap--col2
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Sm
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                      .drop-field__item
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Small
+                      .drop-field__option
                         label.drop-field__input-wrap
-                          input.drop-field__input.drop-field__input--none(name='chek0', type='checkbox')
-                          span Пункт меню 1
-                    .drop-field__accept
-                      +field-actions()
-                        +btn('Применить','accent')(type='submit')
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span EU 75C
+                      .drop-field__option
+                        label.drop-field__input-wrap
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Длинный размер
+                      .drop-field__option
+                        label.drop-field__input-wrap
+                          input.drop-field__input(name='chek0', type='checkbox')
+                          span Oversize
+                  .drop-field__accept
+                    +btn('Таблица размеров','white')
+                    +btn('Применить','accent')(type='submit')
             .drop-field__all-accept
               .content-block__wrap-mob
                 +field-actions

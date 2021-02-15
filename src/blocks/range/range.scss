@@ -1,0 +1,34 @@
+// В этом файле должны быть стили для БЭМ-блока range, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.range {
+
+  $block-name:                &; // #{$block-name}__element
+
+  overflow: visible;
+  width: 100%;
+  height: 6px;
+  border-radius: 20px;
+  background-color: $gray-lightest;
+  
+  &__between {
+    position: absolute;
+    height: 6px;
+    width: 0px;
+    border: none;
+    background-color: #E72378;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: move;
+    transform: translateY(-50%);
+    border: 2px solid $color-accent;
+    background-color: $white;
+    border-radius: 50%;
+  }
+}
