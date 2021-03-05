@@ -6,29 +6,25 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  margin: 0;
+  max-width: 22px;
+  max-height: 22px;
+  cursor: pointer;
+  fill: rgba(255, 255, 255, 0.8);
 
-  svg {
-    max-width: 22px;
-    max-height: 22px;
-    cursor: pointer;
-    fill: $white;
+  @media (min-width: $screen-xl) {
 
-    @media (min-width: $screen-xl) {
-
-      &:hover,
-      :focus {
-        fill: $color-accent-light;
-        stroke-width: 0;
-      }
+    &:hover,
+    :focus {
+      fill: $color-accent-light;
+      stroke-width: 0;
     }
   }
 
-  input {
-    display: none;
+  &__wrap {
+    height: 22px;
   }
 
-  input:checked + svg {
+  &--active {
     fill: $color-accent;
     stroke-width: 0;
   }

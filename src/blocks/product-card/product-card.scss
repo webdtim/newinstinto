@@ -47,6 +47,8 @@
   }
 
   &__img {
+    object-fit: cover;
+    height: 100%;
     width: 100%;
   }
 
@@ -108,8 +110,6 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 24px;
-    height: 24px;
   }
 
   &__action {

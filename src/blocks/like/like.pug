@@ -18,9 +18,9 @@ mixin like(text, mods)
       }
     }
 
-  form.like
-    label
-      input(type='checkbox', checked, name='like')
-      svg
-        use(xlink:href='img/sprite.svg#icon-favorites')
-      block
+  form.like__wrap
+    //- label
+    //-   input(type='checkbox', checked, name='like')
+    svg.like
+      use(xlink:href='img/sprite.svg#icon-favorites')
+    block

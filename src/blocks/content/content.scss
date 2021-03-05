@@ -53,6 +53,7 @@
     @media (min-width: $screen-md) {
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 40px;
+      padding: 0;
     }
 
     @media (min-width: $screen-lg) {
@@ -64,10 +65,11 @@
     }
 
     &--catalog {
+    padding: 0 10px;
 
       @media (min-width: $screen-xs) {
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: 15px;
+        grid-column-gap: 10px;
       }
     }
 
