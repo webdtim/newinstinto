@@ -63,6 +63,14 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
+    &--catalog {
+
+      @media (min-width: $screen-xs) {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 15px;
+      }
+    }
+
     &--mob-hide {
       display: none;
 

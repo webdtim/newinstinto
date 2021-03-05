@@ -185,12 +185,13 @@ block content
                 span 4210 товаров
               +btn('Применить','accent')(type='submit')
         //- контейнер товаров
-        .content__inner
+        .content__inner.content__inner--catalog
           //- блок с товаром
           +content-block
             +product-card
               a.product-card__link(href='product.html')
-                img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
                 .product-card__text-wrap
                   .product-card__name трусики
                   .product-card__price-wrap
@@ -200,7 +201,8 @@ block content
           +content-block
             +product-card
               a.product-card__link(href='product.html')
-                img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
                 .product-card__text-wrap
                   .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки. А это уже третья строка.
                   .product-card__price-wrap
@@ -208,7 +210,8 @@ block content
           +content-block
             +product-card
               a.product-card__link(href='product.html')
-                img.product-card__img(src='img/product-card-img (3).jpg', alt='альт')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (3).jpg', alt='альт')
                 .product-card__text-wrap
                   .product-card__name трусики со средним названием
                   .product-card__price-wrap
@@ -218,7 +221,8 @@ block content
           +content-block
             +product-card
               a.product-card__link(href='product.html')
-                img.product-card__img(src='img/product-card-img (6).jpg', alt='альт')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (6).jpg', alt='альт')
                 .product-card__text-wrap
                   .product-card__name трусики короткие
                   .product-card__price-wrap
@@ -228,7 +232,8 @@ block content
           +content-block
             +product-card
               a.product-card__link(href='product.html')
-                img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
                 .product-card__text-wrap
                   .product-card__name трусики
                   .product-card__price-wrap
@@ -238,7 +243,8 @@ block content
           +content-block
             +product-card
               a.product-card__link(href='product.html')
-                img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/bb6c5dd7181ecb1279338bfae746e292.jpg', alt='альт')
                 .product-card__text-wrap
                   .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки
                   .product-card__price-wrap
@@ -248,7 +254,8 @@ block content
           +content-block('large')
             +product-card
               a.product-card__link(href='product.html')
-                img.product-card__img(src='img/product-card-img (2).jpg', alt='альт')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (2).jpg', alt='альт')
                 .product-card__text-wrap
                   .product-card__name трусики со средним названием
                   .product-card__price-wrap
@@ -258,11 +265,118 @@ block content
           +content-block
             +product-card
               a.product-card__link(href='product.html')
-                img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
                 .product-card__text-wrap
                   .product-card__name трусики короткие
                   .product-card__price-wrap
                     .product-card__actual-price 1320₽
+                    +old-price('3300₽')
+                .product-card__discount -30%
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки. А это уже третья строка.
+                  .product-card__price-wrap
+                    .product-card__price 2210₽
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (3).jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики со средним названием
+                  .product-card__price-wrap
+                    .product-card__actual-price 1720₽
+                    +old-price('3300₽')
+                .product-card__discount -30%
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (6).jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики короткие
+                  .product-card__price-wrap
+                    .product-card__actual-price 1320₽
+                    +old-price('3300₽')
+                  .product-card__discount -30%
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    +old-price('3300₽')
+                .product-card__discount -30%
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/bb6c5dd7181ecb1279338bfae746e292.jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки
+                  .product-card__price-wrap
+                    .product-card__actual-price 2210₽
+                    +old-price('3300₽')
+                .product-card__discount -30%
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки. А это уже третья строка.
+                  .product-card__price-wrap
+                    .product-card__price 2210₽
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (3).jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики со средним названием
+                  .product-card__price-wrap
+                    .product-card__actual-price 1720₽
+                    +old-price('3300₽')
+                .product-card__discount -30%
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/3739abcced147224fdc858ab9f4e1291.jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики короткие
+                  .product-card__price-wrap
+                    .product-card__actual-price 1320₽
+                    +old-price('3300₽')
+                  .product-card__discount -30%
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    +old-price('3300₽')
+                .product-card__discount -30%
+          +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/7a044a1a8bef1634c98a5be13137aac0.jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики с очень длинным названием в целые 2 или даже 3 строки
+                  .product-card__price-wrap
+                    .product-card__actual-price 2210₽
                     +old-price('3300₽')
                 .product-card__discount -30%
         //- пагинация
