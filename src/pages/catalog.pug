@@ -45,15 +45,19 @@ block content
           .content__inner.content__inner--none-margin.content__inner--close#catalogFilter
             +drop-field
               .drop-field__wrap-item
-                .drop-field__title.drop-field__title--active Цена
+                .drop-field__title Цена
                 .drop-field__body-wrap
                   .drop-field__body
                     .drop-field__caption Выберите диапазон
                     .drop-field__range__wrap
                       .drop-field__range-input
-                        +field-text
+                        label.field-text(style='width: 100%;')
+                          span.field-text__input-wrap
+                            input.field-text__input#range__field-1(type='number', min='0', max='10000')
                         .drop-field__line
-                        +field-text
+                        label.field-text(style='width: 100%;')
+                          span.field-text__input-wrap
+                            input.field-text__input#range__field-2(type='number', min='0', max='10000')
                       +range
                     .drop-field__option-wrap
                       .drop-field__option
@@ -177,9 +181,9 @@ block content
                     +btn('Таблица размеров','white')
                     +btn('Применить','accent')(type='submit')
             .drop-field__all-accept
-              .content-block__wrap-mob
-                +field-actions
-                  +btn('Применить','accent')(type='submit')
+              .drop-field__all-search Нашлось:
+                span 4210 товаров
+              +btn('Применить','accent')(type='submit')
         //- контейнер товаров
         .content__inner
           //- блок с товаром

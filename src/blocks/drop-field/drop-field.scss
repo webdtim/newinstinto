@@ -30,19 +30,38 @@
   }
 
   &__all-accept {
-    margin-top: 30px;
+    margin: 30px 20px 0;
+
+    @media (min-width: $screen-md) {
+      margin: 30px 0 0;
+    }
 
     @media (min-width: $screen-xl) {
       margin-top: 40px;
     }
   }
 
+  &__all-search {
+    display: flex;
+    flex-direction: column;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    font-size: 14;
+    color: $gray;
+
+    span {
+      font-size: 24px;
+      color: $black;
+    }
+  }
+
   &__wrap-item {
     position: relative;
-    margin-top: 10px;
+    margin-top: 20px;
+    overflow: hidden;
 
-    @media (min-width: $screen-xl) {
-      margin-top: 20px;
+    &--active {
+      overflow: visible;
     }
   }
 
@@ -86,13 +105,17 @@
 
   &__body-wrap {
     z-index: 20;
-    // position: absolute;
-    // top: 50px;
-    // right: 0;
-    // left: 0;
+    position: absolute;
+    top: -1000px;
+    right: 0;
+    left: 0;
     margin-top: 20px;
     background-color: $white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    &--active {
+      top: 50px;
+    }
   }
 
   &__body {
@@ -163,6 +186,7 @@
     margin-top: 10px;
     padding: 0 20px;
     border: 1px solid $gray-lightest;
+    cursor: pointer;
 
     &--active {
       border: 1px solid $color-accent;
