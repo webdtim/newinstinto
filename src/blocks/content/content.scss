@@ -64,6 +64,14 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
+    &--header {
+      margin-top: 15px;
+
+      @media (min-width: $screen-md) {
+        margin-top: 50px;
+      }
+    }
+
     &--catalog {
     padding: 0 10px;
 

@@ -170,6 +170,14 @@
     grid-column: span 4;
   }
 
+  &--mob-hide {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: grid;
+    }
+  }
+
   &--m-top {
 
     @media (min-width: $screen-xl) {

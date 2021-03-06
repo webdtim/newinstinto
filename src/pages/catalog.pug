@@ -12,12 +12,12 @@ block content
         +breadcrumbs-item('Главная', 'index.html')
         +breadcrumbs-item('Каталог')
       main.content__main
-        .content__inner
+        .content__inner.content__inner--header
           +content-block('full-width')
             .content-block__text-wrapper
               h2 Нижнее белье
-        .content__inner
-          +content-block('big')
+        .content__inner.content__inner--header
+          +content-block('big,mob-hide')
             .content-block__text-wrapper
               +categories-list
                 ul.categories-list__wrap
