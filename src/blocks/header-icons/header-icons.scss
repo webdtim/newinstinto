@@ -48,12 +48,14 @@
       }
 
       #count-basket {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 20px;
         height: 20px;
         background: $black;
-        border-radius: 19px;
+        border-radius: 50%;
         color: $white;
-        text-align: center;
       }
     }
   }

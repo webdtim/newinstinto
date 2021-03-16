@@ -1,0 +1,76 @@
+extends ../pug/layout.pug
+
+block meta
+  title Страница товара
+  meta(name='description', content='')
+
+block content
+  .content
+    .content__container
+      +breadcrumbs
+        +breadcrumbs-item('Главная', 'index.html')
+        +breadcrumbs-item('корзина')
+      main.content__main
+        .cart
+          .cart__select
+            .content-block__wrap-mob
+              .cart__title
+                h3 Ваша корзина
+                .cart__title-info
+                  span Товары, добавленные в корзину резирвируются вами на 60 минут
+            .cart__empty
+              .cart__empty-wrap
+                p Ваша корзина пуста :(
+                .cart__empty-btn
+                  +btn('Посмотреть желаемое', 'white')(href='desired.html')
+                  +btn('Перейти в каталог', 'accent')(href='catalog.html')
+          .cart__info
+            .your-order__wrap
+              +your-order
+                .your-order__inner
+                  .your-order__head
+                    span Ваш заказ
+                  .your-order__price
+                    .your-order__price-big 0 ₽
+                    .your-order__count-wrap
+                      span Корзина пуста :(
+                  .your-order__promo-code-wrap
+                    svg(width='24px', height='24px')
+                      use(xlink:href='img/sprite.svg#icon-gift-grayscale')
+                    p У вас есть промокод или подарочная карта? <br>Введи ее и получи скидку
+                    +form('promocode')
+                      +field-text({
+                        helpText: '',
+                        attrs: {
+                          placeholder: 'Промокод на скидку'
+                        }
+                      })
+                      +field-actions()
+                        +btn('Активировать промокод', 'white')
+                .your-order__inner
+                  +btn('Оформить заказ', 'blocked')(href='checkout.html')
+            .cart__info-help
+              +info-block
+                .info-block__inner
+                  svg.info-block__icon
+                    use(xlink:href='img/sprite.svg#icon-shield')
+                .info-block__inner
+                  h3 Безопасность
+                .info-block__inner
+                  p Оплата производится через официальные сервисы, мы не получаем доступ к вашим картам или кошелькам
+              +info-block
+                .info-block__inner
+                  svg.info-block__icon
+                    use(xlink:href='img/sprite.svg#icon-mask')
+                .info-block__inner
+                  h3 Полная анонимность при доставке
+                .info-block__inner
+                  p Транспортная компания и курьеры не будут знать детали заказа.
+              +info-block
+                .info-block__inner
+                  svg.info-block__icon.info-block__icon--no-fill
+                    use(xlink:href='img/sprite.svg#icon-smile')
+                .info-block__inner
+                  h3 Нужна помощь?
+                .info-block__inner
+                  p У вас возникли вопросы?<br>Обратитесь в нашу службу поддержки клиентов по электронной почте

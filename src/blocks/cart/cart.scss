@@ -326,6 +326,36 @@
   }
 
   &__empty {
-    height: 0;
+    width: 100%;
+    padding: 50px;
+
+    @media (min-width: $screen-big) {
+      padding: 150px 75px;
+    }
+  }
+
+  &__empty-wrap {
+    width: 100%;
+
+    p {
+      padding-bottom: 20px;
+      font-size: 36px;
+      font-weight: 500;
+
+      @media (min-width: $screen-xxl) {
+        padding-bottom: 40px;
+        font-size: 64px;
+      }
+    }
+  }
+
+  &__empty-btn {
+    display: grid;
+    grid-row-gap: 20px;
+
+    @media (min-width: $screen-xxl) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+    }
   }
 }

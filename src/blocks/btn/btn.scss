@@ -137,6 +137,11 @@
     background-color: $black;
   }
 
+  &--blocked {
+    color: #fff;
+    background-color: #D3D3D3;
+  }
+
   &--blank {
     background-color: transparent;
     border: 0;
