@@ -1,0 +1,70 @@
+//- Все примеси в этом файле должны начинаться c имени блока (may-like)
+
+mixin may-like(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +may-like('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' may-like--' + modsList[i].trim();
+      }
+    }
+
+  .may-like(class=allMods)&attributes(attributes)
+    .may-like__inner
+      .may-like__text Вас заинтересует
+    .may-like__inner
+      //- контейнер товаров
+      .content__inner.content__inner--may-like
+        //- блок с товаром
+        +content-block
+          +product-card
+            a.product-card__link(href='product.html')
+              .product-card__img-wrap
+                img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+              .product-card__text-wrap
+                .product-card__name трусики
+                .product-card__price-wrap
+                  .product-card__actual-price 2320₽
+                  +old-price('5 783₽')
+              .product-card__discount -30%
+        +content-block
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__price 5 600₽
+        +content-block
+          +product-card
+            a.product-card__link(href='product.html')
+              .product-card__img-wrap
+                img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+              .product-card__text-wrap
+                .product-card__name трусики
+                .product-card__price-wrap
+                  .product-card__actual-price 2320₽
+                  +old-price('5 783₽')
+              .product-card__discount -30%
+        +content-block
+          +product-card
+            a.product-card__link(href='product.html')
+              .product-card__img-wrap
+                img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+              .product-card__text-wrap
+                .product-card__name трусики
+                .product-card__price-wrap
+                  .product-card__actual-price 2320₽
+                  +old-price('5 783₽')
+              .product-card__discount -30%
+      block

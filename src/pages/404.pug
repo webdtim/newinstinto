@@ -1,21 +1,17 @@
 extends ../pug/layout.pug
 
 block meta
-  title Error 404
+  title Не найдена страница
   meta(name='description', content='')
 
-//- block append head
-//-   link(rel='stylesheet', href='css/some.css')
-
-//- block nav
-//-   +main-nav('-1')
-
 block content
-  h1 Error 404
-  p Page not found.
-
-//- block footer
-//-   p footer
-
-//- block append page-bottom
-//-   script(src='js/some.js')
+  .content
+    .content__container
+      main.content__main
+        .error404
+          .error404__wrap
+            .error404__num 404
+            .error404__info
+              h1.error404__text Такой страницы <br> не существует
+              +btn('перейти в каталог', 'main')(href='catalog.html')
+      +may-like

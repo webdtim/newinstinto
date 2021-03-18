@@ -1,0 +1,59 @@
+// В этом файле должны быть стили для БЭМ-блока error404, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.error404 {
+
+  $block-name:                &; // #{$block-name}__element
+
+  margin-top: 30px;
+  padding-left: 20px;
+
+  @media (min-width: $screen-xl) {
+    margin-top: 80px;
+    padding-left: 0;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: $screen-md) {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__num {
+    font-size: 160px;
+    line-height: 1;
+    color: $gray-lightest;
+
+    @media (min-width: $screen-lg) {
+      font-size: 220px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      font-size: 288px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $screen-md) {
+      margin-left: 40px;
+    }
+  }
+
+  &__text {
+    max-width: 530px;
+    margin-bottom: 20px;
+    font-size: 30px;
+
+    @media (min-width: $screen-lg) {
+      font-size: 60px;
+    }
+  }
+}
