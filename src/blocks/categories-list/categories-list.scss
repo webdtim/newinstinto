@@ -6,7 +6,7 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  display: flex;
+  display: grid;
   margin-bottom: 20px;
 
   &__wrap {

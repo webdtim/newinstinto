@@ -158,5 +158,13 @@
     &--may-like {
       margin-top: 20px;
     }
+
+    &--mob-m {
+      margin-top: 20px;
+
+      @media (min-width: $screen-lg) {
+        margin-top: 50px;
+      }
+    }
   }
 }

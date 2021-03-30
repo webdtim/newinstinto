@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (profile-head)
+
+mixin profile-head(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +profile-head('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' profile-head--' + modsList[i].trim();
+      }
+    }
+
+  .profile-head(class=allMods)&attributes(attributes)
+    .content-block__text-wrapper
+      h2.profile-head__text #{text}
+      block

@@ -13,11 +13,8 @@ block content
         +breadcrumbs-item('Личный кабинет', 'profile.html')
         +breadcrumbs-item('Заказы')
       main.content__main
-        .content__inner
-          +content-block('full-width')
-            .content-block__text-wrapper
-              h2 Заказы
-        .content__inner
+        +profile-head('Мои заказы')
+        .content__inner.content__inner--may-like
           +content-block('full-width')
             .content-block__text-wrapper
               +categories-list
@@ -32,7 +29,7 @@ block content
                     a(href='desired.html') Желаемое <span>(8)</span>
                   li
                     a(href='certificate.html') Подарочный сертификат
-        .content__inner
+        .content__inner.content__inner--mob-m
           +content-block('full-width')
             .content-block__text-wrapper
               h3 Всего 4 заказа

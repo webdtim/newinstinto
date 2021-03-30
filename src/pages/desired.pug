@@ -13,11 +13,8 @@ block content
         +breadcrumbs-item('Личный кабинет', 'profile.html')
         +breadcrumbs-item('Желаемое')
       main.content__main
-        .content__inner
-          +content-block('full-width')
-            .content-block__text-wrapper
-              h2 Желаемое
-        .content__inner
+        +profile-head('Желаемое')
+        .content__inner.content__inner--may-like
           +content-block('full-width')
             .content-block__text-wrapper
               +categories-list
@@ -32,10 +29,8 @@ block content
                     a.categories-list__active(href='desired.html') Желаемое <span>(8)</span>
                   li
                     a(href='certificate.html') Подарочный сертификат
-        .content__inner.content__inner--none-margin
-          +content-block 8 товаров
         //- контейнер товаров
-        .content__inner
+        .content__inner.content__inner--mob-m
           //- блок с товаром
           +content-block
             +product-card

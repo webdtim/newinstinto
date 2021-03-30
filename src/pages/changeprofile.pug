@@ -13,11 +13,8 @@ block content
         +breadcrumbs-item('Личный кабинет', 'profile.html')
         +breadcrumbs-item('Ваши данные')
       main.content__main
-        .content__inner
-          +content-block('full-width')
-            .content-block__text-wrapper
-              h2 Ваши данные
-        .content__inner
+        +profile-head('Мои данные')
+        .content__inner.content__inner--may-like
           +content-block('full-width')
             .content-block__text-wrapper
               +categories-list
@@ -33,7 +30,7 @@ block content
                   li
                     a(href='certificate.html') Подарочный сертификат
         +form('personal-data')
-          .content__inner
+          .content__inner.content__inner--mob-m
             .content-wrap
               +content-block('p-mob')
                 .profile-info
@@ -105,6 +102,14 @@ block content
             +content-block('p-mob')
               .your-adress
                 h3 Ваш адрес
+                .profile-info
+                  p.profile-info__label--m-top Город (Населенный пункт)
+                  +field-text({
+                    helpText: '',
+                    attrs: {
+                      placeholder: 'Название города'
+                    }
+                  })
                 .profile-info
                   p.profile-info__label--m-top Улица
                   +field-text({

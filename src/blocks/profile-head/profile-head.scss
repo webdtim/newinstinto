@@ -1,0 +1,22 @@
+// В этом файле должны быть стили для БЭМ-блока profile-head, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.profile-head {
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__text {
+    margin-top: 20px;
+    font-size: 36px;
+    line-height: 1;
+
+    @media (min-width: $screen-lg) {
+      font-size: 48px;
+    }
+
+    @media (min-width: $screen-big) {
+      font-size: 64px;
+    }
+  }
+}

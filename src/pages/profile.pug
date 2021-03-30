@@ -12,11 +12,8 @@ block content
         +breadcrumbs-item('Главная', 'index.html')
         +breadcrumbs-item('Личный кабинет')
       main.content__main
-        .content__inner
-          +content-block('full-width')
-            .content-block__text-wrapper
-              h2 Личный кабинет
-        .content__inner
+        +profile-head('Личный кабинет')
+        .content__inner.content__inner--may-like
           +content-block('full-width')
             .content-block__text-wrapper
               +categories-list
@@ -31,7 +28,7 @@ block content
                     a(href='desired.html') Желаемое <span>(8)</span>
                   li
                     a(href='certificate.html') Подарочный сертификат
-        .content__inner
+        .content__inner.content__inner--mob-m
           .content-wrap
             +content-block
               .profile-card
