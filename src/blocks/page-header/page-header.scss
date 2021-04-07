@@ -9,6 +9,16 @@
   z-index: 2;
   margin: 0;
   font-size: $font-size-14;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: all .5s ease;
+
+  &--out {
+    transform: translateY(-100%);
+  }
 
   &__inner--padding {
     padding-left: 0;

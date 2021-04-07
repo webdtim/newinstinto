@@ -214,6 +214,9 @@ ready(function(){
 
       function rangeBtnUp() {
         document.removeEventListener('pointermove', rangeBtnMove);
+        inpt1.dispatchEvent(new Event('change'));
+        inpt2.dispatchEvent(new Event('change'));
+        document.removeEventListener('pointerup', rangeBtnUp);
       }
 
       document.addEventListener('pointermove', rangeBtnMove);
@@ -253,5 +256,7 @@ ready(function(){
     // catalogFilter.addEventListener('click', sendAndClose);
     catalogDropFilterButton.addEventListener('click', dropField);
   }
+
+
 
 });

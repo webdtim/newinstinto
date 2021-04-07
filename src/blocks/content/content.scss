@@ -6,6 +6,8 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  margin-top: 50px;
+
   &__container {
     display: grid;
     grid-template-columns: 1fr;

@@ -18,6 +18,7 @@
   }
 
   &__img-wrap {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,9 +79,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
+    white-space: nowrap;
     margin-top: 10px;
     font-weight: 500;
     font-size: 18px;
+    line-height: 1;
   }
 
   &__price {
@@ -99,11 +102,16 @@
 
   &__discount {
     position: absolute;
+    font-size: 12px;
     top: 25%;
     left: 0;
     padding: 5px 20px;
     background-color: $color-accent;
     color: $white;
+
+    @media (min-width: $screen-xl) {
+      font-size: 14px;
+    }
   }
 
   &__like {
