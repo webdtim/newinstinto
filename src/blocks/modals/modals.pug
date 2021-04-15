@@ -255,7 +255,7 @@ mixin modals(text, mods)
                     }
                   })
       .modal__footer.modal__footer--two-buttons
-        +btn('Отправить', 'accent')(data-toggle='modal', data-target='#modal-remind-password-sucсess', data-dismiss='modal', href='#')
+        +btn('Отправить', 'accent')(id='btn-open-remind-pass-succ', href='#')
         +btn('Войти', 'white')(data-toggle='modal', data-target='#modal-log-in', data-dismiss='modal', href='#')
     +modal('modal-remind-password-sucсess', 'Пароль отправлен')
       .modal__body

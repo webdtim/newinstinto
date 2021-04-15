@@ -3,20 +3,20 @@
 const $ = require('jquery');
 
 // Демо событий модальных окон
-$(document).ready(function(){
-  $('#modal-demo-01').on('show.nth.modal', function(){
-    console.log('Модальное окно #modal-demo-01: сработало событие show.nth.modal'); // eslint-disable-line no-console
-  });
-  $('#modal-demo-01').on('shown.nth.modal', function(){
-    console.log('Модальное окно #modal-demo-01: сработало событие shown.nth.modal'); // eslint-disable-line no-console
-  });
-  $('#modal-demo-01').on('hide.nth.modal', function(){
-    console.log('Модальное окно #modal-demo-01: сработало событие hide.nth.modal'); // eslint-disable-line no-console
-  });
-  $('#modal-demo-01').on('hidden.nth.modal', function(){
-    console.log('Модальное окно #modal-demo-01: сработало событие hidden.nth.modal'); // eslint-disable-line no-console
-  });
-});
+// $(document).ready(function(){
+//   $('#modal-demo-01').on('show.nth.modal', function(){
+//     console.log('Модальное окно #modal-demo-01: сработало событие show.nth.modal'); // eslint-disable-line no-console
+//   });
+//   $('#modal-demo-01').on('shown.nth.modal', function(){
+//     console.log('Модальное окно #modal-demo-01: сработало событие shown.nth.modal'); // eslint-disable-line no-console
+//   });
+//   $('#modal-demo-01').on('hide.nth.modal', function(){
+//     console.log('Модальное окно #modal-demo-01: сработало событие hide.nth.modal'); // eslint-disable-line no-console
+//   });
+//   $('#modal-demo-01').on('hidden.nth.modal', function(){
+//     console.log('Модальное окно #modal-demo-01: сработало событие hidden.nth.modal'); // eslint-disable-line no-console
+//   });
+// });
 
 /* ========================================================================
  * Основано на Bootstrap: modal.js v3.3.7
