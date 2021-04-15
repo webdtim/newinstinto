@@ -126,7 +126,7 @@ block content
               +choose-block('methodPay')
                 .choose-block__title
                   span Наличными
-                .choose-block__description Распратитесь с курьером при получении товара
+                .choose-block__description Расплатитесь с курьером при получении заказа
           .cart__info
             .your-order__wrap
               +your-order
@@ -153,7 +153,7 @@ block content
                         +btn('Активировать промокод', 'white')
                 .your-order__inner
                   +btn('Оплатить', 'accent')(href='checkout-success.html')
-            .free-shipping
+            .free-shipping(data-free-ship-price='5000' data-cur-cart-total='4000')
               .free-shipping__text
                 .free-shipping__title Бесплатная доставка
                 .free-shipping__description Возьмите еще что-нибудь и мы доставим вам товар бесплатно!

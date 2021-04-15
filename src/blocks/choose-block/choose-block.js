@@ -7,7 +7,7 @@ ready(function(){
   const chooseBlockWrap = document.querySelector('.choose-block__wrap')
 
   let chooseCheckbox = function(e) {
-    // если клик не по элементу, прерываем
+    // если клик не по элементу
     if (!e.target.closest('.choose-block')) return
 
     const chooseBlock = e.target.closest('.choose-block'),
@@ -16,7 +16,7 @@ ready(function(){
 
     if (e.target.type == 'radio') return
 
-    // если инпут активен, то прерываем функцию
+    // если инпут активен
     if (checkbox.checked === true) return
 
     // удаляем активные классы
@@ -24,9 +24,11 @@ ready(function(){
       allChooseBlock[i].classList.remove('choose-block--active')
     }
 
-    // добавляем активный класс и состояние инпута
+    // добавляем активный класс и меняем состояние инпута
     chooseBlock.classList.add('choose-block--active')
     checkbox.checked = !checkbox.checked
+    // вызываем событие change
+    checkbox.dispatchEvent(new Event('change'))
 
   }
 

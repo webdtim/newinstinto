@@ -10,12 +10,12 @@ ready(function(){
     let changeIndicator = function() {
 
       const indicator = freeShip.querySelector('.free-shipping__indicator-fill'),
-      freeSum = 5000,
+      freeSum = Number(freeShip.dataset.freeShipPrice),
       descrFreeShip = freeShip.querySelector('.free-shipping__description'),
       rangeFreeShip = freeShip.querySelector('.free-shipping__range'),
       priceForFreeShip = rangeFreeShip.querySelector('span')
 
-      let actualSum = document.querySelector('.your-order__price-big').textContent.replace(/\s+/g, '').replace('₽', '')
+      let actualSum = Number(freeShip.dataset.curCartTotal)
 
       let difference = freeSum - actualSum
 
@@ -30,10 +30,12 @@ ready(function(){
         indicator.style.width = 100 / (freeSum / actualSum) + '%'
       }
 
-
-      
     }
 
     changeIndicator()
+
+    // отслеживаем изменение атрибутов
+    let observer = new MutationObserver (() => changeIndicator())
+    observer.observe(freeShip, {attributes: true})
   }
 });
