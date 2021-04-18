@@ -76,10 +76,14 @@
   }
 
   &__title {
-    font-size: $font-size-h3;
+    font-size: 24px;
     line-height: 1.2;
     font-weight: 500;
     color: currentColor;
+
+    @media (min-width: $screen-lg) {
+      font-size: $font-size-h3;
+    }
   }
 
   &__close {
@@ -97,25 +101,11 @@
     max-width: 100%;
     padding: 0 30px;
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 16px;
 
     @media (min-width: $screen-md) {
       padding: 0 50px;
-    }
-
-    td,
-    th {
-      white-space: nowrap;
-      text-align: center;
-      padding: 10px 20px;
-    }
-
-    th {
-      color: $gray;
-    }
-
-    td:nth-child(even) {
-      background-color: $gray-lightest;
+      font-size: 18px;
     }
 
     &--table {
@@ -132,7 +122,48 @@
   }
 
   &__table-container {
+    margin: 0 10px;
+    padding: 10px 0;
     overflow: auto;
+  }
+
+  &__table {
+    width: 100%;
+  }
+
+  &__tr:nth-child(2n) {
+    background-color: $gray-lightest;
+  }
+
+  &__td {
+    white-space: nowrap;
+    text-align: center;
+    padding: 5px 10px;
+  }
+
+  &__th {
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    padding: 5px 15px;
+    color: $gray;
+  }
+
+  &__table-name:first-child {
+    margin-top: 0;
+  }
+
+  &__table-name {
+    margin-top: 20px;
+    padding: 10px 20px 0;
+    font-size: 20px;
+    color: $gray;
+  }
+
+  &__table-desc {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: $gray-light;
   }
 
   &__ankor {

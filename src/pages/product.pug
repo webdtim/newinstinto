@@ -91,8 +91,194 @@ block content
                         '',
                         ''
                       )
-                  +btn('Таблица размеров', 'white')(data-toggle='modal', data-target='#modal-size-table-anais', href='#')
+                  +btn('Таблица размеров', 'white')(data-toggle='modal', data-target='#modal-size-table', href='#')
                   +btn('Добавить в корзину','accent')(type='submit')
+                  +modal('modal-size-table','Название Бренда')
+                    .modal__body.modal__body--table
+                      .modal__table-name Всеобъемлющая таблица размеров
+                      .modal__table-container
+                        table
+                          tr.modal__tr
+                            th.modal__th Размер <br> на сайте
+                            th.modal__th Размер <br> (RU)
+                            th.modal__th Размер <br> (EU)
+                            th.modal__th Обхват груди <br> (см)
+                            th.modal__th Обхват под грудью<br> (см)
+                            th.modal__th Обхват талии<br> (см)
+                            th.modal__th Обхват бедер<br> (см)
+                            th.modal__th Размер чашки
+                            th(colspan='5') 
+                              table.modal__table
+                                tr
+                                  th.modal__th(colspan='5') Размер чашки (обхват груди)
+                                tr
+                                  td.modal__td A
+                                  td.modal__td B
+                                  td.modal__td C
+                                  td.modal__td D
+                                  td.modal__td E
+                            th.modal__th Размер от бренда
+                            th.modal__th Окружность бедра одной ноги <br> (см)
+                            th.modal__th Рост* <br> (см)
+                          tr.modal__tr
+                            td.modal__td S
+                            td.modal__td 36
+                            td.modal__td 42/44
+                            td.modal__td 84-88
+                            td.modal__td 68-72
+                            td.modal__td 62-68
+                            td.modal__td 88-93
+                            td.modal__td A/C
+                            td.modal__td 82-84
+                            td.modal__td 84-86
+                            td.modal__td 86-88
+                            td.modal__td 88-90
+                            td.modal__td 90-92
+                            td.modal__td 1
+                            td.modal__td 90
+                            td.modal__td 168-172
+                          tr.modal__tr
+                            td.modal__td M
+                            td.modal__td 65
+                            td.modal__td 77-79
+                            td.modal__td 79-81
+                            td.modal__td 81-83
+                            td.modal__td 83-85
+                            td.modal__td 85-87
+                            td.modal__td 87-89
+                            td.modal__td 89-91
+                            td.modal__td 91-93
+                            td.modal__td 93-95
+                            td.modal__td 95-97
+                            td.modal__td 97-99
+                          tr.modal__tr
+                            td.modal__td L
+                            td.modal__td 65
+                            td.modal__td 77-79
+                            td.modal__td 79-81
+                            td.modal__td 81-83
+                            td.modal__td 83-85
+                            td.modal__td 85-87
+                            td.modal__td 87-89
+                            td.modal__td 89-91
+                            td.modal__td 91-93
+                            td.modal__td 93-95
+                            td.modal__td 95-97
+                            td.modal__td 97-99
+                          tr.modal__tr
+                            td.modal__td XL
+                            td.modal__td 65
+                            td.modal__td 77-79
+                            td.modal__td 79-81
+                            td.modal__td 81-83
+                            td.modal__td 83-85
+                            td.modal__td 85-87
+                            td.modal__td 87-89
+                            td.modal__td 89-91
+                            td.modal__td 91-93
+                            td.modal__td 93-95
+                            td.modal__td 95-97
+                            td.modal__td 97-99
+                          tr.modal__tr
+                            td.modal__td XXL
+                            td.modal__td 65
+                            td.modal__td 77-79
+                            td.modal__td 79-81
+                            td.modal__td 81-83
+                            td.modal__td 83-85
+                            td.modal__td 85-87
+                            td.modal__td 87-89
+                            td.modal__td 89-91
+                            td.modal__td 91-93
+                            td.modal__td 93-95
+                            td.modal__td 95-97
+                            td.modal__td 97-99
+                      .modal__table-desc *Рост важен только для слитных купальников
+                      .modal__table-name Таблица размеров: Beauty Night
+                      .modal__table-container
+                        table
+                          tr.modal__tr
+                            th.modal__th Размер <br> на сайте
+                            th.modal__th Размер <br> (RU)
+                            th.modal__th Обхват груди <br> (см)
+                            th.modal__th Обхват талии<br> (см)
+                            th.modal__th Обхват бедер<br> (см)
+                          tr.modal__tr
+                            td.modal__td S
+                            td.modal__td 42
+                            td.modal__td 82-86
+                            td.modal__td 63-66
+                            td.modal__td 90-93
+                          tr.modal__tr
+                            td.modal__td M
+                            td.modal__td 44
+                            td.modal__td 86-89
+                            td.modal__td 67-70
+                            td.modal__td 94-97
+                      .modal__table-name Таблица размеров: Obsessive
+                      .modal__table-container
+                        table
+                          tr.modal__tr
+                            th.modal__th Размер <br> на сайте
+                            th.modal__th Размер <br> (EU)
+                            th.modal__th Размер <br> (RU)
+                            th.modal__th Обхват груди <br> (см)
+                            th.modal__th Обхват бедер<br> (см)
+                          tr.modal__tr
+                            td.modal__td S/M
+                            td.modal__td 36/38
+                            td.modal__td 42/44/46
+                            td.modal__td 82-93
+                            td.modal__td 86-97
+                          tr.modal__tr
+                            td.modal__td L/XL
+                            td.modal__td 40/42
+                            td.modal__td 48/50
+                            td.modal__td 93-98
+                            td.modal__td 97-107
+                      .modal__table-name Размер бюстгалтеров, граций, корсетов и сорочек со встроенным бюстгалтером TM JOLIDON (Италия)
+                      .modal__table-container
+                        table
+                          tr.modal__tr
+                            th.modal__th Размер <br> на сайте
+                            th.modal__th Размер <br> TM JOLIDON
+                            th.modal__th Обхват под грудью<br> (см)
+                            th(colspan='7') 
+                              table.modal__table
+                                tr
+                                  th.modal__th(colspan='7') Размер чашки, обхват груди (см)
+                                tr.modal__tr--n-color
+                                  td.modal__td A
+                                  td.modal__td B
+                                  td.modal__td C
+                                  td.modal__td D
+                                  td.modal__td E
+                                  td.modal__td F
+                                  td.modal__td G
+                          tr.modal__tr
+                            td.modal__td 65
+                            td.modal__td 1
+                            td.modal__td 63-67
+                            td.modal__td 77-79
+                            td.modal__td 79-81
+                            td.modal__td 81-83
+                            td.modal__td 83-85
+                            td.modal__td 85-87
+                            td.modal__td 87-89
+                            td.modal__td 89-91
+                          tr.modal__tr
+                            td.modal__td 70
+                            td.modal__td 2
+                            td.modal__td 68-72
+                            td.modal__td 82-84
+                            td.modal__td 84-86
+                            td.modal__td 86-88
+                            td.modal__td 88-90
+                            td.modal__td 90-92
+                            td.modal__td 92-94
+                            td.modal__td 94-96
+                    .modal__footer.modal__footer--table
+                      +btn('Закрыть', 'white')(type='button', data-dismiss='modal')
     .also-like
       .also-like__inner
         +sidebar
