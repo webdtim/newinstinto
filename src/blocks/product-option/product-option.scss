@@ -32,6 +32,7 @@
   }
 
   &__name {
+    margin-top: 10px;
     font-size: 12px;
     color: $gray;
   }
@@ -40,6 +41,10 @@
     margin-top: 20px;
     font-style: 12px;
     font-weight: 500;
+
+    p {
+      margin-bottom: 10px;
+    }
   }
 
   &__color-list {

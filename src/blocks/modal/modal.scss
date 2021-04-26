@@ -231,6 +231,16 @@
       }
     }
   }
+
+  &--certificate {
+
+    .modal__dialog {
+
+      @media (min-width: $screen-lg) {
+        width: 425px;
+      }
+    }
+  }
 }
 
 

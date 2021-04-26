@@ -6,6 +6,7 @@
 
   $block-name:                &; // #{$block-name}__element
 
+  display: none;
   padding: 15px 0;
   background-color: $gray-fb;
 
@@ -112,5 +113,14 @@
 
   &__text-bold {
     
+  }
+
+  &--open {
+    display: grid;
+    position: absolute;
+
+    @media (min-width: $screen-md) {
+      position: static;
+    }
   }
 }

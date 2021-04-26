@@ -64,33 +64,54 @@ block content
                         img(src='img/img1.png', alt='Название товара')
                   .product-option__button-select
                     .product-option__size
-                      +select
-                        option(value='12D', selected) 12D
-                        option(value='75C') 75C
-                        option(value='small') small
-                        option(value='big') big
-                        option(value='12D') 12D
-                    .product-option__count
                       +field-select(
                         '',
                         '',
                         [
                           {
-                            title: 'Опция1',
+                            title: 'Размер 1',
                             attrs: {
-                              value: 'option1',
+                              value: 'size1',
                             }
                           },
                           {
-                            title: 'Опция2',
+                            title: 'Размер 2',
                             attrs: {
-                              value: 'option2',
+                              value: 'size2',
+                            }
+                          },
+                          {
+                            title: 'Размер 3',
+                            attrs: {
+                              value: 'size3',
+                            }
+                          },
+                          {
+                            title: 'Размер 4',
+                            attrs: {
+                              value: 'size4',
+                            }
+                          },
+                          {
+                            title: 'Размер 5',
+                            attrs: {
+                              value: 'size5',
                             }
                           },
                         ],
                         '',
                         ''
                       )
+                    .product-option__count
+                      +field-num({
+                        val: '1',
+                        attrs: {
+                          name: 'quantity',
+                          max: '10',
+                          min: '1',
+                          step: '1',
+                        }
+                      })
                   +btn('Таблица размеров', 'white')(data-toggle='modal', data-target='#modal-size-table', href='#')
                   +btn('Добавить в корзину','accent')(type='submit')
                   +modal('modal-size-table','Название Бренда')
@@ -315,4 +336,5 @@ block content
               h3 Вам также может понравиться
             .info-block__inner
               p В наших подборках только лучшее для вас.
-    +may-like
+    .content__container
+      +may-like

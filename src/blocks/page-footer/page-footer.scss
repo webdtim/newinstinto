@@ -115,4 +115,17 @@
       height: 20px;
     }
   }
+
+  &__cop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 14px;
+    background-color: #f4f4f4;
+  }
+
+  &__cop-item {
+    padding: 10px 20px;
+  }
 }

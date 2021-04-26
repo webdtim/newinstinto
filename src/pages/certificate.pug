@@ -37,7 +37,7 @@ block content
                 .certificate__price 1000₽
                 .certificate__text Главное ведь внимание, не так ли?
               .certificate__btn
-                +btn('подарить', 'black')
+                +btn('подарить', 'black')(data-toggle='modal', data-target='#modal-certificate')
           .certificate
             img(src='img/Rectangle 289.jpg', alt='')
             .certificate__wrap
@@ -62,3 +62,38 @@ block content
                 .certificate__text Главное ведь внимание, не так ли?
               .certificate__btn
                 +btn('подарить', 'black')
+        .modal(id='modal-certificate', class='modal--certificate', tabindex='-1', role='dialog')
+          .modal__dialog(role='document')
+            .modal__content
+              .modal__header
+                span.close.modal__close(data-dismiss='modal', aria-label='Закрыть') #[span]
+              .modal__body
+                .certificate__modal-block
+                  label.certificate__modal-label E-mail получателя
+                    +field-text({
+                      attrs: {
+                        placeholder: 'email@example'
+                      }
+                    })
+                .certificate__modal-block
+                  label.certificate__modal-label Кому дарим?
+                    +field-text({
+                      attrs: {
+                        placeholder: 'ФИО'
+                      }
+                    })
+                .certificate__modal-block
+                  label.certificate__modal-label От?
+                    +field-text({
+                      attrs: {
+                        placeholder: 'Ваше Имя'
+                      }
+                    })
+                .certificate__modal-block
+                  label.certificate__modal-label Пожелания?
+                    +field-text({
+                      isTextarea: true,
+                      attrs: {
+                        placeholder: 'Сопроводительное сообщение'
+                      }
+                    })

@@ -192,7 +192,7 @@ html(class='page  no-js', lang='ru')
                     svg
                       use(xlink:href='img/sprite.svg#icon-vk')
         .page-footer__inner
-          +content-block
+          +content-block('mob-hide')
             .content-block__wrap-mob
               .header-catalog__group
                 .header-catalog__group-title
@@ -206,7 +206,7 @@ html(class='page  no-js', lang='ru')
                     a Работай у нас
                   .header-catalog__item
                     a FAQ
-          +content-block
+          +content-block('mob-hide')
             .content-block__wrap-mob
               .header-catalog__group
                 .header-catalog__group-title
@@ -220,7 +220,7 @@ html(class='page  no-js', lang='ru')
                     a Размерная сетка
                   .header-catalog__item
                     a Скидки
-          +content-block
+          +content-block('mob-hide')
             .content-block__wrap-mob
               .header-catalog__group
                 .header-catalog__group-title
@@ -243,11 +243,9 @@ html(class='page  no-js', lang='ru')
                   .header-catalog__item
                     a Если у вас возникли вопросы, вы всегда можете связаться с нами.
                 +btn('Написать в поддержку','white, small-text')(href='#')
-        .page-footer__inner.page-footer__inner--bg-gray
-          +content-block
-            .content-block__wrap-mob © Instinto, 2021
-          +content-block
-            .content-block__wrap-mob store@instinto.ru
+      .page-footer__cop
+        .page-footer__cop-item © Instinto, 2021
+        .page-footer__cop-item store@instinto.ru
     +modals
 
     block page-bottom
