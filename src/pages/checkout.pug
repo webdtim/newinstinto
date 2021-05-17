@@ -22,7 +22,7 @@ block content
               +locality
             .cart__name-group Выберите способ доставки
             .cart__checkout-wrap.choose-block__wrap
-              +choose-block('delivery')
+              +choose-block('delivery').choose-block--active
                 .choose-block__title
                   span Доставка Почтой
                 .choose-block__description Вы получите товар в ближайшем к вам почтовом отделении вашего города.
@@ -115,7 +115,7 @@ block content
                   })
             .cart__name-group Оплатить с помощью
             .cart__checkout-wrap.choose-block__wrap
-              +choose-block('methodPay')
+              +choose-block('methodPay').choose-block--active
                 .choose-block__title
                   span ApplePay  / GooglePay
                 .choose-block__description Оплати со своего телефона

@@ -20,11 +20,11 @@ mixin choose-block(text, mods)
 
   .choose-block(class=allMods)&attributes(attributes)
     +field-radio([
-          {
-            helpText: '',
-            attrs: {
-              name: text,
-            }
-          },
-        ])
+      {
+        helpText: '',
+        attrs: {
+          name: text,
+        }
+      },
+    ])
     block

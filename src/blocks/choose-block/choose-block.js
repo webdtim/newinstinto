@@ -28,8 +28,11 @@ ready(function(){
     chooseBlock.classList.add('choose-block--active')
     checkbox.checked = !checkbox.checked
     // вызываем событие change
-    checkbox.dispatchEvent(new Event('change'))
-
+    // checkbox.change(() => console.log('change'))
+    // checkbox.dispatchEvent(new Event('change'), {
+    //   bubbles: true,
+    //   cancelable: true
+    // })
   }
 
   if (chooseBlockWrap){

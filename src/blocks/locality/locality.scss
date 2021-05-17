@@ -38,3 +38,26 @@
     }
   }
 }
+
+// модификация элемента bitrix
+.bx-sls {
+  height: 100%;
+}
+
+.bx-sls .dropdown-block {
+  border: none !important;
+  border-radius: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  font-size: 14px;
+  padding: 0 0 0 15px !important;
+  width: 240px;
+}
+
+.bx-sls .dropdown-icon {
+  display: none !important;
+}
+
+.bx-sls .bx-ui-sls-fake, .bx-sls .bx-ui-sls-route {
+  height: 50px !important;
+}
