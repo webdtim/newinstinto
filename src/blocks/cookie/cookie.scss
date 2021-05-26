@@ -6,15 +6,51 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  // position: fixed;
-  // bottom: 0;
-  // left: 0;
-  // right: 0;
-  // height: 10%;
-  // background-color: $gray;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-height: 60px;
+  background-color: #FCFCFC;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  z-index: 100;
 
-  // &__container {
-  //   display: grid;
-  //   grid-template-columns: 1fr 250px;
-  // }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__caption {
+    display: flex;
+    align-self: center;
+
+    &-text {
+      font-size: $font-size-xs;
+      color: $gray;
+      align-self: center;
+      display: flex;
+
+      span {
+
+        @media (min-width: $screen-xs) {
+          display: none;
+        }
+
+        @media (min-width: $screen-sm) {
+          display: block;
+        }
+
+        @media (min-width: $screen-md) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-self: center;
+  }
 }

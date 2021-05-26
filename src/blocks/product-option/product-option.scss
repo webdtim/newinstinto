@@ -22,13 +22,21 @@
   }
 
   &__actual-price {
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 20px;
     font-size: 48px;
     font-weight: 500;
+  }
+
+  &__like {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   &__name {

@@ -19,17 +19,19 @@
 
   &__text-wrapper {
     order: 1;
-    width: 100%;
+    width: calc(100% - 20px);
     padding-left: $m-def;
     padding-right: $m-def;
 
     @media (min-width: $screen-xs) {
+      width: calc(100% - 40px);
       padding-left: $m-md;
       padding-right: $m-md;
     }
 
     @media (min-width: $screen-md) {
       order: 2;
+      width: 100%;
       padding-left: 0;
       padding-right: 0;
     }

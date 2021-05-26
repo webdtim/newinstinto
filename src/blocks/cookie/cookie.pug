@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (cookie)
+
+mixin cookie(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +cookie('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' cookie--' + modsList[i].trim();
+      }
+    }
+
+  .cookie(class=allMods)&attributes(attributes)#cookie-panel
+    .cookie__container
+      .cookie__inner
+        .cookie__caption
+          .cookie__caption-text Наш сайт использует файлы cookie <span> и другие технологии для вашего удобства пользования сайтом, анализа использования наших товаров и услуг и повышения качества рекомендаций.&nbsp; </span><a href="#modal-profile" data-toggle="modal"> Подробнее </a>
+        .cookie__action
+          +btn('Хорошо')#cookie-btn

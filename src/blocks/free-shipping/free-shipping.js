@@ -20,12 +20,12 @@ ready(function(){
       let difference = freeSum - actualSum
 
       if (difference <= 0) {
-        // Если сумма заказа больше или равна freeSum (5000)
+        // Если сумма заказа больше или равна freeSum
         descrFreeShip.textContent = 'Вам доступна бесплатная Доставка!'
         rangeFreeShip.textContent = 'Ура! Доставка будет БЕСПЛАТНОЙ'
         indicator.style.width = '100%'
       } else {
-        // Если сумма заказа меньше freeSum (5000)
+        // Если сумма заказа меньше freeSum
         priceForFreeShip.textContent = difference + '₽'
         indicator.style.width = 100 / (freeSum / actualSum) + '%'
       }
