@@ -1,0 +1,36 @@
+extends ../pug/layout.pug
+
+block meta
+  title Заказ ожидает оплаты
+  meta(name='description', content='')
+
+block content
+  .content
+    .content__container
+      .cart-success__container
+        .cart-success
+          .cart-success__caption
+            h2.wait Ваш заказ сформирован и ожидает оплаты.
+          .cart-success__caption Если окно оплаты не открылось автоматически, пожалуйста нажмите на кнопку ниже.
+          .cart-success__info
+            .cart-success__text-wrap
+              .cart-success__text
+                .cart-success__text-inner
+                  span.cart-success__text-info Заказ №:
+                  span.cart-success__text-info 482750106
+                .cart-success__text-inner
+                  span.cart-success__text-info Дата Заказа:
+                  span.cart-success__text-info 06 март, 2020
+              .cart-success__text
+                .cart-success__text-inner
+                  span.cart-success__text-info Доставка:
+                  span.cart-success__text-info Бесплатно
+                .cart-success__text-inner
+                  span.cart-success__text-info Итого:
+                  span.cart-success__text-info 10 930₽
+            .cart-success__btn-wrap
+              .cart-success__btn
+                +btn('Вернуться в каталог','accent')(href='catalog.html')
+              .cart-success__btn
+                +btn('Информация о возврате','white')(href='#')
+      +may-like
