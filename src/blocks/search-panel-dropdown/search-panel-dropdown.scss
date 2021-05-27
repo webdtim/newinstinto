@@ -81,7 +81,7 @@
 .search-panel-dropdown-item {
   display: flex;
   align-items: center;
-  height: 50px;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
   &__image {
@@ -99,6 +99,7 @@
 
   &__text {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     padding-left: 10px;
