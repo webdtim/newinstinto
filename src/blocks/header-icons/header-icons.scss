@@ -37,7 +37,8 @@
 
     @media (min-width: $screen-xl) {
       // показываем текст иконок на десктопе
-      display: inline-flex;
+      display: flex;
+      align-items: center;
       // стилизация счётчиков
       div {
         margin-left: 10px;
