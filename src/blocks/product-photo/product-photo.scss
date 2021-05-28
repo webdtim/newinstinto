@@ -10,12 +10,14 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 0;
+  padding-top: 141.66667%;
   margin-bottom: 30px;
   overflow: hidden;
 
   @media (min-width: $screen-md) {
     height: auto;
+    padding-top: 0;
     overflow: visible;
     margin-bottom: 0;
   }
@@ -29,6 +31,7 @@
     top: 0;
     left: 0;
     width: 4000px;
+    height: 100%;
     transition: 0.5s;
 
     // размещаем элементы по сетке на широкихх экранах
@@ -38,28 +41,47 @@
       grid-column-gap: 40px;
       position: static;
       width: 100%;
+      height: auto;
     }
   }
 
   &__img {
     display: block;
+    position: relative;
     width: 100vw;
+    height: 100%;
     overflow: hidden;
 
     @media (min-width: $screen-md) {
       width: 100%;
+      height: auto;
       overflow: visible;
       margin-bottom: 40px;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @media (min-width: $screen-md) {
+        position: static;
+      }
     }
   }
 
   &__ellips-wrap {
     display: flex;
+    justify-content: center;
     flex-wrap: nowrap;
-    justify-content: space-between;
     position: absolute;
     bottom: 20px;
-    width: 40%;
+    width: 100%;
 
     @media (min-width: $screen-md) {
       display: none;
@@ -69,9 +91,14 @@
   &__ellips {
     width: 16px;
     height: 16px;
+    margin-left: 16px;
     border-radius: 50%;
     border: 1px solid $gray-lightest;
     background-color: $white;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &--active {
       border: none;

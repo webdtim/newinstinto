@@ -23,6 +23,7 @@ ready(function(){
 
       // создаем переключатели карусели
       let createSlide = function() {
+        if (gallery.children.length <= 1) return
         for (let i = 0; i < gallery.children.length; i++) {
           sliderswitch.insertAdjacentHTML('beforeend', '<div class="product-photo__ellips"></div>')
         }
@@ -80,7 +81,6 @@ ready(function(){
           }
         }
       };
-
 
       let choseSlide = function(e) {   
       // Удаляем активные классы и переключаем на нужный слайд
