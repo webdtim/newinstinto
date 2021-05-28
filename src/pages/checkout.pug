@@ -65,12 +65,9 @@ block content
                   })
                 .cart__field-group-inner
                   .cart__field-title Мобильный телефон
-                  +field-text({
-                    helpText: '',
-                    attrs: {
-                      placeholder: 'К примеру: +7 (000) 000-00-00'
-                    }
-                  })
+                  label.field-text
+                    span.field-text__input-wrap
+                      input.field-text__input(placeholder='К примеру: +7 (000) 000-00-00', type="tel")
                 .cart__field-group-inner
                   .cart__field-title Ваша электронная почта
                   +field-text({

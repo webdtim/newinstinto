@@ -43,12 +43,9 @@ block content
                   })
                 .profile-info
                   p.profile-info__label--m-top Мобильный телефон (для статуса заказа)
-                  +field-text({
-                    helpText: '',
-                    attrs: {
-                      placeholder: 'К примеру: +7 (000) 000-00-00'
-                    }
-                  })
+                  label.field-text
+                    span.field-text__input-wrap
+                      input.field-text__input(placeholder='К примеру: +7 (000) 000-00-00', type='tel')
               +content-block('p-mob')
                 .profile-info
                   p.profile-info__label--m-top Дата рождения
