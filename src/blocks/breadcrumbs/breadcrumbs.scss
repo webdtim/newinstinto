@@ -30,7 +30,6 @@
   &__item {
     display: inline-block;
     margin-right: 0.6em;
-    white-space: nowrap;
 
     &:not(:last-child):after {
       content: '/';

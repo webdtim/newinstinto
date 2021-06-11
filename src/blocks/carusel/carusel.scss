@@ -1,0 +1,94 @@
+// В этом файле должны быть стили для БЭМ-блока carusel, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.carusel {
+
+  $block-name:                &; // #{$block-name}__element
+
+  width: 100%;
+  overflow: hidden;
+
+  @media (min-width: $screen-xl) {
+    padding: 0;
+  }
+
+
+  &__inner {
+    position: relative;
+    height: 150px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+  }
+
+  &__item-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4000px;
+    height: 100%;
+    transition: 0.5s;
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+  }
+
+  &__img {
+    max-height: 100%;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    padding: 20px 30px 30px 20px;
+    text-align: center;
+    color: $white;
+    background-image: url(../img/carusel-bcg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+  }
+
+  &__ellips-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+  }
+
+  &__ellips {
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: 1px solid #AEAEAE;
+    background-color: $white;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+      
+      &:hover {
+        cursor: pointer;
+        background-color: $gray;
+      }
+    }
+
+    &--active {
+      border: none;
+      background-color: $black;
+    }
+  }
+}

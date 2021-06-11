@@ -89,7 +89,7 @@ html(class='page  no-js', lang='ru')
                   a(href='#') Название категории
             .header-catalog__group
               .header-catalog__group-title
-                a(href='#') Название группы категорий
+                a(href='#') Брафит
                 .header-catalog__angle-down
               .header-catalog__item-wrap
                 .header-catalog__item
@@ -106,7 +106,7 @@ html(class='page  no-js', lang='ru')
                   a(href='#') Название категории
             .header-catalog__group
               .header-catalog__group-title
-                a(href='#') Название группы категорий
+                a(href='#') Эротическое белье
                 .header-catalog__angle-down
               .header-catalog__item-wrap
                 .header-catalog__item
@@ -123,7 +123,7 @@ html(class='page  no-js', lang='ru')
                   a(href='#') Название категории
             .header-catalog__group
               .header-catalog__group-title
-                a(href='#') Название группы категорий
+                a(href='#') Корректирующее белье
                 .header-catalog__angle-down
               .header-catalog__item-wrap
                 .header-catalog__item
@@ -150,11 +150,18 @@ html(class='page  no-js', lang='ru')
 
     +page-footer
       .content__container
-        .page-footer__inner.page-footer__inner--carusel
+        .page-footer__inner.page-footer__inner--padding
           +content-block('large')
-            .content-block__wrap-mob
-              a
-                img(src='img/Rectangle 99.png', alt='discount')
+            +carusel
+              a.carusel__item(href='#')
+                img.carusel__img(src='img/Rectangle 99.png', alt='discount')
+                p.carusel__text Подарочные Сертификаты
+              a.carusel__item(href='#')
+                img.carusel__img(src='img/Rectangle 99.png', alt='discount')
+                p.carusel__text Акция приведи друга и получи скидку
+              a.carusel__item(href='#')
+                img.carusel__img(src='img/Rectangle 99.png', alt='discount')
+                P.carusel__text Проверка максимально вместимого текста, дабы всё не переделывать
           +content-block('large')
             .content-block__wrap-mob
               +subscribe

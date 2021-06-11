@@ -65,8 +65,7 @@
   &__price-wrap {
     display: flex;
     justify-content: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
+    flex-wrap: wrap;
     margin-top: 10px;
     font-weight: 500;
     font-size: 18px;

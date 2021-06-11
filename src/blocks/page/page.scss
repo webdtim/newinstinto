@@ -220,7 +220,13 @@ a {
 }
 
 h1 { font-size: $font-size-h1; } // stylelint-disable-line
-h2 { font-size: $font-size-h2; } // stylelint-disable-line
+h2 { 
+  font-size: 36px;
+
+  @media (min-width: $screen-md) {
+    font-size: $font-size-h2;
+  } 
+} // stylelint-disable-line
 h3 { font-size: $font-size-h3; } // stylelint-disable-line
 h4 { font-size: $font-size-h4; } // stylelint-disable-line
 h5 { font-size: $font-size-h5; } // stylelint-disable-line

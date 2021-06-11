@@ -13,12 +13,14 @@ ready(function(){
 
       changeBtn(e)
 
-      if (document.documentElement.scrollWidth > 650) return
+      if (document.documentElement.scrollWidth > 650) {
 
-      // обнуляем отступ
-      let orderCardArr = document.querySelectorAll('.order-card')
-      for ( let i = 0; i < orderCardArr.length ; i++) {
-        orderCardArr[i].style.marginBottom = '40px'
+      } else {
+        // обнуляем отступ
+        let orderCardArr = document.querySelectorAll('.order-card')
+        for ( let i = 0; i < orderCardArr.length ; i++) {
+          orderCardArr[i].style.marginBottom = '40px'
+        }
       }
 
       changePos(e)
@@ -52,15 +54,26 @@ ready(function(){
     }
 
     function changePos(e) {
-      let orderCard = e.target.closest('.order-card')
-      let cardPos = orderCard.getBoundingClientRect().top
-      let top = (cardPos + pageYOffset).toFixed(1)
-      changeStyle(top, orderCard)
+      const orderCard = e.target.closest('.order-card')
+      const cardPos = orderCard.getBoundingClientRect().top
+
+      if (document.documentElement.scrollWidth > 650) {
+        const parrentCard = orderCard.closest('.content-wrap--order')
+        const posY = orderCard.offsetTop - parrentCard.offsetTop
+        changeStyle(posY, orderCard)
+      } else {
+        let top = (cardPos + pageYOffset).toFixed(1)
+        changeStyle(top, orderCard)
+      }
     }
 
     function changeStyle(posTop, orderCard) {
-      showOrder.style.top = (Number(posTop) + orderCard.offsetHeight + 20 + "px")
-      orderCard.style.marginBottom = showOrder.offsetHeight + 50 + 'px'
+      if (document.documentElement.scrollWidth > 650) {
+        showOrder.style.marginTop = posTop + "px"
+      } else {
+        showOrder.style.top = (Number(posTop) + orderCard.offsetHeight + 20 + "px")
+        orderCard.style.marginBottom = showOrder.offsetHeight + 50 + 'px'
+      }
     }
 
     for( let i = 0; i < showOrderBtn.length; i++ ) {
