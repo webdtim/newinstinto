@@ -152,16 +152,19 @@ html(class='page  no-js', lang='ru')
       .content__container
         .page-footer__inner.page-footer__inner--padding
           +content-block('large')
-            +carusel
-              a.carusel__item(href='#')
-                img.carusel__img(src='img/Rectangle 99.png', alt='discount')
-                p.carusel__text Подарочные Сертификаты
-              a.carusel__item(href='#')
-                img.carusel__img(src='img/Rectangle 99.png', alt='discount')
-                p.carusel__text Акция приведи друга и получи скидку
-              a.carusel__item(href='#')
-                img.carusel__img(src='img/Rectangle 99.png', alt='discount')
-                P.carusel__text Проверка максимально вместимого текста, дабы всё не переделывать
+            +carousel('action')
+              .carousel__item
+                a(href='#')
+                  img.carousel__img(src='img/Rectangle 99.png', alt='discount')
+                  p.carousel__text Подарочные Сертификаты
+              //- .carousel__item
+              //-   a(href='#')
+              //-     img.carousel__img(src='img/Rectangle 99.png', alt='discount')
+              //-     p.carousel__text Акция приведи друга и получи скидку
+              //- .carousel__item
+              //-   a(href='#')
+              //-     img.carousel__img(src='img/Rectangle 99.png', alt='discount')
+              //-     P.carousel__text Проверка максимально вместимого текста, дабы всё не переделывать
           +content-block('large')
             .content-block__wrap-mob
               +subscribe

@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (carousel)
+
+mixin carousel(mods, control)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +carousel('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' carousel--' + modsList[i].trim();
+      }
+    }
+
+  .carousel(class=allMods)&attributes(attributes)
+    .carousel__inner
+      .carousel__item-wrap
+        block
+      if control
+        .carousel__control.carousel__control--prev
+        .carousel__control.carousel__control--next
+      .carousel__ellipses

@@ -81,6 +81,14 @@
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 10px;
       }
+
+      @media (min-width: 2400px) {
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      @media (min-width: 3200px) {
+        grid-template-columns: repeat(8, 1fr);
+      }
     }
 
     &--mob-hide {

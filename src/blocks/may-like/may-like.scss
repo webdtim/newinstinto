@@ -6,11 +6,7 @@
 
   $block-name:                &; // #{$block-name}__element
   
-  margin: 50px 20px;
-
-  @media (min-width: $screen-md) {
-    margin: 50px 0 0;
-  }
+  margin-top: 50px;
 
   @media (min-width: $screen-xxl) {
     margin-top: 100px;
@@ -21,9 +17,11 @@
   }
 
   &__text {
+    margin-left: 20px;
     font-size: 24px;
 
     @media (min-width: $screen-lg) {
+      margin-left: 50px;
       font-size: 36px;
     }
 

@@ -11,11 +11,15 @@
   border-radius: $border-radius;
   padding: 5px 15px;
   line-height: $line-height;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   background-color: #fff;
   -moz-appearance: textfield; // stylelint-disable-line
   appearance: textfield;
+
+  @media (min-width: $screen-md) {
+    font-size: 14px;
+  }
 
   &:focus {
     @include field-focus;

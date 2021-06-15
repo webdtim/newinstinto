@@ -1,0 +1,179 @@
+// В этом файле должны быть стили для БЭМ-блока carousel, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.carousel {
+
+  $block-name:                &; // .carousel__element
+
+  width: 100%;
+  margin-top: 50px;
+  overflow: hidden;
+
+  @media (min-width: $screen-xl) {
+    padding: 0;
+  }
+
+  &__inner {
+    position: relative;
+    height: 0;
+    padding-top: 80%;
+    margin-bottom: 70px;
+
+    @media (min-width: $screen-md) {
+      padding-top: 56%;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 40%;
+    }
+  }
+
+  &__item-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // width: auto;
+    height: 100%;
+    transition: 0.5s;
+    transform: translateX(0px);
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 4vw;
+
+    .product-card {
+      width: 49vw;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-right: 2vw;
+
+      .product-card {
+        width: 32vw;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-right: 1vw;
+
+      .product-card {
+        width: 24vw;
+      }
+    }
+  }
+
+  &__control {
+    display: none;
+    position: absolute;
+    top: 40%;
+    width: 75px;
+    height: 75px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f4f4f4;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 30px;      
+      border-bottom: 4px solid $black;
+      border-right: 4px solid $black;
+    }
+
+    &--prev {
+      left: 50px;
+
+      &:after {
+        transform: translate(-25%, -50%) rotate(135deg);
+      }
+    }
+
+    &--next {
+      right: 50px;
+
+      &:after {
+        transform: translate(-75%, -50%) rotate(-45deg);
+      }
+    }
+  }
+
+  &__ellipses {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: -65px;
+    width: 100%;
+  }
+
+  &__ellipse {
+    width: 16px;
+    height: 16px;
+    margin-left: 16px;
+    border-radius: 50%;
+    border: 1px solid #AEAEAE;
+    background-color: $white;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @media (min-width: $screen-xl) {
+
+      &:hover {
+        cursor: pointer;
+        background-color: $gray;
+      }
+    }
+
+    &--active {
+      border: none;
+      background-color: $black;
+    }
+  }
+
+  &--action {
+
+    .carousel__inner {
+      height: 150px;
+      padding-top: 0;
+      margin-left: 20px;
+    }
+
+    .carousel__item{
+      width: 500px;
+      margin-right: 20px;
+    }
+
+    .carousel__img {
+      max-height: 100%;
+    }
+
+    .carousel__text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 60%;
+      padding: 20px 30px 30px 20px;
+      text-align: center;
+      color: $white;
+      background-image: url(../img/carousel-bcg.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+    }
+  }
+}
