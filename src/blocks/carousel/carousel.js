@@ -80,9 +80,6 @@ ready(function(){
           const actualEllipse = -Math.round(privates.opt.position / step)
           removeActiveClass()
           privates.sel.ellipses.children[actualEllipse].classList.add('carousel__ellipse--active')
-
-          // console.log('max  ' + 0 + ' = itemWrapWidth ' + privates.sel.itemWrap.clientWidth + ' - caruselWidth ' + carousel.clientWidth + ' - step ' + step)
-          // console.log(privates.opt.position)
         }
       }
 

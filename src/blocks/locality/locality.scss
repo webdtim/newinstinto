@@ -21,8 +21,8 @@
 
   svg {
     align-self: center;
-    width: 20px;
-    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
   }
 
   &__town {
@@ -33,8 +33,8 @@
     margin-left: 20px;
 
     svg {
-      width: 16px;
-      height: 16px;
+      max-width: 16px;
+      max-height: 16px;
     }
   }
 }
@@ -50,8 +50,8 @@
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   font-size: 14px;
-  padding: 0 0 0 15px !important;
-  width: 240px;
+  padding: 0 !important;
+  width: 220px;
 }
 
 .bx-sls .dropdown-icon {
