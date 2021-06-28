@@ -7,6 +7,7 @@
   $block-name:                &; // #{$block-name}__element
 
   display: block;
+  width: 100%;
   margin: 0;
 
   &__name {
@@ -63,16 +64,17 @@
       outline: none;
     }
 
+    &:disabled {
+      color: #c4c4c4;
+      cursor: not-allowed;
+    }
+
     &--plus {
       right: 0;
-      background: svg-load('../field-num/bg-img/plus.svg') center no-repeat;
-      background-size: 14px 14px;
     }
 
     &--minus {
       left: 0;
-      background: svg-load('../field-num/bg-img/minus.svg') center no-repeat;
-      background-size: 14px 14px;
     }
 
     #{$block-name}--disabled & {

@@ -79,6 +79,16 @@
 
     @media (min-width: $screen-xl) {
       display: block;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ffffff;
+      }
+
+      &:hover:after {
+        border-bottom: 4px solid $color-accent;
+        border-right: 4px solid $color-accent;
+      }
     }
 
     &:after {

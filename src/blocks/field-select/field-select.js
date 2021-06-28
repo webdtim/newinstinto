@@ -31,13 +31,20 @@ ready(function(){
   // Включим отдельно
   // const choices = new Choices('#some-if', {/* options */});
 
-  // Или тупо найдём все селекты и включим на них Choices
-  const selects = document.querySelectorAll('.field-select__select');
-  selects.forEach(function(item){
-    new Choices(item, {
-      searchEnabled: false,
-      placeholderValue: 'Выберите',
+  const initSelects = () => {
+    // Или тупо найдём все селекты и включим на них Choices
+    const selects = document.querySelectorAll('.field-select__select');
+    selects.forEach(function(item){
+      new Choices(item, {
+        searchEnabled: false,
+        placeholderValue: 'Выберите',
+      });
     });
-  });
+  }
+    
+  initSelects()
+
+  // использование в стороннем скрипте
+  window.initSelect = initSelects
 
 });

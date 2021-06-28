@@ -3,44 +3,6 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .alert {
-  position: relative;
-  margin-top: $typo-margin-vertical;
-  margin-bottom: $typo-margin-vertical;
-  padding: 0.7em 1.5em 0.7em 1.4em;
-  border-radius: $border-radius;
-  color: $text-color;
-  background-color: lighten($color-warning, 30%);
-
-  & > * { // stylelint-disable-line  selector-combinator-blacklist
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  & > * + * { // stylelint-disable-line  selector-combinator-blacklist
-    margin-top: $typo-margin-vertical;
-  }
-
-  &__header {
-    display: block;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: $font-size-h3;
-    font-weight: 400;
-    line-height: 1.2;
-    color: inherit;
-
-    & + * {
-      margin-top: 0;
-    }
-  }
-
-  &__close.close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-  }
-
 
 
   // &--warning {
@@ -48,20 +10,17 @@
   //   color: $text-color;
   // }
 
-  // &--danger {
-  //   background-color: $color-danger;
-  //   color: #fff;
+  &--danger {
+    color: $red;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+    padding-left: 20px;
 
-  //   a {
-  //     color: inherit;
-  //     text-decoration: underline;
-
-  //     &:hover,
-  //     &:focus {
-  //       text-decoration: none;
-  //     }
-  //   }
-  // }
+    @media (min-width: $screen-md) {
+      padding-left: 0;
+    }
+  }
 
   // &--success {
   //   background-color: $color-success;

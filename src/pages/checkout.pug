@@ -11,7 +11,7 @@ block content
         +breadcrumbs-item('Главная', 'index.html')
         +breadcrumbs-item('корзина')
       main.content__main
-        .cart
+        form.cart(method="POST", id="ORDER", data-check-form)
           .cart__select
             .cart__title.cart__title--check
               h3 Оформление заказа
@@ -21,14 +21,15 @@ block content
             .cart__local
               +locality
             .cart__name-group Выберите способ доставки
+            .alert.alert--danger._delivery Пожалуйста, выберите доставку!
             .cart__checkout-wrap.choose-block__wrap
-              .choose-block.choose-block--active
+              .choose-block
                 +field-radio([
                   {
                     helpText: '',
                     attrs: {
                       name: 'delivery',
-                      checked: true
+                      required: 'required'
                     }
                   },
                 ])
@@ -60,52 +61,35 @@ block content
                   +field-text({
                     helpText: '',
                     attrs: {
-                      placeholder: 'Фамилия Имя Отчество'
+                      placeholder: 'Фамилия Имя Отчество',
+                      required: 'required'
                     }
                   })
                 .cart__field-group-inner
                   .cart__field-title Мобильный телефон
                   label.field-text
                     span.field-text__input-wrap
-                      input.field-text__input(placeholder='К примеру: +7 (000) 000-00-00', type="tel")
+                      input.field-text__input(placeholder='К примеру: +7 (000) 000-00-00', type="tel", required,)
                 .cart__field-group-inner
                   .cart__field-title Ваша электронная почта
-                  +field-text({
-                    helpText: '',
-                    attrs: {
-                      placeholder: 'Email'
-                    }
-                  })
+                  label.field-textlabel.field-text
+                    span.field-text__input-wrap
+                      input.field-text__input(placeholder='Email', type='email', required)
               .cart__field-group
                 .cart__field-group-inner
-                  .cart__field-title Улица
+                  .cart__field-title Адрес доставки
                   +field-text({
-                    helpText: '',
                     attrs: {
-                      placeholder: 'Название улицы'
-                    }
-                  })
-                .cart__field-group-inner--two-field
-                  .cart__field-title Дом
-                  +field-text({
-                    helpText: '',
-                    attrs: {
-                      placeholder: 'Номер дома'
-                    }
-                  })
-                  .cart__field-title Квартира
-                  +field-text({
-                    helpText: '',
-                    attrs: {
-                      placeholder: 'Номер квартиры'
+                      placeholder: 'Название улицы',
+                      required: 'required'
                     }
                   })
                 .cart__field-group-inner--two-field
                   .cart__field-title Почтовый индекс
                   +field-text({
-                    helpText: '',
+                    helpText: 'подсказка',
                     attrs: {
-                      placeholder: 'Номер'
+                      placeholder: 'Индекс'
                     }
                   })
             .cart__checkout-wrap.cart__checkout-wrap--full
@@ -164,7 +148,7 @@ block content
                       +field-actions()
                         +btn('Активировать промокод', 'white')
                 .your-order__inner
-                  +btn('Оплатить', 'accent')(href='checkout-wait.html')
+                  +btn('Оплатить', 'accent')(type='submit')
             .free-shipping(data-free-ship-price='5000' data-cur-cart-total='4000')
               .free-shipping__text
                 .free-shipping__title Бесплатная доставка

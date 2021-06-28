@@ -1,63 +1,116 @@
 /* global document */
 
-const closest = require('closest');
+// const closest = require('closest');
 const ready = require('../../js/utils/documentReady.js');
 
 ready(function(){
 
-  // Для всех форм страницы
-  const forms = Array.from(document.querySelectorAll('form[data-check-form]'));
-  forms.forEach(function(form){
-    // Подпишемся на событие отправки
-    form.addEventListener('submit', function(e){
-      let valid = true;
-      // Проверим все текстовые инпуты
-      const fieldsText = Array.from(form.querySelectorAll('input[data-check-pattern]'));
-      fieldsText.forEach(function(input){
-        if(!checkFieldText(input)) valid = false;
-      });
-      // Проверим все чекбоксы
-      const fieldsCheckbox = Array.from(form.querySelectorAll('input[data-check-state]'));
-      fieldsCheckbox.forEach(function(input){
-        if(!checkFieldCheckbox(input)) valid = false;
-      });
-      // Если были ошибки, не отправляем форму
-      if(!valid) e.preventDefault();
-    });
-  });
+  const fieldsText = document.querySelectorAll('input[required]')
+  if (fieldsText) {
 
-  // Для всех проверяемых текстовых полей
-  const fieldsText = Array.from(document.querySelectorAll('input[data-check-pattern]'));
-  fieldsText.forEach(function(input){
-    let hasBeenAlreadyBlured = false;
-    input.addEventListener('blur', function(){ 
-      checkFieldText(input); 
-      if(!hasBeenAlreadyBlured) hasBeenAlreadyBlured = true;
-    });
-    input.addEventListener('input', function(){ if(hasBeenAlreadyBlured) checkFieldText(input); });
-  });
+    //real-time validation
+    for (let field of fieldsText) {
+      field.addEventListener('focus', (e) => {
+        const field = e.target
+        removeError(field)
+      })
+      field.addEventListener('blur', (e) => {
+        const field = e.target
+        validateField(field)
+      })
+    }
 
-  // Для всех проверяемых чекбоксов
-  const fieldsCheckbox = Array.from(document.querySelectorAll('input[data-check-state]'));
-  fieldsCheckbox.forEach(function(input){
-    input.addEventListener('change', function(){ checkFieldCheckbox(input); });
-  });
+    let errorCount
 
-  function checkFieldText(input) {
-    const regExp = new RegExp(input.dataset.checkPattern, 'gi');
-    const result = regExp.test(input.value);
-    const errorClass = 'field-text--error';
-    const parent = closest(input, '.field-text');
-    result ? parent.classList.remove(errorClass) : parent.classList.add(errorClass);
-    return result;
+    window.validate = (form) => {
+      errorCount = 0
+      validateForm(form)
+      if (errorCount >= 1) return false
+      return true
+    }
+
+    function validateForm(form) {
+      const fields = form.querySelectorAll('input[required]')
+
+      for (let field of fields) {
+        validateField(field)
+      }
+    }
+
+    function validateField(field) {
+      const fieldType = field.getAttribute('type')
+
+      if (isEmpty(field)) {
+        // empty field
+        addError(field)
+      } else {
+        // not an empty field
+        switch (fieldType) {
+          case 'radio':
+            radioCheck(field)? console.log('Ура, выбрана') : addError(field)
+            break
+          case 'checkbox': break
+          case 'tel':
+            numberCheck(field)? removeError(field) : addError(field, 'Кажется тут недостаточно цифр')
+            break
+          case 'email':
+            emailCheck(field)? removeError(field) : addError(field, 'Неверно указан email')
+            break
+          case 'text':
+            removeError(field)
+        }
+      }
+    }
+
+    function isEmpty(input) {
+      const empty = input.value.replace(/\s+/g, ' ').trim()
+      return (!empty) ? true : false
+    }
+
+    function radioCheck(input) {
+      const form = input.closest('form'),
+            name = input.getAttribute('name'),
+            inputChecked = form.querySelector(`input[name="${name}"]:checked`)
+      return (!inputChecked) ? false : true
+    }
+
+    function numberCheck(input) {
+      const amountOfNumbers = input.value.replace(/[^\d]/g, '').length
+      return (amountOfNumbers < 11) ? false : true
+    }
+
+    function emailCheck(input) {
+      const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+            msgText = 'Неверно указан email',
+            correctEmail = reg.test(input.value)
+      return (!correctEmail) ? false : true
+    }
+
+    function addError(input, msgText) {
+      const fieldText = input.closest('.field-text'),
+            errorClass = 'field-text--error',
+            helpText = input.nextSibling
+
+      // count error
+      errorCount += 1
+
+      if (!fieldText) return
+      if (!msgText) msgText = 'Пожалуйста, заполните поле'
+      fieldText.classList.add(errorClass)
+      if (helpText) helpText.remove()
+      //add helpText
+      input.insertAdjacentHTML('afterend', `<span class="field-text__help-text">${msgText}</span>`)
+    }
+
+    function removeError(input) {
+      const fieldText = input.closest('.field-text'),
+            errorClass = 'field-text--error',
+            helpText = input.nextSibling
+
+      if (!fieldText) return
+      fieldText.classList.remove(errorClass)
+      if (helpText) helpText.remove()
+    }
   }
 
-  function checkFieldCheckbox(input) {
-    const trueVal = input.dataset.checkState == 'on' ? true : false;
-    const result = trueVal === input.checked
-    const errorClass = 'field-checkbox__input-wrap--error';
-    const parent = closest(input, '.field-checkbox__input-wrap');
-    result ? parent.classList.remove(errorClass) : parent.classList.add(errorClass);
-    return result;
-  }
 });

@@ -11,7 +11,7 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   padding: 15px;
   cursor: pointer;
 
@@ -43,7 +43,7 @@
   }
 
   &--active {
-    border: 2px solid $color-accent;
+    box-shadow: 0 0 0 2px $color-accent;
     color: $black;
 
     // модификация блока

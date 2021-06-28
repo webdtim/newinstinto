@@ -34,8 +34,11 @@ ready(function(){
 
     changeIndicator()
 
-    // отслеживаем изменение атрибутов
-    let observer = new MutationObserver (() => changeIndicator())
-    observer.observe(freeShip, {attributes: true})
+    // использование в стороннем скрипте
+    window.initFreeShip = changeIndicator
+
+    // // отслеживаем изменение атрибутов
+    // let observer = new MutationObserver (() => changeIndicator())
+    // observer.observe(freeShip, {attributes: true})
   }
 });

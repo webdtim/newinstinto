@@ -150,9 +150,9 @@ ready(function(){
         })
       }
 
-      privates.sel.itemWrap.addEventListener('touchstart', privates.touchSet)
+      privates.sel.itemWrap.addEventListener('touchstart', privates.touchSet, {passive: true})
 
-      privates.sel.itemWrap.addEventListener('touchmove', privates.touchMove)
+      privates.sel.itemWrap.addEventListener('touchmove', privates.touchMove, {passive: true})
 
     }
 

@@ -94,10 +94,12 @@
 }
 
 @mixin field-help-text {
+  position: absolute;
+  bottom: -10px;
   display: block;
-  padding-top: 0.4em;
+  // padding-top: 0.4em;
   font-size: $font-size-sm;
-  line-height: 1.2em;
+  line-height: 1.2;
   color: $text-color-muted;
 
   &:empty { // stylelint-disable-line
