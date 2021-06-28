@@ -47,7 +47,7 @@ ready(function(){
         // not an empty field
         switch (fieldType) {
           case 'radio':
-            radioCheck(field)? console.log('Ура, выбрана') : addError(field)
+            if (!radioCheck(field)) addError(field)
             break
           case 'checkbox': break
           case 'tel':
@@ -81,7 +81,6 @@ ready(function(){
 
     function emailCheck(input) {
       const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
-            msgText = 'Неверно указан email',
             correctEmail = reg.test(input.value)
       return (!correctEmail) ? false : true
     }

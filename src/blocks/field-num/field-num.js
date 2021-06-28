@@ -11,6 +11,7 @@ ready(function(){
 
       const field = e.target.closest('.field-num'),
             input = field.querySelector('.field-num__input'),
+            eventChange = new Event('change'),
             valueMin = input.getAttribute('min') ? +input.getAttribute('min') : -Infinity,
             valueMax = input.getAttribute('max') ? +input.getAttribute('max') : Infinity,
             valueStep = input.getAttribute('step') ? +input.getAttribute('step') : 1
@@ -25,10 +26,16 @@ ready(function(){
         if (isNaN(num)) num = 0
 
         if (eventBtnPlus) {
-          if (num < valueMax) input.value = num + valueStep
+          if (num < valueMax) {
+            input.value = num + valueStep
+            input.dispatchEvent(eventChange)
+          }
         }
         if (eventBtnMinus) {
-          if (num > valueMin) input.value = num - valueStep
+          if (num > valueMin) {
+            input.value = num - valueStep
+            input.dispatchEvent(eventChange)
+          }
         }
 
         if (input.value <= 1) {
