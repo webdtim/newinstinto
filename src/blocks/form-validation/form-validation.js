@@ -20,15 +20,27 @@ ready(function(){
       })
     }
 
-    let errorCount
+    let errorValid = {}
 
+    // global func
     window.validate = (form) => {
-      errorCount = 0
-      validateForm(form)
-      if (errorCount >= 1) return false
-      return true
-    }
 
+      errorValid = {
+        'count': 0,
+        'locationFirstError': null
+      }
+
+      validateForm(form)
+
+      if (errorValid.count >= 1) {
+        window.smoothScrollTo(errorValid.locationFirstError, 500)
+        return false
+      } else {
+        return true
+      }
+
+    }
+    
     function validateForm(form) {
       const fields = form.querySelectorAll('input[required]')
 
@@ -51,10 +63,10 @@ ready(function(){
             break
           case 'checkbox': break
           case 'tel':
-            numberCheck(field)? removeError(field) : addError(field, 'Кажется тут недостаточно цифр')
+            numberCheck(field) ? removeError(field) : addError(field, 'Кажется тут недостаточно цифр')
             break
           case 'email':
-            emailCheck(field)? removeError(field) : addError(field, 'Неверно указан email')
+            emailCheck(field) ? removeError(field) : addError(field, 'Неверно указан email')
             break
           case 'text':
             removeError(field)
@@ -91,7 +103,13 @@ ready(function(){
             helpText = input.nextSibling
 
       // count error
-      errorCount += 1
+      errorValid.count += 1
+
+      // the location of the first error
+      if (errorValid.count === 1) {
+        const curLocation = input.getBoundingClientRect().top + pageYOffset
+        errorValid.locationFirstError = curLocation - 100
+      }
 
       if (!fieldText) return
       if (!msgText) msgText = 'Пожалуйста, заполните поле'
