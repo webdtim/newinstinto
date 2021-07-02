@@ -9,13 +9,14 @@ ready(function(){
 if (chooseBlockWrap) {
 
     let chooseCheckbox = function(e) {
+      const chooseBlock = e.target.closest('.choose-block')
+      
       // если клик не по элементу
-      if (!e.target.closest('.choose-block')) return
+      if (!chooseBlock) return
 
-      const chooseBlock = e.target.closest('.choose-block'),
-            checkbox = chooseBlock.querySelector('input'),
+      const checkbox = chooseBlock.querySelector('input'),
             allChooseBlock = e.target.closest('.choose-block__wrap').querySelectorAll('.choose-block')
-      if (e.target.type == 'radio') return
+
       // если инпут активен
       if (checkbox.checked === true) return
       // удаляем активные классы
