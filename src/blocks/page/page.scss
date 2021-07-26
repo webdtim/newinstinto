@@ -117,6 +117,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.body--blocked {
+  overflow: hidden;
+}
+
 [tabindex='-1']:focus {
   outline: none !important; // stylelint-disable-line
 }

@@ -8,6 +8,14 @@ ready(function(){
 
   if (carouselList) {
 
+    function initCarousels(carouselList) {
+      for (let i = 0; i < carouselList.length; i ++) {
+        new Carousel(carouselList[i])
+      }
+    }
+
+    initCarousels(carouselList)
+
     function Carousel(carousel) {
       const privates = {}
       let xDown, yDown, xUp, yUp, xDiff, yDiff
@@ -23,7 +31,7 @@ ready(function(){
 
       privates.opt = {
         "position": 0,
-        "marginWidth": Number(getComputedStyle(privates.sel.item).marginRight.replace('px','')),
+        "marginWidth": parseInt(getComputedStyle(privates.sel.item).marginRight, 10),
         "allowMove": true
       }
 
@@ -97,6 +105,7 @@ ready(function(){
             
             privates.opt.position = Math.max((-step * i), -maxPosition)
             privates.sel.itemWrap.style.transform = `translateX(${privates.opt.position}px)`
+            return
           }
         }
       }
@@ -119,11 +128,9 @@ ready(function(){
         yDiff = yDown - yUp;
 
         if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-          if ( xDiff > 0 ) {
-            this.nextSlide();
-          } else {
-            this.prevSlide();
-          }
+
+          ( xDiff > 0 ) ? this.nextSlide() : this.prevSlide();
+
         }
 
         xDown = 0;
@@ -151,15 +158,10 @@ ready(function(){
       }
 
       privates.sel.itemWrap.addEventListener('touchstart', privates.touchSet, {passive: true})
-
       privates.sel.itemWrap.addEventListener('touchmove', privates.touchMove, {passive: true})
 
     }
 
-
-    for (let i = 0; i < carouselList.length; i ++) {
-      new Carousel(carouselList[i])
-    }
   }
 
 });

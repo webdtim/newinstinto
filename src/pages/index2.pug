@@ -1,0 +1,125 @@
+extends ../pug/layout.pug
+
+block meta
+  title Главная
+  meta(name='description', content='')
+
+
+block content
+  .content
+    .content__container.content__container--sidebar
+      +sidebar
+      main.content__main
+        .content__inner.content__inner--home
+          +content-block('main')
+            .content-block__text-wrapper
+              h1 Место, <br>где начинается <b>твой секрет.</b>
+              p.content-block__description Стань вновь желанной с новым бельем от Инстинто.
+              +btn('Перейти в каталог','main')(href='catalog.html')
+          +content-block('large, svg')
+            img.content-block__img(src='img/hero.jpg', alt='альт')
+            .content-block__stick-img
+              svg
+                use(xlink:href='img/sprite.svg#hero-figure')
+        .content__inner.content__inner--home
+          +content-block('center')
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+            .content-block__text-wrapper
+              h3.content-block__title Косметика
+              p.content-block__description Будь неотразимой
+          +content-block('center')
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+            .content-block__text-wrapper
+              h3.content-block__title В главных ролях – Ты.
+              p.content-block__description Мы подобрали для тебя лучшие комплекты белья, которые помогут тебе преобразиться в его глазах
+        +may-like
+        +carousel('may-like', true)
+          .carousel__item
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                  .product-card__discount -30%
+                .product-card__text-wrap
+                  .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф 
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    +old-price('5 783₽')
+          .carousel__item
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__price 5 600₽
+          .carousel__item
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                  .product-card__discount -30%
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    +old-price('5 783₽')
+          .carousel__item
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                  .product-card__discount -30%
+                .product-card__text-wrap
+                  .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    +old-price('5 783₽')
+          .carousel__item
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                  .product-card__discount -30%
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    +old-price('5 783₽')
+          .carousel__item
+            +product-card
+              a.product-card__link(href='product.html')
+                .product-card__img-wrap
+                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                  .product-card__discount -30%
+                .product-card__text-wrap
+                  .product-card__name трусики
+                  .product-card__price-wrap
+                    .product-card__actual-price 2320₽
+                    +old-price('5 783₽')
+        .content__inner.content__inner--home.content__inner--mob-hide
+          +content-block('center')
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+            .content-block__text-wrapper
+              h3.content-block__title Неотразимость во время сна
+              p.content-block__description Лучший материал для повышенного комфорта и крепкого сна
+              +btn('Выбрать пижаму','main')(href='catalog.html')
+          +content-block('center')
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+            .content-block__text-wrapper
+              h3.content-block__title Верни отношениям былую страсть
+              p.content-block__description Набор вагинальных шариков
+              +btn('Тсс, мы никому не скажем','main')(href='catalog.html')
+          +content-block
+            .content-block__text-wrapper
+              svg(width='60px', height='60px')
+                use(xlink:href='img/sprite.svg#icon-delivery')
+              h3.content-block__title Информация о доставке и т.д.
+              p.content-block__description Бесплатная доставка от 5000₽
+        .content__inner.content__inner--home
+          +content-block('full-width, center')
+            .content-block__text-wrapper
+              p.content-block__seo-text Вы следите за модой и интересуетесь последними тенденциями в мире нижнего белья и одежды? Тогда не пропустите женскую коллекцию. разнообразие моделей вас приятно удивит. Наша коллекция создана, чтобы учитывать потребности каждой женщины в любое время суток и в любой период жизни. Эта коллекция поможет безупречно выглядеть в офисе
+//- block append page-bottom
+//-   script(src='js/some.js')

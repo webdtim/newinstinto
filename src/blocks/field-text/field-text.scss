@@ -29,6 +29,7 @@
   // для Input от битрикса
   .bx-sls .bx-ui-sls-fake, .bx-sls .bx-ui-sls-route {
     font-size: 16px !important;
+    z-index: 1 !important;
   }
 
   &__help-text {

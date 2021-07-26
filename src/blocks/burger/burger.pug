@@ -1,7 +1,7 @@
 //- Pug-файл этого блока:
 //- Все примеси в этом файле должны начинаться c имени блока (burger)
 
-mixin burger(label, targetId, switchableClass)
+mixin burger(label, targetId, switchableClass, elemBlockScroll, blockScrollClass)
 
   //- Принимает:
   //-   label           {string} - описание, значение атрибута aria-label
@@ -15,6 +15,8 @@ mixin burger(label, targetId, switchableClass)
     label = label || 'Toggle block ' + targetId
     if (typeof(targetId) !== 'undefined' && targetId !== '') attributes['data-target-id'] = targetId
     if (typeof(switchableClass) !== 'undefined' && switchableClass !== '') attributes['data-target-class-toggle'] = switchableClass
+    if (typeof(elemBlockScroll) !== 'undefined' && elemBlockScroll !== '') attributes['data-target-scroll-block'] = elemBlockScroll
+    if (typeof(blockScrollClass) !== 'undefined' && blockScrollClass !== '') attributes['data-scroll-block-class'] = blockScrollClass
 
   a.burger(role='button')&attributes(attributes)
     .burger__inner
