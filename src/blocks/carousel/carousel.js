@@ -21,12 +21,13 @@ ready(function(){
       let xDown, yDown, xUp, yUp, xDiff, yDiff
 
       privates.sel = {
-        "itemWrap": carousel.querySelector('.carousel__item-wrap'),
-        "item": carousel.querySelector('.carousel__item'),
-        "items": carousel.querySelectorAll('.carousel__item'),
-        "prev": carousel.querySelector('.carousel__control--prev'),
-        "next": carousel.querySelector('.carousel__control--next'),
-        "ellipses": carousel.querySelector('.carousel__ellipses')
+        "carouselInner": carousel.querySelector('.carousel__inner'),
+        "itemWrap":     carousel.querySelector('.carousel__item-wrap'),
+        "item":         carousel.querySelector('.carousel__item'),
+        "items":        carousel.querySelectorAll('.carousel__item'),
+        "prev":         carousel.querySelector('.carousel__control--prev'),
+        "next":         carousel.querySelector('.carousel__control--next'),
+        "ellipses":     carousel.querySelector('.carousel__ellipses')
       }
 
       privates.opt = {
@@ -35,8 +36,34 @@ ready(function(){
         "allowMove": true
       }
 
+      privates.opt.maxPosition = privates.sel.itemWrap.clientWidth - carousel.clientWidth - privates.opt.marginWidth
+
+
+      // Модификация для быстрого измения (не использовать в новом проекте)
+      const initHeightCarousel = function(item) {
+        const mini = carousel.classList.contains('carousel--mini')
+        const full = carousel.classList.contains('carousel--full-width')
+        if (mini || full) {
+          const prodCard = item.querySelector('.product-card')
+          const windowWidh = document.documentElement.clientWidth
+          let tempNum = 50
+
+          if (windowWidh < 600) {
+            tempNum = 65
+
+            if (full) tempNum = 30
+          }
+
+          carousel.style.height = prodCard.clientHeight + tempNum + 'px'
+        }
+      }
+
+      initHeightCarousel(privates.sel.item)
+
+
       const createEllipses = function() {
-        const scrollableItem = Math.round((privates.sel.itemWrap.clientWidth / (privates.sel.item.clientWidth + privates.opt.marginWidth)) - (carousel.clientWidth / (privates.sel.item.clientWidth + privates.opt.marginWidth)))
+        const scrollableItem = Math.ceil(privates.sel.items.length - (carousel.clientWidth / (privates.sel.item.clientWidth + privates.opt.marginWidth)))
+        
         if (scrollableItem < 1) return
         for (let i = 0; i <= scrollableItem; i++) {
           privates.sel.ellipses.insertAdjacentHTML('beforeend', '<div class="carousel__ellipse"></div>')
@@ -45,30 +72,34 @@ ready(function(){
       }
       createEllipses()
 
-      const removeActiveClass = function() {
+      const removeActiveClassAllEllipses = function() {
         for (let i = 0; i < privates.sel.ellipses.children.length; i++) {
           privates.sel.ellipses.children[i].classList.remove('carousel__ellipse--active')
         }
       }
 
+      const addActiveClassEllipse = function(numEllipse) {
+        privates.sel.ellipses.children[numEllipse].classList.add('carousel__ellipse--active')
+      }
+
 
       this.nextSlide = () => {
 
-        const step = privates.sel.item.clientWidth + privates.opt.marginWidth,
-        maxPosition = privates.sel.itemWrap.clientWidth - carousel.clientWidth - step + privates.opt.marginWidth
+        const step = privates.sel.item.clientWidth + privates.opt.marginWidth
 
         // set the permission for switching slides
-        if (privates.opt.position <= -maxPosition) privates.opt.allowMove = false
+        if (privates.opt.position <= -privates.opt.maxPosition) privates.opt.allowMove = false
         else privates.opt.allowMove = true
 
         if (privates.opt.allowMove){
           privates.opt.position -= step
+          if (privates.opt.position < -privates.opt.maxPosition) privates.opt.position = -privates.opt.maxPosition
           privates.sel.itemWrap.style.transform = `translateX(${privates.opt.position}px)`
 
           // changing the active class of the ellipse
-          const actualEllipse = -Math.round(privates.opt.position / step)
-          removeActiveClass()
-          privates.sel.ellipses.children[actualEllipse].classList.add('carousel__ellipse--active')
+          const actualEllipse = Math.ceil(-privates.opt.position / step)
+          removeActiveClassAllEllipses()
+          addActiveClassEllipse(actualEllipse)
         }
       }
 
@@ -85,9 +116,9 @@ ready(function(){
           privates.sel.itemWrap.style.transform = `translateX(${privates.opt.position}px)`
 
           // changing the active class of the ellipse
-          const actualEllipse = -Math.round(privates.opt.position / step)
-          removeActiveClass()
-          privates.sel.ellipses.children[actualEllipse].classList.add('carousel__ellipse--active')
+          const actualEllipse = Math.ceil(-privates.opt.position / step)
+          removeActiveClassAllEllipses()
+          addActiveClassEllipse(actualEllipse)
         }
       }
 
@@ -95,15 +126,14 @@ ready(function(){
       this.goTo = (e) => {
         if (e.target === privates.sel.ellipses) return
 
-        const step = privates.sel.item.clientWidth + privates.opt.marginWidth,
-        maxPosition = privates.sel.itemWrap.clientWidth - carousel.clientWidth - privates.opt.marginWidth
+        const step = privates.sel.item.clientWidth + privates.opt.marginWidth
         
         for (let i = 0; i < privates.sel.ellipses.children.length; i++) {
           if (e.target === privates.sel.ellipses.children[i]) {
-            removeActiveClass()
-            privates.sel.ellipses.children[i].classList.add('carousel__ellipse--active')
+            removeActiveClassAllEllipses()
+            addActiveClassEllipse(i)
             
-            privates.opt.position = Math.max((-step * i), -maxPosition)
+            privates.opt.position = Math.max((-step * i), -privates.opt.maxPosition)
             privates.sel.itemWrap.style.transform = `translateX(${privates.opt.position}px)`
             return
           }

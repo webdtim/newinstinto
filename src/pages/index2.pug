@@ -18,105 +18,228 @@ block content
               +btn('Перейти в каталог','main')(href='catalog.html')
           +content-block('large, svg')
             img.content-block__img(src='img/hero.jpg', alt='альт')
-            .content-block__stick-img
-              svg
-                use(xlink:href='img/sprite.svg#hero-figure')
+        .content__inner.content__inner--home
+          +content-block('center, p-t-mob')
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+          +content-block('large, center')
+            h3.content-block__caption Экстравагантная коллекция Vivelo 
+            +carousel('mini', true)
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__price 5 600₽
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/7a044a1a8bef1634c98a5be13137aac0.jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф 
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/bb6c5dd7181ecb1279338bfae746e292.jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+        .content__inner.content__inner--home
+          +content-block('center, p-t-mob')
+            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+          +content-block('large')
+            h3.content-block__caption Экстравагантная коллекция Vivelo 
+            +carousel('mini', true)
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__price 5 600₽
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/7a044a1a8bef1634c98a5be13137aac0.jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф 
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/00b8965ee26d0b44336c5e51b525cb45.jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/bb6c5dd7181ecb1279338bfae746e292.jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/0a3bec6480158a55554e423fc3ac35ff.jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
         .content__inner.content__inner--home
           +content-block('center')
-            img.content-block__img(src='img/preview-3.jpg', alt='альт')
             .content-block__text-wrapper
-              h3.content-block__title Косметика
-              p.content-block__description Будь неотразимой
-          +content-block('center')
-            img.content-block__img(src='img/preview-3.jpg', alt='альт')
+              h3.content-block__title Коллекция корректирующих корсетов от AnnChery
+              +btn('Отправиться в путь','main')(href='catalog.html')
+          +content-block('large')
+            h3.content-block__caption Экстравагантная коллекция Vivelo 
+            +carousel('mini', true)
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф 
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__price 5 600₽
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+              .carousel__item
+                +product-card
+                  a.product-card__link(href='product.html')
+                    .product-card__img-wrap
+                      img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
+                      .product-card__discount -30%
+                    .product-card__text-wrap
+                      .product-card__name трусики
+                      .product-card__price-wrap
+                        .product-card__actual-price 2320₽
+                        +old-price('5 783₽')
+        .content__inner.content__inner--home
+          +content-block('large, center')
+            img.content-block__img(src='img/hero.jpg', alt='альт')
             .content-block__text-wrapper
-              h3.content-block__title В главных ролях – Ты.
-              p.content-block__description Мы подобрали для тебя лучшие комплекты белья, которые помогут тебе преобразиться в его глазах
-        +may-like
-        +carousel('may-like', true)
-          .carousel__item
-            +product-card
-              a.product-card__link(href='product.html')
-                .product-card__img-wrap
-                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
-                  .product-card__discount -30%
-                .product-card__text-wrap
-                  .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф 
-                  .product-card__price-wrap
-                    .product-card__actual-price 2320₽
-                    +old-price('5 783₽')
-          .carousel__item
-            +product-card
-              a.product-card__link(href='product.html')
-                .product-card__img-wrap
-                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
-                .product-card__text-wrap
-                  .product-card__name трусики
-                  .product-card__price-wrap
-                    .product-card__price 5 600₽
-          .carousel__item
-            +product-card
-              a.product-card__link(href='product.html')
-                .product-card__img-wrap
-                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
-                  .product-card__discount -30%
-                .product-card__text-wrap
-                  .product-card__name трусики
-                  .product-card__price-wrap
-                    .product-card__actual-price 2320₽
-                    +old-price('5 783₽')
-          .carousel__item
-            +product-card
-              a.product-card__link(href='product.html')
-                .product-card__img-wrap
-                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
-                  .product-card__discount -30%
-                .product-card__text-wrap
-                  .product-card__name трусики ОЧень вывфдадзыазщызща лафоыащшыоа ыал заф
-                  .product-card__price-wrap
-                    .product-card__actual-price 2320₽
-                    +old-price('5 783₽')
-          .carousel__item
-            +product-card
-              a.product-card__link(href='product.html')
-                .product-card__img-wrap
-                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
-                  .product-card__discount -30%
-                .product-card__text-wrap
-                  .product-card__name трусики
-                  .product-card__price-wrap
-                    .product-card__actual-price 2320₽
-                    +old-price('5 783₽')
-          .carousel__item
-            +product-card
-              a.product-card__link(href='product.html')
-                .product-card__img-wrap
-                  img.product-card__img(src='img/product-card-img (4).jpg', alt='альт')
-                  .product-card__discount -30%
-                .product-card__text-wrap
-                  .product-card__name трусики
-                  .product-card__price-wrap
-                    .product-card__actual-price 2320₽
-                    +old-price('5 783₽')
-        .content__inner.content__inner--home.content__inner--mob-hide
-          +content-block('center')
-            img.content-block__img(src='img/preview-3.jpg', alt='альт')
-            .content-block__text-wrapper
-              h3.content-block__title Неотразимость во время сна
-              p.content-block__description Лучший материал для повышенного комфорта и крепкого сна
-              +btn('Выбрать пижаму','main')(href='catalog.html')
-          +content-block('center')
-            img.content-block__img(src='img/preview-3.jpg', alt='альт')
-            .content-block__text-wrapper
-              h3.content-block__title Верни отношениям былую страсть
-              p.content-block__description Набор вагинальных шариков
-              +btn('Тсс, мы никому не скажем','main')(href='catalog.html')
-          +content-block
-            .content-block__text-wrapper
-              svg(width='60px', height='60px')
-                use(xlink:href='img/sprite.svg#icon-delivery')
-              h3.content-block__title Информация о доставке и т.д.
-              p.content-block__description Бесплатная доставка от 5000₽
+              h3.content-block__title Экстравагантная коллекция Vivelo Barcetti
+              p.content-block__description Новая коллекция трусиков от эпатажного дизайнера
+              +btn('отправиться в путь','main')(href='catalog.html')
+          +content-block('pos-relative')
+            svg
+              use(xlink:href='img/sprite.svg#icon-to-surprise')
         .content__inner.content__inner--home
           +content-block('full-width, center')
             .content-block__text-wrapper

@@ -155,19 +155,18 @@ html(class='page  no-js', lang='ru')
             +carousel('action')
               .carousel__item
                 a(href='#')
-                  img.carousel__img(src='img/Rectangle 99.png', alt='discount')
-                  p.carousel__text Подарочные Сертификаты
+                  .carousel__img-wrap
+                    img.carousel__img(src='img/Rectangle 99.png', alt='discount')
               .carousel__item
                 a(href='#')
-                  img.carousel__img(src='img/Rectangle 99.png', alt='discount')
-                  p.carousel__text Акция приведи друга и получи скидку
+                  .carousel__img-wrap
+                    img.carousel__img(src='img/Rectangle 99.png', alt='discount')
               .carousel__item
                 a(href='#')
-                  img.carousel__img(src='img/Rectangle 99.png', alt='discount')
-                  P.carousel__text Проверка максимально вместимого текста, дабы всё не переделывать
-          +content-block('large')
-            .content-block__wrap-mob
-              +subscribe
+                  .carousel__img-wrap
+                    img.carousel__img(src='img/Rectangle 99.png', alt='discount')
+          .content-block__wrap-mob
+            +subscribe
         .page-footer__inner.page-footer__inner--border
           +content-block('al-center')
             .content-block__wrap-mob

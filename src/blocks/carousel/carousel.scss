@@ -7,6 +7,7 @@
   $block-name:                &; // .carousel__element
 
   width: 100%;
+  // height: 100%;
   overflow: hidden;
 
   @media (min-width: $screen-xl) {
@@ -15,17 +16,7 @@
 
   &__inner {
     position: relative;
-    height: 0;
-    padding-top: 80%;
-    margin-bottom: 70px;
-
-    @media (min-width: $screen-md) {
-      padding-top: 56%;
-    }
-
-    @media (min-width: $screen-xl) {
-      padding-top: 40%;
-    }
+    height: 100%;
   }
 
   &__item-wrap {
@@ -35,7 +26,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    // width: auto;
     height: 100%;
     transition: 0.5s;
     transform: translateX(0px);
@@ -43,27 +33,6 @@
 
   &__item {
     position: relative;
-    margin-right: 4vw;
-
-    .product-card {
-      width: 49vw;
-    }
-
-    @media (min-width: $screen-md) {
-      margin-right: 2vw;
-
-      .product-card {
-        width: 32vw;
-      }
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-right: 1vw;
-
-      .product-card {
-        width: 24vw;
-      }
-    }
   }
 
   &__control {
@@ -74,7 +43,7 @@
     height: 75px;
     border: none;
     border-radius: 50%;
-    background-color: #f4f4f4;
+    background-color: rgba(244, 244, 244, 0.5);
 
     @media (min-width: $screen-xl) {
       display: block;
@@ -123,7 +92,7 @@
     justify-content: center;
     flex-wrap: nowrap;
     position: absolute;
-    bottom: -65px;
+    bottom: 0px;
     width: 100%;
   }
 
@@ -153,36 +122,160 @@
     }
   }
 
+
+
+  &--mini &__item{
+    width: 160px;
+    margin-right: 20px;
+
+    @media (min-width: $screen-xl) {
+      width: 200px;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 250px;
+    }
+
+    @media (min-width: $screen-big) {
+      width: 300px;
+    }
+  }
+  &--mini &__inner {
+    margin-bottom: 0;
+  }
+  &--mini &__ellipses {
+    bottom: 10px;
+  }
+  &--mini &__control {
+    display: block;
+    top: 80px;
+    width: 55px;
+    height: 55px;
+
+    @media (min-width: $screen-xl) {
+      top: 30%;
+
+      &:hover:after {
+        border-bottom: 3px solid $color-accent;
+        border-right: 3px solid $color-accent;
+      }
+    }
+
+    &:after {
+      width: 22px;
+      height: 22px;      
+      border-bottom: 3px solid $black;
+      border-right: 3px solid $black;
+    }
+
+    &--prev {
+      left: 10px;
+    }
+
+    &--next {
+      right: 10px;
+    }
+  }
+  &--mini &__ellipse {
+
+    @media (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+
+
+  &--full-width &__item{
+    margin-right: 4vw;
+
+    .product-card {
+      width: 49vw;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-right: 2vw;
+
+      .product-card {
+        width: 32vw;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-right: 1vw;
+
+      .product-card {
+        width: 24vw;
+      }
+    }
+  }
+  &--full-width .product-card {
+    margin-bottom: 0;
+  }
+  &--full-width &__inner {
+    // height: 0;
+    // padding-top: 80%;
+    // margin-bottom: 70px;
+
+    // @media (min-width: $screen-md) {
+    //   padding-top: 56%;
+    // }
+
+    // @media (min-width: $screen-xl) {
+    //   padding-top: 40%;
+    // }
+  }
+
+
   &--action {
-    margin-left: 20px;
+    padding-left: 20px;
 
     .carousel__inner {
       height: 150px;
       padding-top: 0;
+      margin-bottom: 0;
+
+      @media (min-width: $screen-xs) {
+        margin-bottom: 30px;
+      }
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 70px;
+      }
     }
 
-    .carousel__item{
+    .carousel__item {
       width: 500px;
+      max-width: 90vw;
       margin-right: 20px;
     }
 
-    .carousel__img {
-      max-height: 100%;
+    .carousel__img-wrap {
+      position: relative;
+      height: 0;
+      padding-top: 40%;
     }
 
-    .carousel__text {
+    .carousel__img {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      width: 60%;
-      padding: 20px 30px 30px 20px;
-      text-align: center;
-      color: $white;
-      background-image: url(../img/carousel-bcg.png);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .carousel__ellipses {
+      bottom: 0px;
+
+      @media (min-width: $screen-xs) {
+        bottom: -25px;
+      }
+
+      @media (min-width: $screen-md) {
+        bottom: -65px;
+      }
     }
   }
 }
